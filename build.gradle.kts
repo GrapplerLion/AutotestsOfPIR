@@ -51,5 +51,7 @@ tasks.withType<JavaCompile> {
 }
 
 tasks.test {
+    systemProperty("selenide.browser", System.getProperty("browser", "chrome"))
+    systemProperty("selenide.headless", System.getProperty("headless", "false"))
     useJUnitPlatform()
 }

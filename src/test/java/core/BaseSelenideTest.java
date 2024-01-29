@@ -14,19 +14,20 @@ abstract public class BaseSelenideTest extends Driver{
 
     @BeforeAll
     public static void initDriver() {
-        Driver.initDriver();
+//        Driver.initDriver();
     }
 
     /**
      * Инициализация selenide с настройками
      */
     public void setUp(){
-        WebDriverManager.chromedriver().setup();
-        Configuration.browser = "chrome";
+//        WebDriverManager.chromedriver().setup();
+        WebDriverManager.firefoxdriver().setup();
+//        Configuration.browser = "chrome";
         Configuration.webdriverLogsEnabled = true;
         Configuration.browserVersion = "119.0.6045.124";
         Configuration.browserSize = "1920x1080";
-        Configuration.headless = false;
+//        Configuration.headless = false;
     }
 
     /**

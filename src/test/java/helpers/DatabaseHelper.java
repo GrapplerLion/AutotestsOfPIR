@@ -6,7 +6,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-//@Disabled
+@Disabled
 public class DatabaseHelper {
 
     private Connection connection;
