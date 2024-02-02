@@ -39,7 +39,7 @@ public class PersonalAccount extends StepForms  {
     @Test
     @Feature("Строковый модуль фильтров")
     @Description("Тестирование всех функций строкового фильтра")
-    public void testFilterString(){
+    public void testStringFilter(){
         Authorization(name, password);
         BaseMenu();
 //        StringFilterVoid();
@@ -49,4 +49,11 @@ public class PersonalAccount extends StepForms  {
 //        StringFilterContains();
     }
 
+    @Test
+    @Feature("Числовой модуль фильтров")
+    @Description("Тестирование всех функций числового фильтра")
+    public void testNumericFilter(){
+        Authorization(name, password);
+        BaseMenu();
+    }
 }
