@@ -164,38 +164,38 @@ public class StepForms extends BaseSelenideTest {
         filterColumnsPage.filterIcon.shouldBe(visible, enabled).click();
         filterColumnsPage.inputTypeFilter.shouldBe(visible, enabled).click();
         filterColumnsPage.filter3.shouldBe(visible, enabled).click();
-        filterColumnsPage.enterValue.shouldBe(visible, enabled).setValue("ЗАВОЛЖЬЕ");
+        filterColumnsPage.enterValue.shouldBe(visible, enabled).setValue("АП Новострой");
 
         boolean value = true;
         SelenideElement firstElement = filterColumnsPage.valueField.first();
         // Проверка, что все элементы, кроме первого, равняются "ЗАВОЛЖЬЕ"
         for (int i = 1; i < filterColumnsPage.valueField.size(); i++) {
-            if (!filterColumnsPage.valueField.get(i).shouldHave(matchText("ЗАВОЛЖЬЕ")).is(visible)) {
+            if (!filterColumnsPage.valueField.get(i).shouldHave(matchText("АП Новострой")).is(visible)) {
                 value = false;
                 break;
             }
         }
         if (!value) {
             // Обработка ошибки, если не все элементы соответствуют условию
-            System.out.println("Не все элементы, кроме первого, равняются 'ЗАВОЛЖЬЕ'");
+            System.out.println("Не все элементы, кроме первого, равняются 'АП Новострой'");
         }
 
         filterColumnsPage.applyButton.shouldBe(visible, enabled).click();
         filterColumnsPage.activeFilters.shouldHave(text("Подразделение"));
         filterColumnsPage.containsOfValueColumns2.forEach(element ->
-                element.shouldHave(text("ЗАВОЛЖЬЕ")));
+                element.shouldHave(text("АП Новострой")));
         //сброс фильтра
         filterColumnsPage.closeFilters.shouldBe(visible, enabled).click();
         //TODO:проверка фильтра "Не равно"
         filterColumnsPage.filterIcon.shouldBe(visible, enabled).click();
         filterColumnsPage.inputTypeFilter.shouldBe(visible, enabled).click();
         filterColumnsPage.filter4.shouldBe(visible, enabled).click();
-        filterColumnsPage.enterValue.shouldBe(visible, enabled).setValue("ЗАВОЛЖЬЕ");
-        filterColumnsPage.valueField.forEach(element -> element.shouldNotHave(text("ЗАВОЛЖЬЕ")));
+        filterColumnsPage.enterValue.shouldBe(visible, enabled).setValue("АП Новострой");
+        filterColumnsPage.valueField.forEach(element -> element.shouldNotHave(text("АП Новострой")));
         filterColumnsPage.applyButton.shouldBe(visible, enabled).click();
         filterColumnsPage.activeFilters.shouldHave(text("Подразделение"));
         filterColumnsPage.containsOfValueColumns2.forEach(element ->
-                element.shouldNotHave(text("ЗАВОЛЖЬЕ")));
+                element.shouldNotHave(text("АП Новострой")));
 
         filterColumnsPage.closeFilters.shouldBe(visible, enabled).click();
     }
@@ -266,8 +266,8 @@ public class StepForms extends BaseSelenideTest {
         sleep(2000);
         for (int i = 1; i < filterColumnsPage.valueField.size(); i++) {
             String text = filterColumnsPage.valueField.get(i).getText();
-            if (!text.endsWith("1")) {
-                System.out.println("Элемент с текстом '" + filterColumnsPage.valueField.get(i).getText() + "' не заканчивается на '1'");
+            if (!text.endsWith("й")) {
+                System.out.println("Элемент с текстом '" + filterColumnsPage.valueField.get(i).getText() + "' не заканчивается на 'й'");
             }
         }
         filterColumnsPage.applyButton.shouldBe(visible, enabled).click();
@@ -275,8 +275,8 @@ public class StepForms extends BaseSelenideTest {
 
         for (SelenideElement element : filterColumnsPage.containsOfValueColumns2) {
             String text = element.getText();
-            if (!text.endsWith("1")) {
-                System.out.println("Элемент с текстом '" + text + "' не заканчивается на '1'");
+            if (!text.endsWith("й")) {
+                System.out.println("Элемент с текстом '" + text + "' не заканчивается на 'й'");
             }
         }
         filterColumnsPage.closeFilters.shouldBe(visible, enabled).click();
@@ -289,8 +289,8 @@ public class StepForms extends BaseSelenideTest {
         sleep(2000);
         for (int i = 1; i < filterColumnsPage.valueField.size(); i++) {
             String text = filterColumnsPage.valueField.get(i).getText();
-            if (text.endsWith("1")) {
-                System.out.println("Элемент с текстом '" + filterColumnsPage.valueField.get(i).getText() + "' заканчивается на '1'");
+            if (text.endsWith("й")) {
+                System.out.println("Элемент с текстом '" + filterColumnsPage.valueField.get(i).getText() + "' заканчивается на 'й'");
             }
         }
         filterColumnsPage.applyButton.shouldBe(visible, enabled).click();
@@ -298,8 +298,8 @@ public class StepForms extends BaseSelenideTest {
 
         for (SelenideElement element : filterColumnsPage.containsOfValueColumns2) {
             String text = element.getText();
-            if (text.endsWith("1")) {
-                System.out.println("Элемент с текстом '" + text + "' заканчивается на '1'");
+            if (text.endsWith("й")) {
+                System.out.println("Элемент с текстом '" + text + "' заканчивается на 'й'");
             }
         }
 
@@ -318,8 +318,8 @@ public class StepForms extends BaseSelenideTest {
 
         for (int i = 1; i < filterColumnsPage.valueField.size(); i++) {
             String text = filterColumnsPage.valueField.get(i).getText();
-            if (!text.contains("1")) {
-                System.out.println("Элемент с текстом '" + filterColumnsPage.valueField.get(i).getText() + "' не cодержит '1'");
+            if (!text.contains("с")) {
+                System.out.println("Элемент с текстом '" + filterColumnsPage.valueField.get(i).getText() + "' не cодержит 'с'");
             }
         }
         filterColumnsPage.applyButton.shouldBe(visible, enabled).click();
@@ -327,8 +327,8 @@ public class StepForms extends BaseSelenideTest {
 
         for (SelenideElement element : filterColumnsPage.containsOfValueColumns2) {
             String text = element.getText().toLowerCase();
-            if (!text.contains("1")) {
-                System.out.println("Элемент с текстом '" + element.getText() + "' не содержит '1'");
+            if (!text.contains("с")) {
+                System.out.println("Элемент с текстом '" + element.getText() + "' не содержит 'с'");
             }
         }
         filterColumnsPage.closeFilters.shouldBe(visible, enabled).click();
@@ -342,8 +342,8 @@ public class StepForms extends BaseSelenideTest {
 
         for (int i = 1; i < filterColumnsPage.valueField.size(); i++) {
             String text = filterColumnsPage.valueField.get(i).getText();
-            if (text.contains("1")) {
-                System.out.println("Элемент с текстом '" + filterColumnsPage.valueField.get(i).getText() + "' cодержит '1'");
+            if (text.contains("с")) {
+                System.out.println("Элемент с текстом '" + filterColumnsPage.valueField.get(i).getText() + "' cодержит 'с'");
             }
         }
         filterColumnsPage.applyButton.shouldBe(visible, enabled).click();
@@ -351,8 +351,8 @@ public class StepForms extends BaseSelenideTest {
 
         for (SelenideElement element : filterColumnsPage.containsOfValueColumns2) {
             String text = element.getText().toLowerCase();
-            if (text.contains("1")) {
-                System.out.println("Элемент с текстом '" + element.getText() + "' содержит '1'");
+            if (text.contains("с")) {
+                System.out.println("Элемент с текстом '" + element.getText() + "' содержит 'с'");
             }
         }
 

@@ -42,11 +42,11 @@ public class PersonalAccount extends StepForms  {
     public void testFilterString(){
         Authorization(name, password);
         BaseMenu();
-//        StringFilterVoid();
-//        StringFilterEquals();
-//        StringFilterBegins();
+        StringFilterVoid();
+        StringFilterEquals();
+        StringFilterBegins();
         StringFilterEnds();
-//        StringFilterContains();
+        StringFilterContains();
     }
 
 }

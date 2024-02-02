@@ -12,16 +12,16 @@ public class FilterColumnsPage {
     public SelenideElement inputTypeFilter = $("div[data-test-id='pir_filter_condition_comparison_refDepartment_name_0']");
 
 
-    public SelenideElement filter1 = $("html > body > div:nth-of-type(2) > div:nth-of-type(20) > div > div > div:nth-of-type(1)").$(byText("Пусто"));
-    public SelenideElement filter2 = $("html > body > div:nth-of-type(2) > div:nth-of-type(20) > div > div > div:nth-of-type(1)").$(byText("Не пусто"));
-    public SelenideElement filter3 = $("html > body > div:nth-of-type(2) > div:nth-of-type(20) > div > div > div:nth-of-type(1)").$(byText("Равно"));
-    public SelenideElement filter4 = $("html > body > div:nth-of-type(2) > div:nth-of-type(20) > div > div > div:nth-of-type(1)").$(byText("Не равно"));
-    public SelenideElement filter5 = $("html > body > div:nth-of-type(2) > div:nth-of-type(20) > div > div > div:nth-of-type(1)").$(byText("Начинается с"));
-    public SelenideElement filter6 = $("html > body > div:nth-of-type(2) > div:nth-of-type(20) > div > div > div:nth-of-type(1)").$(byText("Не начинается с"));
-    public SelenideElement filter7 = $("html > body > div:nth-of-type(2) > div:nth-of-type(20) > div > div > div:nth-of-type(1)").$(byText("Заканчивается на"));
-    public SelenideElement filter8 = $("html > body > div:nth-of-type(2) > div:nth-of-type(20) > div > div > div:nth-of-type(1)").$(byText("Не заканчивается на"));
-    public SelenideElement filter9 = $("html > body > div:nth-of-type(2) > div:nth-of-type(20) > div > div > div:nth-of-type(1)").$(byText("Содержит"));
-    public SelenideElement filter10 = $("html > body > div:nth-of-type(2) > div:nth-of-type(20) > div > div > div:nth-of-type(1)").$(byText("Не содержит"));
+    public SelenideElement filter1 = $("[aria-hidden='false'] ul li:nth-child(1)");
+    public SelenideElement filter2 = $("[aria-hidden='false'] ul li:nth-child(2)");
+    public SelenideElement filter3 = $("[aria-hidden='false'] ul li:nth-child(3)");
+    public SelenideElement filter4 = $("[aria-hidden='false'] ul li:nth-child(4)");
+    public SelenideElement filter5 = $("[aria-hidden='false'] ul li:nth-child(5)");
+    public SelenideElement filter6 = $("[aria-hidden='false'] ul li:nth-child(6)");
+    public SelenideElement filter7 = $("[aria-hidden='false'] ul li:nth-child(7)");
+    public SelenideElement filter8 = $("[aria-hidden='false'] ul li:nth-child(8)");
+    public SelenideElement filter9 = $("[aria-hidden='false'] ul li:nth-child(9)");
+    public SelenideElement filter10 = $("[aria-hidden='false'] ul li:nth-child(10)");
 
 
     public SelenideElement applyButton = $("button[data-test-id='pir_filter_action_apply_refDepartment_name']").$(byText("Применить"));
