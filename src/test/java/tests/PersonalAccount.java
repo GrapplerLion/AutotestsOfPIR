@@ -45,8 +45,17 @@ public class PersonalAccount extends StepForms  {
 //        StringFilterVoid();
 //        StringFilterEquals();
 //        StringFilterBegins();
-        StringFilterEnds();
-//        StringFilterContains();
+//        StringFilterEnds();
+        StringFilterContains();
     }
+    @Test
+    @Feature("Числовой модуль фильтров")
+    @Description("Тестирование всех функций числового фильтра")
+    public void testNumericFilter(){
+        Authorization(name, password);
+        BaseMenu();
+        NumericFilterVoid();
+    }
+
 
 }
