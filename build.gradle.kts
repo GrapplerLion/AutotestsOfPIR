@@ -1,5 +1,6 @@
 plugins {
     id("java")
+    id ("io.qameta.allure") version ("2.9.6")
 }
 
 group = "org.example"
@@ -22,7 +23,14 @@ dependencies {
     testImplementation("org.seleniumhq.selenium:selenium-chrome-driver:3.141.59")
     testImplementation("io.github.bonigarcia:webdrivermanager:5.6.2")
     testImplementation("org.slf4j:slf4j-simple:2.0.9")
-    testImplementation("io.qameta.allure:allure-selenide:2.12.0")
+
+    testImplementation ("org.aspectj:aspectjweaver:1.9.5")
+    testImplementation ("io.qameta.allure:allure-junit5:2.12.1")
+    testImplementation ("io.qameta.allure:allure-commandline:2.12.1")
+    testImplementation ("io.qameta.allure:allure-assertj:2.12.1")
+    testImplementation ("io.qameta.allure:allure-rest-assured:2.12.1")
+    testImplementation ("io.qameta.allure:allure-java-commons:2.12.1")
+    testImplementation ("io.qameta.allure:allure-selenide:2.12.1")
 
     testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.1")
@@ -30,7 +38,6 @@ dependencies {
     testImplementation("com.codeborne:xls-test:1.7.0")
     testImplementation("org.apache.poi:poi-ooxml:5.2.3")
 
-    testImplementation("net.lightbody.bmp:browsermob-core:2.1.5")
     testImplementation("junit:junit:4.13.2")
 
 //    testImplementation("org.springframework.boot:spring-boot-starter-test:2.3.0")
@@ -51,5 +58,7 @@ tasks.withType<JavaCompile> {
 }
 
 tasks.test {
+    systemProperty("selenide.browser", System.getProperty("browser", "chrome"))
+    systemProperty("selenide.headless", System.getProperty("headless", "false"))
     useJUnitPlatform()
 }
