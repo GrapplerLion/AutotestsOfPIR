@@ -376,7 +376,7 @@ public class StepForms extends BaseSelenideTest {
         numericFilterColumns.activeFilters.shouldHave(text("Мобильный телефон"));
         numericFilterColumns.tableOfSize.forEach(row -> {
             // Получаем все ячейки восьмой колонки в текущей строке
-            row.$$("td").get(7).shouldNotBe(empty);
+            row.$$("td").get(7).shouldHave(Condition.text(" "));
         });
 //                .forEach(row -> {
 //            // Получаем все ячейки в восьмой колонке, начиная со второй
