@@ -13,15 +13,15 @@ repositories {
 
 tasks {
     wrapper {
-        gradleVersion = "7.3" // Используйте последнюю версию Gradle
+        gradleVersion = "9.0" // Используйте последнюю версию Gradle
         distributionType = Wrapper.DistributionType.ALL
     }
 }
 
 dependencies {
-    testImplementation("com.codeborne:selenide:5.23.3")
-    testImplementation("org.seleniumhq.selenium:selenium-chrome-driver:3.141.59")
-    testImplementation("io.github.bonigarcia:webdrivermanager:5.6.2")
+    testImplementation("com.codeborne:selenide:7.2.3")
+    testImplementation("org.seleniumhq.selenium:selenium-chrome-driver:4.20.0")
+    testImplementation("io.github.bonigarcia:webdrivermanager:5.8.0")
     testImplementation("org.slf4j:slf4j-simple:2.0.9")
 
     testImplementation ("org.aspectj:aspectjweaver:1.9.5")
