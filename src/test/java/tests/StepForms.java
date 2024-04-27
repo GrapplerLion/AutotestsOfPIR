@@ -376,17 +376,10 @@ public class StepForms extends BaseSelenideTest {
         numericFilterColumns.applyButton.shouldBe(visible, enabled).click();
         numericFilterColumns.activeFilters.shouldHave(text("Мобильный телефон"));
         numericFilterColumns.tableOfSize
-//                .forEach(row -> {
-//            // Получаем все ячейки восьмой колонки в текущей строке
-//            row.$$("td").get(7).shouldHave(Condition.text(" "));
-//        });
                 .forEach(row -> {
-                    // Получаем все ячейки в восьмой колонке, начиная со второй
-                    row.$$("td").subList(8, row.$$("td").size()).forEach(cell -> {
-                        // Проверяем, что значение в ячейке пусто
-                        cell.shouldHave(Condition.text(" "));
-                    });
-                });
+            // Получаем все ячейки восьмой колонки в текущей строке
+            row.$$("td").get(7).shouldBe(empty);
+        });
 
         numericFilterColumns.closeFiltersMobilePhone.shouldBe(visible, enabled).click();
 
