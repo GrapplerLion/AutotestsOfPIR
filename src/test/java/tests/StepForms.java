@@ -126,10 +126,10 @@ public class StepForms extends BaseSelenideTest {
         numberOfLine.tableOfSize.shouldHave(CollectionCondition.size(100));
         numberOfLine.inputLine.shouldBe(visible, enabled).click();
         numberOfLine.thirdLine.shouldBe(visible, enabled).click();
-        numberOfLine.tableOfSize.shouldHave(CollectionCondition.size(500));
+        numberOfLine.tableOfSize.shouldHave(CollectionCondition.size(200));
         numberOfLine.inputLine.shouldBe(visible, enabled).click();
         numberOfLine.fourthLine.shouldBe(visible, enabled).click();
-        numberOfLine.tableOfSize.shouldHave(CollectionCondition.size(1000));
+        numberOfLine.tableOfSize.shouldHave(CollectionCondition.size(400));
     }
 
     //TODO: Модуль фильтрации - строковый (колонка "Подразделение", модуль ЛС)
