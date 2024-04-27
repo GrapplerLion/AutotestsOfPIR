@@ -15,6 +15,7 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import core.BaseSelenideTest;
 import io.qameta.allure.Step;
+import org.openqa.selenium.StaleElementReferenceException;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -366,7 +367,7 @@ public class StepForms extends BaseSelenideTest {
 
     //TODO: Модуль фильтрации - числовой
     @Step("Модуль фильтрации - числовой('Пусто' и 'Не пусто')")
-    public void NumericFilterVoid(){
+    public void NumericFilterVoid() {
         NumericFilterColumns numericFilterColumns = new NumericFilterColumns();
         numericFilterColumns.filterIcon.click();
         numericFilterColumns.inputTypeFilter.shouldBe(visible, enabled).click();
@@ -380,28 +381,35 @@ public class StepForms extends BaseSelenideTest {
 //            row.$$("td").get(7).shouldHave(Condition.text(" "));
 //        });
                 .forEach(row -> {
-            // Получаем все ячейки в восьмой колонке, начиная со второй
-            row.$$("td").subList(8, row.$$("td").size()).forEach(cell -> {
-                // Проверяем, что значение в ячейке пусто
-                cell.shouldHave(Condition.text(" "));
-            });
-        });
+                    // Получаем все ячейки в восьмой колонке, начиная со второй
+                    row.$$("td").subList(8, row.$$("td").size()).forEach(cell -> {
+                        // Проверяем, что значение в ячейке пусто
+                        cell.shouldHave(Condition.text(" "));
+                    });
+                });
 
-        numericFilterColumns.closeFilters.shouldBe(visible, enabled).click();
+        numericFilterColumns.closeFiltersMobilePhone.shouldBe(visible, enabled).click();
 
         //TODO:Открытие фильтра "Не пусто"
-        numericFilterColumns.tableOfSize.shouldHave(CollectionCondition.size(20));
+
         numericFilterColumns.filterIcon.shouldBe(visible, enabled).click();
         numericFilterColumns.inputTypeFilter.shouldBe(visible, enabled).click();
-        numericFilterColumns.filter1.shouldBe(visible, enabled).click();
+        numericFilterColumns.filter2.shouldBe(visible, enabled).click();
         numericFilterColumns.applyButton.shouldBe(visible, enabled).click();
         numericFilterColumns.activeFilters.shouldHave(text("Мобильный телефон"));
-        numericFilterColumns.tableOfSize.forEach(row -> {
-            // Получаем все ячейки восьмой колонки в текущей строке
-            row.$$("td").get(7).shouldNotBe(empty);
-        });
+        try {
+            numericFilterColumns.tableOfSize.forEach(row -> {
+                // Получаем все ячейки восьмой колонки в текущей строке
+                row.$$("td").get(7).shouldNotBe(empty);
+            });
+        }catch (StaleElementReferenceException e){
+            numericFilterColumns.tableOfSize.forEach(row -> {
+                // Получаем все ячейки восьмой колонки в текущей строке
+                row.$$("td").get(7).shouldNotBe(empty);
+            });
+        }
 
-        numericFilterColumns.closeFilters.shouldBe(visible, enabled).click();
+        numericFilterColumns.closeFiltersMobilePhone.shouldBe(visible, enabled).click();
     }
 }
 

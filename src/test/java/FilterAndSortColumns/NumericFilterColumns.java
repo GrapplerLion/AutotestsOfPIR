@@ -29,6 +29,7 @@ public class NumericFilterColumns {
     public SelenideElement valueField = $("[data-test-id='pir_filter_entries_list_mobilePhone']");
     public SelenideElement activeFilters = $("#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div");
     public SelenideElement closeFilters = $("#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i");
+    public SelenideElement closeFiltersMobilePhone = $("#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span:nth-child(3) > i");
     public ElementsCollection tableOfSize = $("div[class='pir-table'] tbody").$$("tr");
     public ElementsCollection containsOfValueColumns2 = $$("div[class='pir-table'] tbody tr.el-table_1_column_2");
 
