@@ -14,8 +14,7 @@ public class PersonalAccount extends StepForms  {
     public String password = "admin";
 
     @Test
-    @Feature("Таблица")
-    @Description("Тестирование раздела Лицевые счета")
+    @Feature("Тестирование модуля Лицевые счета")
     public void testPersonalAccount() {
         Authorization(name, password);
         BaseMenu();
@@ -23,9 +22,8 @@ public class PersonalAccount extends StepForms  {
     }
 
     @Test
-    @Feature("Опции списка")
-    @Description("Тестирование опций работы со списком")
-    public void testSettings() throws AWTException {
+    @Feature("Тестирование опций работы со списком")
+    public void testSettings() {
         Authorization(name, password);
         BaseMenu();
         SettingTable();
@@ -37,8 +35,7 @@ public class PersonalAccount extends StepForms  {
     }
 
     @Test
-    @Feature("Строковый модуль фильтров")
-    @Description("Тестирование всех функций строкового фильтра")
+    @Feature("Тестирование всех функций строкового фильтра")
     public void testStringFilter(){
         Authorization(name, password);
         BaseMenu();
@@ -50,8 +47,7 @@ public class PersonalAccount extends StepForms  {
     }
 
     @Test
-    @Feature("Числовой модуль фильтров")
-    @Description("Тестирование всех функций числового фильтра")
+    @Feature("Тестирование всех функций числового фильтра")
     public void testNumericFilter(){
         Authorization(name, password);
         BaseMenu();

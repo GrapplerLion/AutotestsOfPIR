@@ -13,4 +13,9 @@ app-test:
   script:
     - chmod +x ./gradlew
     - ./gradlew clean test -Dbrowser=firefox -Dheadless=true
-    - ./gradlew io.qameta.allure:allure-maven:report
+    - ./gradlew allure:report # Генерация отчетов Allure
+  artifacts:
+        when: always
+        paths:
+          - build/allure-results/ # Путь к результатам тестов, используемым Allure для создания отчетов
+          - build/reports/allure-report/
