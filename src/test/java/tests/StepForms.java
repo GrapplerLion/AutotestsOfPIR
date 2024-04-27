@@ -96,14 +96,14 @@ public class StepForms extends BaseSelenideTest {
     public void ExportFileAllTable() throws AWTException {
         XlsFileExport xlsFileExport = new XlsFileExport();
         xlsFileExport.filterAbonent.click();
-//        xlsFileExport.inputTypeAbonent.click();
-        xlsFileExport.searchValue.setValue("Физические лица");
-//        xlsFileExport.flex.shouldBe(visible);
-//        xlsFileExport.flex.click();
-//        xlsFileExport.flex.shouldHave(cssClass("is-focus"));
-//        SelenideElement input = xlsFileExport.flex.find("input");
-//        input.setValue("Всякие лица");
-//        sleep(2500);
+        xlsFileExport.inputTypeAbonent.click();
+//        xlsFileExport.searchValue.setValue("Физические лица");
+        xlsFileExport.flex.shouldBe(visible);
+        xlsFileExport.flex.click();
+        xlsFileExport.flex.shouldHave(cssClass("is-focus"));
+        SelenideElement input = xlsFileExport.flex.find("input");
+        input.setValue("Всякие лица");
+        sleep(2500);
         xlsFileExport.inputButton.click();
         xlsFileExport.columnsAbonent.shouldBe(visible).getText().contains("Физические лица");
         xlsFileExport.textOfNumber.shouldBe(text("Всего 748"));
@@ -374,17 +374,18 @@ public class StepForms extends BaseSelenideTest {
         numericFilterColumns.valueField.$$("label").get(1).shouldHave(text("(Пустые)"));
         numericFilterColumns.applyButton.shouldBe(visible, enabled).click();
         numericFilterColumns.activeFilters.shouldHave(text("Мобильный телефон"));
-        numericFilterColumns.tableOfSize.forEach(row -> {
-            // Получаем все ячейки восьмой колонки в текущей строке
-            row.$$("td").get(7).shouldHave(Condition.text(" "));
-        });
+        numericFilterColumns.tableOfSize
 //                .forEach(row -> {
-//            // Получаем все ячейки в восьмой колонке, начиная со второй
-//            row.$$("td").subList(8, row.$$("td").size()).forEach(cell -> {
-//                // Проверяем, что значение в ячейке пусто
-//                cell.shouldHave(Condition.text(" "));
-//            });
+//            // Получаем все ячейки восьмой колонки в текущей строке
+//            row.$$("td").get(7).shouldHave(Condition.text(" "));
 //        });
+                .forEach(row -> {
+            // Получаем все ячейки в восьмой колонке, начиная со второй
+            row.$$("td").subList(8, row.$$("td").size()).forEach(cell -> {
+                // Проверяем, что значение в ячейке пусто
+                cell.shouldHave(Condition.text(" "));
+            });
+        });
 
         numericFilterColumns.closeFilters.shouldBe(visible, enabled).click();
 

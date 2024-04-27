@@ -30,7 +30,7 @@ public class PersonalAccount extends StepForms  {
         BaseMenu();
         SettingTable();
         VerticalBar();
-        ExportFileAllTable();
+//        ExportFileAllTable();
         UpdateTable();
         QuantityOfStrings();
 //        SortOfColumns();
@@ -42,12 +42,13 @@ public class PersonalAccount extends StepForms  {
     public void testStringFilter(){
         Authorization(name, password);
         BaseMenu();
-//        StringFilterVoid();
-//        StringFilterEquals();
-//        StringFilterBegins();
-//        StringFilterEnds();
+        StringFilterVoid();
+        StringFilterEquals();
+        StringFilterBegins();
+        StringFilterEnds();
         StringFilterContains();
     }
+
     @Test
     @Feature("Числовой модуль фильтров")
     @Description("Тестирование всех функций числового фильтра")
@@ -55,14 +56,5 @@ public class PersonalAccount extends StepForms  {
         Authorization(name, password);
         BaseMenu();
         NumericFilterVoid();
-    }
-
-
-    @Test
-    @Feature("Числовой модуль фильтров")
-    @Description("Тестирование всех функций числового фильтра")
-    public void testNumericFilter(){
-        Authorization(name, password);
-        BaseMenu();
     }
 }
