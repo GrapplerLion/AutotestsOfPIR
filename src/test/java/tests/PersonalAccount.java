@@ -28,7 +28,7 @@ public class PersonalAccount extends StepForms  {
         BaseMenu();
         SettingTable();
         VerticalBar();
-//        ExportFileAllTable();
+        ExportFileAllTable();
         UpdateTable();
         QuantityOfStrings();
 //        SortOfColumns();
