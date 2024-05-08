@@ -11,7 +11,6 @@ app-test:
   before_script:
     - apk update
     - apk add firefox
-    - apt-get update && apt-get install -y allure #строка 1
   script:
     - chmod +x ./gradlew
     - ./gradlew clean test -Dbrowser=firefox -Dheadless=true
@@ -19,9 +18,8 @@ app-test:
   artifacts:
     when: always
     paths:
-       - build/reports/allure-report/allureReport #строка 2
-#      - build/test-results/ # Путь к результатам тестов, используемым Allure для создания отчетов
-#      - build/reports/tests/
+      - build/test-results/ # Путь к результатам тестов, используемым Allure для создания отчетов
+      - build/reports/tests/
   allow_failure: true
 
 test-report:
@@ -30,7 +28,6 @@ test-report:
   script:
     - chmod +x ./gradlew
     - ./gradlew allure:report # Генерация отчетов Allure
-    - allure generate allure-results -o allure-report #строка 3
     - cp "$ALLURE_CONFIG" config.json
     - wget https://github.com/qa-guru/allure-notifications/releases/download/4.6.1/allure-notifications-4.6.1.jar
     - java "-DconfigFile=config.json" -jar allure-notifications-4.6.1.jar
