@@ -31,6 +31,7 @@ dependencies {
 
     testImplementation ("org.aspectj:aspectjweaver:1.9.22")
     testImplementation ("io.qameta.allure:allure-junit5:2.27.0")
+    testImplementation ("io.qameta.allure:allure-bom:2.27.0")
     testImplementation ("io.qameta.allure:allure-commandline:2.27.0")
     testImplementation ("io.qameta.allure:allure-assertj:2.27.0")
     testImplementation ("io.qameta.allure:allure-rest-assured:2.27.0")
