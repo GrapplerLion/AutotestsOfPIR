@@ -13,6 +13,7 @@ import VerticalBarOptions.XlsFileExport;
 import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.conditions.ExactText;
 import core.BaseSelenideTest;
 import io.qameta.allure.Step;
 import org.openqa.selenium.StaleElementReferenceException;
@@ -368,6 +369,7 @@ public class StepForms extends BaseSelenideTest {
     //TODO: Модуль фильтрации - числовой
     @Step("Модуль фильтрации - числовой('Пусто' и 'Не пусто')")
     public void NumericFilterVoid() {
+        //TODO:Открытие фильтра "Пусто"
         NumericFilterColumns numericFilterColumns = new NumericFilterColumns();
         numericFilterColumns.filterIcon.click();
         numericFilterColumns.inputTypeFilter.shouldBe(visible, enabled).click();
@@ -404,5 +406,41 @@ public class StepForms extends BaseSelenideTest {
 
         numericFilterColumns.closeFiltersMobilePhone.shouldBe(visible, enabled).click();
     }
+
+
+    public void NumericFilterEquals(){
+        //TODO:Открытие фильтра "Равно"
+        NumericFilterColumns numericFilterColumns = new NumericFilterColumns();
+        numericFilterColumns.filterIcon.click();
+        numericFilterColumns.inputTypeFilter.shouldBe(visible, enabled).click();
+        numericFilterColumns.filter3.shouldBe(visible, enabled).click();
+        numericFilterColumns.enterValue.setValue("84949435104");
+        numericFilterColumns.valueField.$$("label").get(1).$(".pir-filter__checkbox-label").shouldHave(text("84949435104"));
+        numericFilterColumns.applyButton.shouldBe(visible, enabled).click();
+        numericFilterColumns.activeFilters.shouldHave(text("Мобильный телефон"));
+        numericFilterColumns.tableOfSize
+                .forEach(row -> {
+                    // Получаем все ячейки восьмой колонки в текущей строке
+                    row.$$("td").get(7).shouldHave(text("84949435104"));
+                });
+        numericFilterColumns.closeFiltersMobilePhone.shouldBe(visible, enabled).click();
+
+        //TODO:Открытие фильтра "Не равно"
+        numericFilterColumns.filterIcon.click();
+        numericFilterColumns.inputTypeFilter.shouldBe(visible, enabled).click();
+        numericFilterColumns.filter4.shouldBe(visible, enabled).click();
+        numericFilterColumns.enterValue.setValue("84949435104");
+        numericFilterColumns.valueField.$$("label").forEach(element -> element.shouldNotHave(attribute("value","84949435104")));
+        numericFilterColumns.applyButton.shouldBe(visible, enabled).click();
+        numericFilterColumns.activeFilters.shouldHave(text("Мобильный телефон"));
+        numericFilterColumns.tableOfSize
+                .forEach(row -> {
+                    // Получаем все ячейки восьмой колонки в текущей строке
+                    row.$$("td").get(7).shouldNotHave(text("84949435104"));
+                });
+        numericFilterColumns.closeFiltersMobilePhone.shouldBe(visible, enabled).click();
+
+    }
+
 }
 

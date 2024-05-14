@@ -51,6 +51,7 @@ public class PersonalAccount extends StepForms  {
     public void testNumericFilter(){
         Authorization(name, password);
         BaseMenu();
-        NumericFilterVoid();
+//        NumericFilterVoid();
+        NumericFilterEquals();
     }
 }

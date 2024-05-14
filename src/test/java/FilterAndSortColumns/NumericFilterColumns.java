@@ -34,7 +34,7 @@ public class NumericFilterColumns {
     public ElementsCollection containsOfValueColumns2 = $$("div[class='pir-table'] tbody tr.el-table_1_column_2");
 
 
-    public SelenideElement enterValue = $("input[data-test-id='pir_filter_condition_comparison_refDepartment_name_0']");
+    public SelenideElement enterValue = $("input[data-test-id='pir_filter_condition_comparison_mobilePhone_0']");
 
 
 }
