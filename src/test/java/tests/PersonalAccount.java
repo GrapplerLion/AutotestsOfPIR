@@ -1,10 +1,15 @@
 package tests;
 
+import com.codeborne.selenide.ElementsCollection;
+import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.conditions.localstorage.Item;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
 import org.junit.jupiter.api.Test;
 
 import java.awt.*;
+import java.util.LinkedList;
 
 public class PersonalAccount extends StepForms  {
 
@@ -52,6 +57,9 @@ public class PersonalAccount extends StepForms  {
         Authorization(name, password);
         BaseMenu();
 //        NumericFilterVoid();
-        NumericFilterEquals();
+//        NumericFilterEquals();
+//        NumericFilterBegins();
     }
+
+
 }

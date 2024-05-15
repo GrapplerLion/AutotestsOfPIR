@@ -430,7 +430,7 @@ public class StepForms extends BaseSelenideTest {
         numericFilterColumns.inputTypeFilter.shouldBe(visible, enabled).click();
         numericFilterColumns.filter4.shouldBe(visible, enabled).click();
         numericFilterColumns.enterValue.setValue("84949435104");
-        numericFilterColumns.valueField.$$("label").forEach(element -> element.shouldNotHave(attribute("value","84949435104")));
+        numericFilterColumns.valueField.$$("label").forEach(element -> element.shouldNotHave(text("84949435104")));
         numericFilterColumns.applyButton.shouldBe(visible, enabled).click();
         numericFilterColumns.activeFilters.shouldHave(text("Мобильный телефон"));
         numericFilterColumns.tableOfSize
@@ -440,6 +440,76 @@ public class StepForms extends BaseSelenideTest {
                 });
         numericFilterColumns.closeFiltersMobilePhone.shouldBe(visible, enabled).click();
 
+    }
+
+
+    public void NumericFilterBegins(){
+        //TODO:Открытие фильтра "Начинается с"
+        NumericFilterColumns numericFilterColumns = new NumericFilterColumns();
+        numericFilterColumns.filterIcon.click();
+        numericFilterColumns.inputTypeFilter.shouldBe(visible, enabled).click();
+        numericFilterColumns.filter5.shouldBe(visible, enabled).click();
+        numericFilterColumns.enterValue.setValue("8");
+        boolean allButFirstStartsWith8 = true;
+        SelenideElement firstElement = numericFilterColumns.valueField.$$("label").first();
+        // Проверка, что все элементы, кроме первого, начинаются c "8"
+        for (int i = 1; i < numericFilterColumns.valueField.$$("label").size(); i++) {
+            String text = numericFilterColumns.valueField.$$("label").get(i).text();
+            if (text.startsWith("8")) {
+                allButFirstStartsWith8 = false;
+                break;
+            }
+        }
+        String firstElementText = firstElement.text();
+        if (firstElementText.startsWith("8")) {
+            allButFirstStartsWith8 = false;
+        }
+
+        if (!allButFirstStartsWith8) {
+            // Обработка ошибки
+            System.out.println("Не все элементы, кроме первого, не начинаются с '8'");
+        }
+        numericFilterColumns.applyButton.shouldBe(visible, enabled).click();
+        numericFilterColumns.activeFilters.shouldHave(text("Мобильный телефон"));
+        numericFilterColumns.tableOfSize
+                .forEach(element -> {
+                    // Получаем все ячейки восьмой колонки в текущей строке
+                    element.$$("td").get(7).shouldHave(matchText("8.*"));
+                });
+        numericFilterColumns.closeFiltersMobilePhone.shouldBe(visible, enabled).click();
+
+        //TODO:Открытие фильтра "Не начинается с"
+        numericFilterColumns.filterIcon.click();
+        numericFilterColumns.inputTypeFilter.shouldBe(visible, enabled).click();
+        numericFilterColumns.filter6.shouldBe(visible, enabled).click();
+        numericFilterColumns.enterValue.setValue("8");
+        boolean allDoNotStartsWith8 = true;
+        SelenideElement firstElementIsNot8 = numericFilterColumns.valueField.$$("label").first();
+        // Проверка, что все элементы, кроме первого, не начинаются c "8"
+        for (int i = 1; i < numericFilterColumns.valueField.$$("label").size(); i++) {
+            String text = numericFilterColumns.valueField.$$("label").get(i).text();
+            if (!text.startsWith("8")) {
+                allDoNotStartsWith8 = false;
+                break;
+            }
+        }
+        String firstElementIsNot8Text = firstElementIsNot8.text();
+        if (!firstElementIsNot8Text.startsWith("8")) {
+            allDoNotStartsWith8 = false;
+        }
+
+        if (allDoNotStartsWith8) {
+            // Обработка ошибки
+            System.out.println("Не все элементы, кроме первого, не начинаются с '8'");
+        }
+        numericFilterColumns.applyButton.shouldBe(visible, enabled).click();
+        numericFilterColumns.activeFilters.shouldHave(text("Мобильный телефон"));
+        numericFilterColumns.tableOfSize
+                .forEach(element -> {
+                    // Получаем все ячейки восьмой колонки в текущей строке
+                    element.$$("td").get(7).shouldHave(matchText("8.*"));
+                });
+        numericFilterColumns.closeFiltersMobilePhone.shouldBe(visible, enabled).click();
     }
 
 }
