@@ -28,6 +28,6 @@ test-report:
   stage: report
   script:
     - chmod +x ./gradlew && ./gradlew allureReport
-    - cp "$ALLURE_CONFIG" config.json.json
+    - cp "$ALLURE_CONFIG" config.json
     - wget https://github.com/qa-guru/allure-notifications/releases/download/4.6.1/allure-notifications-4.6.1.jar
     - java "-DconfigFile=config.json" -jar allure-notifications-4.6.1.jar
