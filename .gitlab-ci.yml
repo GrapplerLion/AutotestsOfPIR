@@ -10,10 +10,10 @@ app-test:
     GRADLE_OPTS: "-Dorg.gradle.daemon=false"
   before_script:
     - apk update
-    - apk add firefox
+    - apk add chrome
   script:
     - chmod +x ./gradlew
-    - ./gradlew clean test -Dbrowser=firefox -Dheadless=true
+    - ./gradlew clean test -Dbrowser=chrome -Dheadless=true
 
   artifacts:
     when: always
