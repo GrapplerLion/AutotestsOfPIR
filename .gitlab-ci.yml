@@ -29,4 +29,5 @@ test-report:
   script:
     - ls -lA build
     - chmod +x ./gradlew && ./gradlew allureReport
+    - ls -lA build
     - java "-DconfigFile=notifications/config.json" -jar notifications/allure-notifications-4.6.1.jar
