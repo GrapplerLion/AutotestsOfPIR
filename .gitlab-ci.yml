@@ -27,6 +27,7 @@ test-report:
   image: amazoncorretto:17-alpine-jdk
   stage: report
   script:
+    - apk add --no-cache msttcorefonts-installer fontconfig && update-ms-fonts
     - chmod +x ./gradlew && ./gradlew allureReport
     - ls -lA build/reports
     - java "-DconfigFile=notifications/config.json" -jar notifications/allure-notifications-4.6.1.jar
