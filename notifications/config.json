@@ -6,7 +6,7 @@
     "comment": "some comment",
     "reportLink": "",
     "language": "ru",
-    "allureFolder": "build/reports/allure-report/allureReport/widgets/summary.json",
+    "allureFolder": "build/reports/allure-report/allureReport",
     "enableChart": true,
     "logo": "logo.png",
     "durationFormat": "HH:mm:ss.SSS"
