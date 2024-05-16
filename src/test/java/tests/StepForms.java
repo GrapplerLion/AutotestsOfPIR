@@ -11,9 +11,7 @@ import HorizontalPanelOptions.UpdateTable;
 import VerticalBarOptions.VerticalBar;
 import VerticalBarOptions.XlsFileExport;
 import com.codeborne.selenide.CollectionCondition;
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.conditions.ExactText;
 import core.BaseSelenideTest;
 import io.qameta.allure.Step;
 import org.openqa.selenium.StaleElementReferenceException;
@@ -95,25 +93,18 @@ public class StepForms extends BaseSelenideTest {
     }
 
     @Step("Экспорт файла excel раздела - Лицевые счета")
-    public void ExportFileAllTable(){
+    public void ExportFileAllTable() throws AWTException {
         XlsFileExport xlsFileExport = new XlsFileExport();
-        xlsFileExport.filterIconForDepartament.click();
-//        xlsFileExport.inputTypeAbonent.click();
-//        xlsFileExport.searchValue.setValue("Физические лица");
-//        xlsFileExport.flex.shouldBe(visible);
-//        xlsFileExport.flex.click();
-//        xlsFileExport.flex.shouldHave(cssClass("is-focus"));
-//        SelenideElement input = xlsFileExport.flex.find("input");
-//        input.setValue("Всякие лица");
-//        sleep(2500);
-//        xlsFileExport.inputButton.click();
-//        xlsFileExport.columnsAbonent.shouldBe(visible).getText().contains("Физические лица");
-//        xlsFileExport.textOfNumber.shouldBe(text("Всего 748"));
-//        xlsFileExport.buttonOfExport.click();
-//        sleep(5000);
-//        Robot robot = new Robot();
-//        robot.keyPress(KeyEvent.VK_ENTER);
-//        robot.keyRelease(KeyEvent.VK_ENTER);
+        xlsFileExport.filterIconForTypeHouse.click();
+        xlsFileExport.inputSearchValue.setValue("Частный дом");
+        xlsFileExport.inputButton.click();
+        xlsFileExport.tableOfSize.forEach(element ->
+                element.shouldHave(text("Частный дом")));
+        xlsFileExport.buttonOfExport.click();
+        sleep(5000);
+        Robot robot = new Robot();
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.keyRelease(KeyEvent.VK_ENTER);
     }
 
     @Step("Количество строк на странице")

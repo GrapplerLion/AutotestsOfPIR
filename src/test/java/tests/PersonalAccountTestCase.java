@@ -1,17 +1,11 @@
 package tests;
 
-import com.codeborne.selenide.ElementsCollection;
-import com.codeborne.selenide.Selenide;
-import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.conditions.localstorage.Item;
-import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
 import org.junit.jupiter.api.Test;
 
 import java.awt.*;
-import java.util.LinkedList;
 
-public class PersonalAccount extends StepForms  {
+public class PersonalAccountTestCase extends StepForms  {
 
 
 
@@ -28,7 +22,7 @@ public class PersonalAccount extends StepForms  {
 
     @Test
     @Feature("Тестирование опций работы со списком")
-    public void testSettings() {
+    public void testSettings() throws AWTException {
         Authorization(name, password);
         BaseMenu();
         SettingTable();
@@ -36,7 +30,6 @@ public class PersonalAccount extends StepForms  {
         ExportFileAllTable();
         UpdateTable();
         QuantityOfStrings();
-//        SortOfColumns();
     }
 
     @Test
@@ -56,9 +49,9 @@ public class PersonalAccount extends StepForms  {
     public void testNumericFilter(){
         Authorization(name, password);
         BaseMenu();
-//        NumericFilterVoid();
-//        NumericFilterEquals();
-//        NumericFilterBegins();
+        NumericFilterVoid();
+        NumericFilterEquals();
+        NumericFilterBegins();
     }
 
 
