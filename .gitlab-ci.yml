@@ -18,14 +18,15 @@ app-test:
   artifacts:
     when: always
     paths:
-      - build/reports/allure-report/allureReport/widgets/summary.json
-#      - build/test-results/ # Путь к результатам тестов, используемым Allure для создания отчетов
-#      - build/reports/tests/
+      # - build/reports/allure-report/allureReport/widgets/summary.json
+     - build/test-results/ # Путь к результатам тестов, используемым Allure для создания отчетов
+     - build/reports/tests/
   allow_failure: true
 
 test-report:
   image: amazoncorretto:17-alpine-jdk
   stage: report
   script:
+    - ls -lA build
     - chmod +x ./gradlew && ./gradlew allureReport
     - java "-DconfigFile=notifications/config.json" -jar notifications/allure-notifications-4.6.1.jar
