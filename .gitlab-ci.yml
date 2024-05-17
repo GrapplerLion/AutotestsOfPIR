@@ -10,7 +10,7 @@ app-test:
     GRADLE_OPTS: "-Dorg.gradle.daemon=false"
   before_script:
     - apk update
-    - apk add chrome
+    - apk add --no-cache bash curl chromium chromium-chromedriver
   script:
     - chmod +x ./gradlew
     - ./gradlew clean test -Dbrowser=chrome -Dheadless=true
