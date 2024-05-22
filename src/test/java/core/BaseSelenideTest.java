@@ -27,7 +27,7 @@ abstract public class BaseSelenideTest extends Driver{
         Configuration.webdriverLogsEnabled = true;
         Configuration.browserVersion = "119.0.6045.124";
         Configuration.browserSize = "2560x1440";
-//        Configuration.headless = false;
+        Configuration.headless = true;
     }
 
     /**
