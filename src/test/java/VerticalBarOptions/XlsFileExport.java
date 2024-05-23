@@ -21,3 +21,4 @@ public class XlsFileExport {
     public SelenideElement buttonOfExport = $("div[class$='pir-table__bar'] ul li:nth-of-type(3) > button");
 
 }
+

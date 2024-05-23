@@ -15,7 +15,7 @@ abstract public class BaseSelenideTest extends Driver{
 
     @BeforeAll
     public static void initDriver() {
-//        Driver.initDriver();
+        Driver.initDriver();
     }
 
     /**
@@ -25,7 +25,7 @@ abstract public class BaseSelenideTest extends Driver{
         WebDriverManager.chromedriver().setup();
         Configuration.browser = "chrome";
         Configuration.webdriverLogsEnabled = true;
-        Configuration.browserVersion = "119.0.6045.124";
+        Configuration.browserVersion = "125.0.6422.76";
         Configuration.browserSize = "2560x1440";
         Configuration.headless = true;
 
