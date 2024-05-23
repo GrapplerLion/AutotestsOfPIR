@@ -11,8 +11,8 @@ app-test:
   before_script:
     - apk update
     - apk add --no-cache bash curl
-    - apk add --no-cache chromium=119.0.6045.124-r0
-    - apk add --no-cache chromium-chromedriver=119.0.6045.124-r0
+    - apk add --no-cache chromium
+    - apk add --no-cache chromium-chromedriver
     - export PATH=$PATH:/usr/lib/chromium/
   script:
     - chmod +x ./gradlew
