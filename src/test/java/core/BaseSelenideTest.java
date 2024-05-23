@@ -22,8 +22,11 @@ abstract public class BaseSelenideTest extends Driver{
      * Инициализация selenide с настройками
      */
     public void setUp(){
-        WebDriverManager.chromedriver().setup();
-        Configuration.browser = "chrome";
+        WebDriverManager.chromedriver().driverVersion("125.0.6422.76").setup();
+
+//        WebDriverManager.chromedriver().setup();
+        Configuration.browser = "" +
+                "chrome";
         Configuration.webdriverLogsEnabled = true;
         Configuration.browserVersion = "125.0.6422.76";
         Configuration.browserSize = "2560x1440";
