@@ -1,14 +1,24 @@
 package tests;
 
-import core.BaseSelenideTest;
+import helpers.InitDriver;
 import io.qameta.allure.Feature;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.awt.*;
 
 public class PersonalAccountTestCase extends StepForms {
 
+    @BeforeAll
+    public static void setUp() {
+        InitDriver.setUp();
+    }
 
+    @AfterAll
+    public static void tearDown() {
+        InitDriver.tearDown();
+    }
 
     public String name = "admin";
     public String password = "admin";
@@ -58,6 +68,22 @@ public class PersonalAccountTestCase extends StepForms {
         NumericFilterContains();
         NumericFilterMass();
     }
+
+    @Test
+    @Feature("Тестирование логического фильтра поля 'Наличие прибора учета(счетчика)'")
+    public void testLogicalFilter(){
+        Authorization(name, password);
+        BaseMenu();
+        LogicalFilter();
+    }
+
+    @Test
+    @Feature("Тестирование логического фильтра поля 'Наличие прибора учета(счетчика)'")
+    public void testDateFilter(){
+        Authorization(name, password);
+        BaseMenu();
+    }
+
 
     @Test
     @Feature("Сортировка колонок раздела и подраздела 'Лицевые счета'")

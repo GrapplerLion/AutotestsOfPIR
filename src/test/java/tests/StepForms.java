@@ -2,6 +2,7 @@ package tests;
 
 import CollectionColumns.TablePageLS;
 import FilterAndSortColumns.ColumnSorting;
+import FilterAndSortColumns.LogicalFilterColumns;
 import FilterAndSortColumns.NumericFilterColumns;
 import FilterAndSortColumns.StringFilterColumns;
 import HorizontalPanelOptions.NumberOfLine;
@@ -26,6 +27,7 @@ import java.util.List;
 import static com.codeborne.selenide.CollectionCondition.*;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Condition.empty;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -97,6 +99,8 @@ public class StepForms extends BaseSelenideTest {
         System.out.println(updateTable.getNumberOfAccounts());
     }
 
+
+
     @Step("Экспорт файла excel раздела - Лицевые счета")
     public void ExportFileAllTable() throws AWTException {
         XlsFileExport xlsFileExport = new XlsFileExport();
@@ -166,6 +170,8 @@ public class StepForms extends BaseSelenideTest {
         assertEquals(expectedDescValues, sortedDescValues, "Значения должны быть отсортированы в порядке убывания");
 
     }
+
+
 
     //TODO: Модуль фильтрации - строковый (колонка "Подразделение", модуль ЛС)
     @Step("Модуль фильтрации - строковый('Пусто' и 'Не пусто')")
@@ -721,5 +727,30 @@ public class StepForms extends BaseSelenideTest {
 
         numericFilterColumns.closeFilters.shouldBe(visible, enabled).click();
     }
+
+
+    //TODO: Модуль фильтрации - логический
+    @Step("Модуль фильтрации - логический")
+    public void LogicalFilter(){
+        LogicalFilterColumns logicalFilterColumns = new LogicalFilterColumns();
+        logicalFilterColumns.inputFilter.click();
+        logicalFilterColumns.checkBox1.$(byText("Нет")).click();
+        logicalFilterColumns.applyButton.click();
+        logicalFilterColumns.listOfColumns.forEach(element -> {
+            element.$$("td").get(13).shouldHave(text("Да"));
+        });
+        logicalFilterColumns.closeFilter.click();
+
+        logicalFilterColumns.inputFilter.click();
+        logicalFilterColumns.checkBox2.$(byText("Да")).click();
+        logicalFilterColumns.applyButton.click();
+        logicalFilterColumns.listOfColumns.forEach(element -> {
+            element.$$("td").get(13).shouldHave(text("Нет"));
+        });
+        logicalFilterColumns.closeFilter.click();
+    }
+
+    //TODO: Модуль фильтрации - дата
+
 }
 

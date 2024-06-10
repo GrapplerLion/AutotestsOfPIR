@@ -1,34 +1,27 @@
 package core;
-import helpers.Driver;
+import helpers.InitDriver;
+import helpers.TestConfig;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selenide;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 /**
  * Базовый класс для инициализации селенида
  */
-abstract public class BaseSelenideTest extends Driver{
+abstract public class BaseSelenideTest extends InitDriver {
 
-    @BeforeAll
-    public static void initDriver() {
-        Driver.initDriver();
-    }
 
     /**
      * Инициализация selenide с настройками
      */
-    public void setUp(){
+    public static void setUp(){
 
         WebDriverManager.chromedriver().setup();
-        Configuration.browser = "chrome";
+        Configuration.browser = TestConfig.browser;
         Configuration.webdriverLogsEnabled = true;
-        Configuration.browserVersion = "125.0.6422.142";
+        Configuration.browserVersion = "120.0.6099.199";
         Configuration.browserSize = "2560x1440";
-        Configuration.headless = false;
+        Configuration.headless = TestConfig.isHeadless();
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
@@ -44,20 +37,5 @@ abstract public class BaseSelenideTest extends Driver{
         System.out.println("Browser size: " + Configuration.browserSize);
     }
 
-    /**
-     * Выполнение метода перед каждым запуском тестов
-     */
-    @BeforeEach
-    public void init(){
-        setUp();
-    }
-
-    /**
-     * Выполнение метода после каждого закрытия тестов
-     */
-    @AfterEach
-    public void tearDown(){
-        Selenide.closeWebDriver();
-    }
 
 }

@@ -23,7 +23,7 @@ dependencies {
 //    implementation("org.seleniumhq.selenium:selenium-java:31.0.1")
 //    testImplementation("org.testng:testng:7.7.0")
 
-    testImplementation("com.codeborne:selenide:7.0.1")
+    testImplementation("com.codeborne:selenide:7.3.2")
     testImplementation("org.seleniumhq.selenium:selenium-chrome-driver:4.20.0")
     testImplementation("io.github.bonigarcia:webdrivermanager:5.7.0")
     testImplementation("org.slf4j:slf4j-simple:2.0.13")
@@ -74,3 +74,5 @@ tasks.test {
     systemProperty("selenide.headless", System.getProperty("headless", "false"))
     useJUnitPlatform()
 }
+
+
