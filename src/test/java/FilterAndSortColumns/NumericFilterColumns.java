@@ -23,6 +23,8 @@ public class NumericFilterColumns {
     public SelenideElement filter8 = $("[aria-hidden='false'] ul li:nth-child(8)");
     public SelenideElement filter9 = $("[aria-hidden='false'] ul li:nth-child(9)");
     public SelenideElement filter10 = $("[aria-hidden='false'] ul li:nth-child(10)");
+    public SelenideElement filter11 = $("[aria-hidden='false'] ul li:nth-child(11)");
+    public SelenideElement filter12 = $("[aria-hidden='false'] ul li:nth-child(12)");
 
 
     public SelenideElement applyButton = $("button[data-test-id='pir_filter_action_apply_mobilePhone']").$(byText("Применить"));
@@ -33,6 +35,7 @@ public class NumericFilterColumns {
     public ElementsCollection tableOfSize = $("div[class='pir-table'] tbody").$$("tr");
     public ElementsCollection containsOfValueColumns2 = $$("div[class='pir-table'] tbody tr.el-table_1_column_2");
 
+    public SelenideElement valueOfMassFilter = $("[data-test-id='pir_filter_mass_input_mobilePhone']");
 
     public SelenideElement enterValue = $("input[data-test-id='pir_filter_condition_comparison_mobilePhone_0']");
 

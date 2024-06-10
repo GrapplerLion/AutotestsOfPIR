@@ -12,7 +12,7 @@ public class StringFilterColumns {
     public SelenideElement filterIconForDepartament = $("[data-test-id=pir_filter_action_open_refDepartment_name]");
 
     //выбор типа фильтра колонки "Подразделение"
-    public SelenideElement typeFilterDepartament = $("div[data-test-id='pir_filter_condition_comparison_refDepartment_name_0']");
+    public SelenideElement typeFilterDepartament = $("[data-test-id='pir_filter_condition_comparison_refDepartment_name_0']");
 
     //кнопка иконки функции фильтра на колонку "Тип здания"
     public SelenideElement filterIconBuildType = $("[data-test-id=pir_filter_action_open_refBuildType_name]");
@@ -31,6 +31,8 @@ public class StringFilterColumns {
     public SelenideElement filter8 = $("[aria-hidden='false'] ul li:nth-child(8)");
     public SelenideElement filter9 = $("[aria-hidden='false'] ul li:nth-child(9)");
     public SelenideElement filter10 = $("[aria-hidden='false'] ul li:nth-child(10)");
+    public SelenideElement filter11 = $("[aria-hidden='false'] ul li:nth-child(11)");
+    public SelenideElement filter12 = $("[aria-hidden='false'] ul li:nth-child(12)");
 
 
     //кнопка "применить" для фильтра колонки "Подразделение"
@@ -43,6 +45,7 @@ public class StringFilterColumns {
     //лист значений в попапе колонки "Подразделение"
     public ElementsCollection valueOfListDepartament = $$("[data-test-id=pir_filter_entries_list_refDepartment_name]");
     public ElementsCollection valueOfListBuildType = $$("[data-test-id=pir_filter_entries_list_refBuildType_name]");
+    public SelenideElement valueOfMassFilter = $("[data-test-id='pir_filter_mass_input_refDepartment_name']");
 
     public SelenideElement activeFilters = $("#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div");
     public SelenideElement closeFilters = $("#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i");

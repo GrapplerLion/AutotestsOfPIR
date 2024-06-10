@@ -1,11 +1,12 @@
 package tests;
 
+import core.BaseSelenideTest;
 import io.qameta.allure.Feature;
 import org.junit.jupiter.api.Test;
 
 import java.awt.*;
 
-public class PersonalAccountTestCase extends StepForms  {
+public class PersonalAccountTestCase extends StepForms {
 
 
 
@@ -33,7 +34,7 @@ public class PersonalAccountTestCase extends StepForms  {
     }
 
     @Test
-    @Feature("Тестирование всех функций строкового фильтра")
+    @Feature("Тестирование всех функций строкового фильтра колонки 'Подразделение'")
     public void testStringFilter(){
         Authorization(name, password);
         BaseMenu();
@@ -42,16 +43,28 @@ public class PersonalAccountTestCase extends StepForms  {
         StringFilterBegins();
         StringFilterEnds();
         StringFilterContains();
+        StringFilterMass();
     }
 
     @Test
-    @Feature("Тестирование всех функций числового фильтра")
+    @Feature("Тестирование всех функций числового фильтра колонки 'Мобильный телефон'")
     public void testNumericFilter(){
         Authorization(name, password);
         BaseMenu();
         NumericFilterVoid();
         NumericFilterEquals();
         NumericFilterBegins();
+        NumericFilterEnds();
+        NumericFilterContains();
+        NumericFilterMass();
+    }
+
+    @Test
+    @Feature("Сортировка колонок раздела и подраздела 'Лицевые счета'")
+    public void testSortOfColumns(){
+        Authorization(name, password);
+        BaseMenu();
+        SortOfColumns();
     }
 
 

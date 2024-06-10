@@ -22,15 +22,13 @@ abstract public class BaseSelenideTest extends Driver{
      * Инициализация selenide с настройками
      */
     public void setUp(){
-        WebDriverManager.chromedriver().driverVersion("124.0.6367.78").setup();
 
-//        WebDriverManager.chromedriver().setup();
-        Configuration.browser = "" +
-                "chrome";
+        WebDriverManager.chromedriver().setup();
+        Configuration.browser = "chrome";
         Configuration.webdriverLogsEnabled = true;
-        Configuration.browserVersion = "124.0.6367.78";
+        Configuration.browserVersion = "125.0.6422.142";
         Configuration.browserSize = "2560x1440";
-        Configuration.headless = true;
+        Configuration.headless = false;
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");

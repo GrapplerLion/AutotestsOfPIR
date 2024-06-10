@@ -1,6 +1,7 @@
 package tests;
 
 import CollectionColumns.TablePageLS;
+import FilterAndSortColumns.ColumnSorting;
 import FilterAndSortColumns.NumericFilterColumns;
 import FilterAndSortColumns.StringFilterColumns;
 import HorizontalPanelOptions.NumberOfLine;
@@ -18,11 +19,15 @@ import org.openqa.selenium.StaleElementReferenceException;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 import static com.codeborne.selenide.CollectionCondition.*;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Condition.empty;
 import static com.codeborne.selenide.Selenide.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class StepForms extends BaseSelenideTest {
@@ -124,6 +129,44 @@ public class StepForms extends BaseSelenideTest {
         numberOfLine.tableOfSize.shouldHave(CollectionCondition.size(400));
     }
 
+    @Step("Сортировка колонок")
+    public void SortOfColumns() {
+        ColumnSorting columnSorting = new ColumnSorting();
+
+        //получение коллекции до сортировки
+        List<String> originalValues = new ArrayList<>();
+        for (SelenideElement element : columnSorting.containsOfValueColumns3) {
+            originalValues.add(element.getText());
+        }
+
+        columnSorting.inputSortLS.click();
+
+        // Получение значений после сортировки по возрастанию
+        List<String> sortedAscValues = new ArrayList<>();
+        for (SelenideElement element : columnSorting.containsOfValueColumns3) {
+            sortedAscValues.add(element.getText());
+        }
+
+        // Проверка, что значения отсортированы по возрастанию
+        List<String> expectedAscValues = new ArrayList<>(originalValues);
+        Collections.sort(expectedAscValues);
+        assertEquals(expectedAscValues, sortedAscValues, "Значения должны быть отсортированы в порядке возрастания");
+
+        columnSorting.inputSortLS.click();
+
+        // Получение значений после сортировки по убыванию
+        List<String> sortedDescValues = new ArrayList<>();
+        for (SelenideElement element : columnSorting.containsOfValueColumns3) {
+            sortedDescValues.add(element.getText());
+        }
+
+        // Проверка, что значения отсортированы по убыванию
+        List<String> expectedDescValues = new ArrayList<>(originalValues);
+        Collections.sort(expectedDescValues, Collections.reverseOrder());
+        assertEquals(expectedDescValues, sortedDescValues, "Значения должны быть отсортированы в порядке убывания");
+
+    }
+
     //TODO: Модуль фильтрации - строковый (колонка "Подразделение", модуль ЛС)
     @Step("Модуль фильтрации - строковый('Пусто' и 'Не пусто')")
     public void StringFilterVoid() {
@@ -152,46 +195,46 @@ public class StepForms extends BaseSelenideTest {
         stringFilterColumns.closeFilters.shouldBe(visible, enabled).click();
     }
 
-    //TODO: Модуль фильтрации - строковый (колонка "Тип здания", модуль ЛС)
     @Step("Модуль фильтрации - строковый('Равно' и 'Не равно')")
     public void StringFilterEquals() {
         //TODO:проверка фильтра "Равно"
         StringFilterColumns stringFilterColumns = new StringFilterColumns();
-        stringFilterColumns.filterIconBuildType.shouldBe(visible, enabled).click();
-        stringFilterColumns.typeFilterBuildType.shouldBe(visible, enabled).click();
+        stringFilterColumns.filterIconForDepartament.shouldBe(visible, enabled).click();
+        stringFilterColumns.typeFilterDepartament.shouldBe(visible, enabled).click();
         stringFilterColumns.filter3.shouldBe(visible, enabled).click();
-        stringFilterColumns.enterValueForFilterBuildType.shouldBe(visible, enabled).setValue("Частный дом");
+        stringFilterColumns.enterValueForFilterDepartament.shouldBe(visible, enabled).setValue("АП Новострой");
 
         boolean value = true;
-        SelenideElement firstElement = stringFilterColumns.valueOfListBuildType.first();
-        // Проверка, что все элементы, кроме первого, равняются "Частный дом"
-        for (int i = 1; i < stringFilterColumns.valueOfListBuildType.size(); i++) {
-            if (!stringFilterColumns.valueOfListBuildType.get(i).shouldHave(matchText("Частный дом")).is(visible)) {
+        SelenideElement firstElement = stringFilterColumns.valueOfListDepartament.first();
+        // Проверка, что все элементы, кроме первого, равняются "АП Новострой"
+        for (int i = 1; i < stringFilterColumns.valueOfListDepartament.size(); i++) {
+            if (!stringFilterColumns.valueOfListDepartament.get(i).shouldHave(matchText("АП Новострой")).is(visible)) {
                 value = false;
                 break;
             }
         }
         if (!value) {
             // Обработка ошибки, если не все элементы соответствуют условию
-            System.out.println("Не все элементы, кроме первого, равняются 'Частный дом'");
+            System.out.println("Не все элементы, кроме первого, равняются 'АП Новострой'");
         }
 
-        stringFilterColumns.applyButtonForFilterBuildType.shouldBe(visible, enabled).click();
-        stringFilterColumns.activeFilters.shouldHave(text("Тип здания"));
-        stringFilterColumns.containsOfValueColumns7.forEach(element ->
-                element.shouldHave(text("Частный дом")));
+        stringFilterColumns.applyButtonForFilterDepartament.shouldBe(visible, enabled).click();
+        stringFilterColumns.activeFilters.shouldHave(text("Подразделение"));
+        stringFilterColumns.containsOfValueColumns2.forEach(element ->
+                element.shouldHave(text("АП Новострой")));
         //сброс фильтра
         stringFilterColumns.closeFilters.shouldBe(visible, enabled).click();
+
         //TODO:проверка фильтра "Не равно"
-        stringFilterColumns.filterIconBuildType.shouldBe(visible, enabled).click();
-        stringFilterColumns.typeFilterBuildType.shouldBe(visible, enabled).click();
+        stringFilterColumns.filterIconForDepartament.shouldBe(visible, enabled).click();
+        stringFilterColumns.typeFilterDepartament.shouldBe(visible, enabled).click();
         stringFilterColumns.filter4.shouldBe(visible, enabled).click();
-        stringFilterColumns.enterValueForFilterBuildType.shouldBe(visible, enabled).setValue("Частный дом");
-        stringFilterColumns.valueOfListBuildType.forEach(element -> element.shouldNotHave(text("Частный дом")));
-        stringFilterColumns.applyButtonForFilterBuildType.shouldBe(visible, enabled).click();
-        stringFilterColumns.activeFilters.shouldHave(text("Тип здания"));
+        stringFilterColumns.enterValueForFilterDepartament.shouldBe(visible, enabled).setValue("АП Новострой");
+        stringFilterColumns.valueOfListDepartament.forEach(element -> element.shouldNotHave(text("АП Новострой")));
+        stringFilterColumns.applyButtonForFilterDepartament.shouldBe(visible, enabled).click();
+        stringFilterColumns.activeFilters.shouldHave(text("Подразделение"));
         stringFilterColumns.containsOfValueColumns7.forEach(element ->
-                element.shouldNotHave(text("Частный дом")));
+                element.shouldNotHave(text("АП Новострой")));
 
         stringFilterColumns.closeFilters.shouldBe(visible, enabled).click();
     }
@@ -357,6 +400,47 @@ public class StepForms extends BaseSelenideTest {
         stringFilterColumns.closeFilters.shouldBe(visible, enabled).click();
     }
 
+    @Step("Модуль фильтрации - строковый('Включая' и 'Исключая')")
+    public void StringFilterMass(){
+        //TODO:Открытие фильтра "Включая"
+        StringFilterColumns stringFilterColumns = new StringFilterColumns();
+        stringFilterColumns.filterIconForDepartament.shouldBe(visible, enabled).click();
+        stringFilterColumns.typeFilterDepartament.shouldBe(visible, enabled).click();
+        stringFilterColumns.filter11.shouldBe(visible, enabled).click();
+        stringFilterColumns.valueOfMassFilter.shouldBe(visible, enabled).setValue("АП Новострой \n ТУ Дербентского р-на");
+        sleep(2000);
+        stringFilterColumns.applyButtonForFilterDepartament.shouldBe(visible, enabled).click();
+        stringFilterColumns.activeFilters.shouldBe(visible, enabled).shouldHave(text("Подразделение"));
+
+        for (SelenideElement element : stringFilterColumns.containsOfValueColumns2) {
+            String text = element.getText().toLowerCase();
+            if (!text.contains("АП Новострой, ТУ Дербентского р-на")) {
+                System.out.println("Элемент с текстом '" + element.getText() + "' не содержит 'АП Новострой, ТУ Дербентского р-на'");
+            }
+        }
+        stringFilterColumns.closeFilters.shouldBe(visible, enabled).click();
+
+        //TODO:Открытие фильтра "Исключая"
+        stringFilterColumns.filterIconForDepartament.shouldBe(visible, enabled).click();
+        stringFilterColumns.typeFilterDepartament.shouldBe(visible, enabled).click();
+        stringFilterColumns.filter12.shouldBe(visible, enabled).click();
+        stringFilterColumns.valueOfMassFilter.shouldBe(visible, enabled).setValue("АП Новострой \n ТУ Дербентского р-на");
+        sleep(2000);
+        stringFilterColumns.applyButtonForFilterDepartament.shouldBe(visible, enabled).click();
+        stringFilterColumns.activeFilters.shouldBe(visible, enabled).shouldHave(text("Подразделение"));
+
+        for (SelenideElement element : stringFilterColumns.containsOfValueColumns2) {
+            String text = element.getText().toLowerCase();
+            if (text.contains("АП Новострой, ТУ Дербентского р-на")) {
+                System.out.println("Элемент с текстом '" + element.getText() + "' содержит 'АП Новострой, ТУ Дербентского р-на'");
+            }
+        }
+
+        stringFilterColumns.closeFilters.shouldBe(visible, enabled).click();
+    }
+
+
+
     //TODO: Модуль фильтрации - числовой
     @Step("Модуль фильтрации - числовой('Пусто' и 'Не пусто')")
     public void NumericFilterVoid() {
@@ -398,7 +482,7 @@ public class StepForms extends BaseSelenideTest {
         numericFilterColumns.closeFiltersMobilePhone.shouldBe(visible, enabled).click();
     }
 
-
+    @Step("Модуль фильтрации - числовой('Равно' и 'Не равно')")
     public void NumericFilterEquals(){
         //TODO:Открытие фильтра "Равно"
         NumericFilterColumns numericFilterColumns = new NumericFilterColumns();
@@ -433,7 +517,7 @@ public class StepForms extends BaseSelenideTest {
 
     }
 
-
+    @Step("Модуль фильтрации - числовой('Начинается с' и 'Не начинается с')")
     public void NumericFilterBegins(){
         //TODO:Открытие фильтра "Начинается с"
         NumericFilterColumns numericFilterColumns = new NumericFilterColumns();
@@ -503,5 +587,139 @@ public class StepForms extends BaseSelenideTest {
         numericFilterColumns.closeFiltersMobilePhone.shouldBe(visible, enabled).click();
     }
 
+    @Step("Модуль фильтрации - числовой('Заканчивается на' и 'Не заканчивается на')")
+    public void NumericFilterEnds() {
+        //TODO:Открытие фильтра "Заканчивается на"
+        NumericFilterColumns numericFilterColumns = new NumericFilterColumns();
+        numericFilterColumns.filterIcon.shouldBe(visible, enabled).click();
+        numericFilterColumns.inputTypeFilter.shouldBe(visible, enabled).click();
+        numericFilterColumns.filter7.shouldBe(visible, enabled).click();
+        numericFilterColumns.enterValue.shouldBe(visible, enabled).setValue("0");
+
+        for (int i = 1; i < numericFilterColumns.valueField.$$("label").size(); i++) {
+            String text = numericFilterColumns.valueField.$$("label").get(i).getText();
+            if (!text.endsWith("0")) {
+                System.out.println("Элемент с текстом '" + numericFilterColumns.valueField.$$("label").get(i).getText() + "' не заканчивается на '0'");
+            }
+        }
+        numericFilterColumns.applyButton.shouldBe(visible, enabled).click();
+        numericFilterColumns.activeFilters.shouldBe(visible, enabled).shouldHave(text("Мобильный телефон"));
+        numericFilterColumns.tableOfSize
+                .forEach(element -> {
+                    // Получаем все ячейки восьмой колонки в текущей строке
+                    element.$$("td").get(7).shouldHave(matchText(".*0$"));
+                });
+        numericFilterColumns.closeFilters.shouldBe(visible, enabled).click();
+
+        //TODO:Открытие фильтра "Не заканчивается на"
+        numericFilterColumns.filterIcon.shouldBe(visible, enabled).click();
+        numericFilterColumns.inputTypeFilter.shouldBe(visible, enabled).click();
+        numericFilterColumns.filter8.shouldBe(visible, enabled).click();
+        numericFilterColumns.enterValue.shouldBe(visible, enabled).setValue("0");
+        sleep(2000);
+        for (int i = 1; i < numericFilterColumns.valueField.$$("label").size(); i++) {
+            String text = numericFilterColumns.valueField.$$("label").get(i).getText();
+            if (text.endsWith("0")) {
+                System.out.println("Элемент с текстом '" + numericFilterColumns.valueField.$$("label").get(i).getText() + "' заканчивается на '0'");
+            }
+        }
+        numericFilterColumns.applyButton.shouldBe(visible, enabled).click();
+        numericFilterColumns.activeFilters.shouldBe(visible, enabled).shouldHave(text("Мобильный телефон"));
+        numericFilterColumns.tableOfSize
+                .forEach(element -> {
+                    // Получаем все ячейки восьмой колонки в текущей строке
+                    element.$$("td").get(7).shouldNotHave(matchText(".*0$"));
+                });
+
+        numericFilterColumns.closeFilters.shouldBe(visible, enabled).click();
+    }
+
+    @Step("Модуль фильтрации - числовой('Содержит' и 'Не содержит')")
+    public void NumericFilterContains(){
+        //TODO:Открытие фильтра "Содержит"
+        NumericFilterColumns numericFilterColumns = new NumericFilterColumns();
+        numericFilterColumns.filterIcon.shouldBe(visible, enabled).click();
+        numericFilterColumns.inputTypeFilter.shouldBe(visible, enabled).click();
+        numericFilterColumns.filter9.shouldBe(visible, enabled).click();
+        numericFilterColumns.enterValue.shouldBe(visible, enabled).setValue("0");
+        sleep(2000);
+
+        for (int i = 1; i < numericFilterColumns.valueField.$$("label").size(); i++) {
+            String text = numericFilterColumns.valueField.$$("label").get(i).getText();
+            if (!text.contains("0")) {
+                System.out.println("Элемент с текстом '" + numericFilterColumns.valueField.$$("label").get(i).getText() + "' не cодержит '0'");
+            }
+        }
+        numericFilterColumns.applyButton.shouldBe(visible, enabled).click();
+        numericFilterColumns.activeFilters.shouldBe(visible, enabled).shouldHave(text("Мобильный телефон"));
+        numericFilterColumns.tableOfSize
+                .forEach(element -> {
+                    // Получаем все ячейки восьмой колонки в текущей строке
+                    element.$$("td").get(7).shouldHave(matchText(".*0.*"));
+                });
+        numericFilterColumns.closeFilters.shouldBe(visible, enabled).click();
+
+        //TODO:Открытие фильтра "Не содержит"
+        numericFilterColumns.filterIcon.shouldBe(visible, enabled).click();
+        numericFilterColumns.inputTypeFilter.shouldBe(visible, enabled).click();
+        numericFilterColumns.filter10.shouldBe(visible, enabled).click();
+        numericFilterColumns.enterValue.shouldBe(visible, enabled).setValue("0");
+        sleep(2000);
+
+        for (int i = 1; i < numericFilterColumns.valueField.$$("label").size(); i++) {
+            String text = numericFilterColumns.valueField.$$("label").get(i).getText();
+            if (text.contains("0")) {
+                System.out.println("Элемент с текстом '" + numericFilterColumns.valueField.$$("label").get(i).getText() + "' cодержит '0'");
+            }
+        }
+        numericFilterColumns.applyButton.shouldBe(visible, enabled).click();
+        numericFilterColumns.activeFilters.shouldBe(visible, enabled).shouldHave(text("Мобильный телефон"));
+        numericFilterColumns.tableOfSize
+                .forEach(element -> {
+                    // Получаем все ячейки восьмой колонки в текущей строке
+                    element.$$("td").get(7).shouldNotHave(matchText(".*0.*"));
+                });
+
+        numericFilterColumns.closeFilters.shouldBe(visible, enabled).click();
+    }
+
+    @Step("Модуль фильтрации - числовой('Включая' и 'Исключая')")
+    public void NumericFilterMass(){
+        //TODO:Открытие фильтра "Включая"
+        NumericFilterColumns numericFilterColumns = new NumericFilterColumns();
+        numericFilterColumns.filterIcon.shouldBe(visible, enabled).click();
+        numericFilterColumns.inputTypeFilter.shouldBe(visible, enabled).click();
+        numericFilterColumns.filter11.shouldBe(visible, enabled).click();
+        numericFilterColumns.valueOfMassFilter.shouldBe(visible, enabled).setValue("84949435104 \n ТУ 81769811173");
+        sleep(2000);
+        numericFilterColumns.applyButton.shouldBe(visible, enabled).click();
+        numericFilterColumns.activeFilters.shouldBe(visible, enabled).shouldHave(text("Мобильный телефон"));
+
+        for (SelenideElement element : numericFilterColumns.containsOfValueColumns2) {
+            String text = element.getText().toLowerCase();
+            if (!text.contains("84949435104, 81769811173")) {
+                System.out.println("Элемент с текстом '" + element.getText() + "' не содержит '84949435104, 81769811173'");
+            }
+        }
+        numericFilterColumns.closeFilters.shouldBe(visible, enabled).click();
+
+        //TODO:Открытие фильтра "Исключая"
+        numericFilterColumns.filterIcon.shouldBe(visible, enabled).click();
+        numericFilterColumns.inputTypeFilter.shouldBe(visible, enabled).click();
+        numericFilterColumns.filter12.shouldBe(visible, enabled).click();
+        numericFilterColumns.valueOfMassFilter.shouldBe(visible, enabled).setValue("84949435104 \n ТУ 81769811173");
+        sleep(2000);
+        numericFilterColumns.applyButton.shouldBe(visible, enabled).click();
+        numericFilterColumns.activeFilters.shouldBe(visible, enabled).shouldHave(text("Мобильный телефон"));
+
+        for (SelenideElement element : numericFilterColumns.containsOfValueColumns2) {
+            String text = element.getText().toLowerCase();
+            if (text.contains("84949435104, 81769811173")) {
+                System.out.println("Элемент с текстом '" + element.getText() + "' содержит '84949435104, 81769811173'");
+            }
+        }
+
+        numericFilterColumns.closeFilters.shouldBe(visible, enabled).click();
+    }
 }
 
