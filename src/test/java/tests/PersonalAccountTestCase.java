@@ -5,10 +5,13 @@ import io.qameta.allure.Feature;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import tests.steps.StepFormsFilterLS;
+import tests.steps.StepFormsSorting;
 
 import java.awt.*;
+import java.io.IOException;
 
-public class PersonalAccountTestCase extends StepForms {
+public class PersonalAccountTestCase extends InitDriver {
 
     @BeforeAll
     public static void setUp() {
@@ -20,77 +23,54 @@ public class PersonalAccountTestCase extends StepForms {
         InitDriver.tearDown();
     }
 
-    public String name = "admin";
-    public String password = "admin";
+    private final StepFormsFilterLS stepFormsFilterLS = new StepFormsFilterLS();
+    private final StepFormsSorting stepFormsSorting = new StepFormsSorting();
 
     @Test
     @Feature("Тестирование модуля Лицевые счета")
     public void testPersonalAccount() {
-        Authorization(name, password);
-        BaseMenu();
-        TablePage();
+        stepFormsFilterLS.Authorization("admin", "admin");
+        stepFormsFilterLS.BaseMenu(1);
+        stepFormsFilterLS.TablePage();
     }
 
     @Test
     @Feature("Тестирование опций работы со списком")
     public void testSettings() throws AWTException {
-        Authorization(name, password);
-        BaseMenu();
-        SettingTable();
-        VerticalBar();
-        ExportFileAllTable();
-        UpdateTable();
-        QuantityOfStrings();
-    }
-
-    @Test
-    @Feature("Тестирование всех функций строкового фильтра колонки 'Подразделение'")
-    public void testStringFilter(){
-        Authorization(name, password);
-        BaseMenu();
-        StringFilterVoid();
-        StringFilterEquals();
-        StringFilterBegins();
-        StringFilterEnds();
-        StringFilterContains();
-        StringFilterMass();
-    }
-
-    @Test
-    @Feature("Тестирование всех функций числового фильтра колонки 'Мобильный телефон'")
-    public void testNumericFilter(){
-        Authorization(name, password);
-        BaseMenu();
-        NumericFilterVoid();
-        NumericFilterEquals();
-        NumericFilterBegins();
-        NumericFilterEnds();
-        NumericFilterContains();
-        NumericFilterMass();
-    }
-
-    @Test
-    @Feature("Тестирование логического фильтра поля 'Наличие прибора учета(счетчика)'")
-    public void testLogicalFilter(){
-        Authorization(name, password);
-        BaseMenu();
-        LogicalFilter();
-    }
-
-    @Test
-    @Feature("Тестирование логического фильтра поля 'Наличие прибора учета(счетчика)'")
-    public void testDateFilter(){
-        Authorization(name, password);
-        BaseMenu();
+        stepFormsFilterLS.Authorization("admin", "admin");
+        stepFormsFilterLS.BaseMenu(1);
+        stepFormsFilterLS.SettingTable();
+        stepFormsFilterLS.VerticalBar();
+        stepFormsFilterLS.ExportFileAllTable();
+        stepFormsFilterLS.UpdateTable();
+        stepFormsFilterLS.QuantityOfStrings();
     }
 
 
+
     @Test
-    @Feature("Сортировка колонок раздела и подраздела 'Лицевые счета'")
+    @Feature("Сортировка всех колонок раздела 'Лицевые счета'")
     public void testSortOfColumns(){
-        Authorization(name, password);
-        BaseMenu();
-        SortOfColumns();
+        stepFormsFilterLS.Authorization("admin", "admin");
+        stepFormsFilterLS.BaseMenu(1);
+        stepFormsSorting.SortOfColumnsLS();
+        stepFormsFilterLS.BaseMenu(2);
+        stepFormsSorting.SortOfColumnsAP();
+        stepFormsFilterLS.BaseMenu(3);
+        stepFormsSorting.SortOfColumnsDR();
+        stepFormsFilterLS.BaseMenu(4);
+        stepFormsSorting.SortOfColumnsSP();
+        stepFormsFilterLS.BaseMenu(5);
+        stepFormsSorting.SortOfColumnsIP();
+    }
+
+    private final Main main = new Main();
+
+    @Test
+    public void tests() throws IOException {
+        stepFormsFilterLS.Authorization("admin", "admin");
+        stepFormsFilterLS.BaseMenu(1);
+        main.testColumnFilters();
     }
 
 

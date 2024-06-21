@@ -1,8 +1,7 @@
 package helpers;
 
-import core.BaseSelenideTest;
 
-public class TestConfig extends BaseSelenideTest {
+public class TestConfig {
 
     public static String browser = "chrome";
     public static String headless = "0";

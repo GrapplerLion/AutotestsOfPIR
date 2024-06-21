@@ -43,6 +43,9 @@ dependencies {
     testImplementation("com.codeborne:xls-test:1.7.1")
     testImplementation("org.apache.poi:poi-ooxml:5.2.5")
 
+    implementation("com.fasterxml.jackson.core:jackson-core:2.17.1")
+
+
 //    testImplementation("junit:junit:4.13.2")
 
 //    testImplementation("org.springframework.boot:spring-boot-starter-test:2.3.0")
