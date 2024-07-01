@@ -222,7 +222,7 @@
             "valueOfListSelector": "[data-test-id=pir_filter_entries_list_fioAbonent]",
             "valueOfMassFilterSelector": "[data-test-id=pir_filter_mass_input_fioAbonent]",
             "enterValueSelector": "input[data-test-id=pir_filter_condition_comparison_fioAbonent_0]",
-            "containsOfValueColumnsSelector": "div[class='pir-table'] tbody tr.el-table_1_column_16",
+            "containsOfValueColumnsSelector": "div[class='pir-table'] tbody tr.el-table_1_column_14",
             "activeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div",
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
