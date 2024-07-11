@@ -1,6 +1,8 @@
 package helpers;
 
+import org.junit.jupiter.api.Disabled;
 
+@Disabled
 public class TestConfig {
 
     public static String browser = "chrome";

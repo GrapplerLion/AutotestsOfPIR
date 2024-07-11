@@ -2,47 +2,49 @@ package helpers;
 
 import com.codeborne.selenide.Configuration;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.time.Duration;
 
 abstract public class InitDriver {
 
-    protected static WebDriverWait wait;
+    protected static WebDriver driver;
+
+    @BeforeAll
     public static void setUp() {
-
-        WebDriver driver = new ChromeDriver();
-        WebDriverManager.chromedriver().setup();
-
-
-        Configuration.browser = TestConfig.browser;
         Configuration.webdriverLogsEnabled = true;
-        Configuration.browserVersion = "125.0.6422.141";
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        Configuration.browserVersion = "126.0.6478.127";
         Configuration.browserSize = "2560x1440";
-        Configuration.headless = TestConfig.isHeadless();
-
 
         switch (TestConfig.browser.toLowerCase()) {
             case "chrome":
                 WebDriverManager.chromedriver().setup();
+                driver = new ChromeDriver();
                 break;
             case "firefox":
                 WebDriverManager.firefoxdriver().setup();
+                driver = new FirefoxDriver();
                 break;
             case "edge":
                 WebDriverManager.edgedriver().setup();
+                driver = new EdgeDriver();
                 break;
             // Add other browsers here as needed
             default:
                 throw new IllegalArgumentException("Unsupported browser: " + TestConfig.browser);
         }
+
+        // Установка времени ожидания для драйвера с использованием Duration
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
     public static void tearDown() {
-        // Close WebDriver and clean up if needed
+        if (driver != null) {
+            driver.quit();
         }
+    }
 }

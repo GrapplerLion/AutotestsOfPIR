@@ -77,13 +77,16 @@ class DataColumn {
 
 class ColumnFilter{
 
+
     public Column column;
     public ColumnFilter(Column schema){
         this.column = schema;
     }
 
 
+
     public void applyFilterAndCheckVoid(int sectionNumber) {
+        scrollToElementIfNotVisible(column.filterIcon);
         column.filterIcon.shouldBe(visible, enabled).click();
         column.typeFilter.shouldBe(visible, enabled).click();
         openFilter(sectionNumber);
@@ -109,6 +112,7 @@ class ColumnFilter{
         column.filterIcon.shouldBe(visible, enabled).click();
         column.typeFilter.shouldBe(visible, enabled).click();
         openFilter(sectionNumber);
+        sleep(3000);
         column.enterValue.shouldBe(visible, enabled).setValue(column.value1);
         ElementsCollection elements = column.valueOfList;
         FilterUtils.checkElementsMatchCondition(elements, column.value1, shouldMatch);
@@ -123,6 +127,7 @@ class ColumnFilter{
         column.filterIcon.shouldBe(visible, enabled).click();
         column.typeFilter.shouldBe(visible, enabled).click();
         openFilter(sectionNumber);
+        sleep(3000);
         column.enterValue.shouldBe(visible, enabled).setValue(column.value1);
         ElementsCollection elements = column.valueOfList;
         FilterUtils.checkElementsMatchCondition(elements, column.value1, shouldMatch);
@@ -137,6 +142,7 @@ class ColumnFilter{
         column.filterIcon.shouldBe(visible, enabled).click();
         column.typeFilter.shouldBe(visible, enabled).click();
         openFilter(sectionNumber);
+        sleep(3000);
         column.enterValue.shouldBe(visible, enabled).setValue(column.value2);
         ElementsCollection elements = column.valueOfList;
         FilterUtils.checkElementsMatchCondition(elements, column.value2, shouldMatch);
@@ -151,6 +157,7 @@ class ColumnFilter{
         column.filterIcon.shouldBe(visible, enabled).click();
         column.typeFilter.shouldBe(visible, enabled).click();
         openFilter(sectionNumber);
+        sleep(3000);
         column.enterValue.shouldBe(visible, enabled).setValue(column.value2);
         ElementsCollection elements = column.valueOfList;
         FilterUtils.checkElementsMatchCondition(elements, column.value2, shouldMatch);
@@ -165,6 +172,7 @@ class ColumnFilter{
         column.filterIcon.shouldBe(visible, enabled).click();
         column.typeFilter.shouldBe(visible, enabled).click();
         openFilter(sectionNumber);
+        sleep(3000);
         column.enterValue.shouldBe(visible, enabled).setValue(column.value3);
         String condition = ".*" + column.value3;
         ElementsCollection elements = column.valueOfList;
@@ -184,6 +192,7 @@ class ColumnFilter{
         column.filterIcon.shouldBe(visible, enabled).click();
         column.typeFilter.shouldBe(visible, enabled).click();
         openFilter(sectionNumber);
+        sleep(3000);
         column.enterValue.shouldBe(visible, enabled).setValue(column.value3);
         String condition = ".*" + column.value3;
         ElementsCollection elements = column.valueOfList;
@@ -203,6 +212,7 @@ class ColumnFilter{
         column.filterIcon.shouldBe(visible, enabled).click();
         column.typeFilter.shouldBe(visible, enabled).click();
         openFilter(sectionNumber);
+        sleep(3000);
         column.enterValue.shouldBe(visible, enabled).setValue(column.value4);
         String condition = ".*" + column.value4 + ".*";
         ElementsCollection elements = column.valueOfList;
@@ -222,6 +232,7 @@ class ColumnFilter{
         column.filterIcon.shouldBe(visible, enabled).click();
         column.typeFilter.shouldBe(visible, enabled).click();
         openFilter(sectionNumber);
+        sleep(3000);
         column.enterValue.shouldBe(visible, enabled).setValue(column.value4);
         String condition = ".*" + column.value4 + ".*";
         ElementsCollection elements = column.valueOfList;
@@ -241,6 +252,7 @@ class ColumnFilter{
         column.filterIcon.shouldBe(visible, enabled).click();
         column.typeFilter.shouldBe(visible, enabled).click();
         openFilter(sectionNumber);
+        sleep(3000);
         column.valueOfMassFilter.shouldBe(visible, enabled).setValue(column.value5);
         column.applyButton.shouldBe(visible, enabled).click();
         column.activeFilters.shouldBe(visible, enabled).shouldHave(text(column.label));
@@ -257,6 +269,7 @@ class ColumnFilter{
         column.filterIcon.shouldBe(visible, enabled).click();
         column.typeFilter.shouldBe(visible, enabled).click();
         openFilter(sectionNumber);
+        sleep(3000);
         column.valueOfMassFilter.shouldBe(visible, enabled).setValue(column.value5);
         column.applyButton.shouldBe(visible, enabled).click();
         column.activeFilters.shouldBe(visible, enabled).shouldHave(text(column.label));
@@ -269,117 +282,16 @@ class ColumnFilter{
         column.closeFilters.shouldBe(visible, enabled).click();
     }
 
-    //"АП Новострой \n ТУ Дербентского р-на"
-
-//    private void applyFilter(int filterNumber, String value, boolean shouldMatch, boolean matchText, boolean startsWith, boolean endsWith, boolean contains) {
-//        column.filterIcon.shouldBe(visible, enabled).click();
-//        column.typeFilter.shouldBe(visible, enabled).click();
-//        openFilter(filterNumber);
-//
-//        if (value != null) {
-//            column.enterValue.setValue(value);
-//        }
-//
-//        ElementsCollection elements = column.valueOfList;
-//
-//        if (matchText) {
-//            FilterUtils.checkElementsMatchCondition(elements, value, shouldMatch);
-//        } else if (startsWith) {
-//            FilterUtils.checkElementsMatchCondition(elements, "^" + value, shouldMatch);
-//        } else if (endsWith) {
-//            FilterUtils.checkElementsMatchCondition(elements, value + "$", shouldMatch);
-//        } else if (contains) {
-//            FilterUtils.checkElementsMatchCondition(elements, ".*" + value + ".*", shouldMatch);
-//        }
-//
-//        column.applyButton.shouldBe(visible, enabled).click();
-//        column.activeFilters.shouldHave(text(column.label));
-//
-//        column.containsOfValueColumns.forEach(element -> {
-//            if (matchText) {
-//                element.shouldHave(text(value));
-//            } else if (startsWith) {
-//                element.shouldHave(matchText("^" + value));
-//            } else if (endsWith) {
-//                element.shouldHave(matchText(value + "$"));
-//            } else if (contains) {
-//                element.shouldHave(matchText(".*" + value + ".*"));
-//            }
-//        });
-//
-//        column.closeFilters.shouldBe(visible, enabled).click();
-//    }
-
     private void openFilter(int sectionNumber) {
         SelenideElement filterIsNumber = $("[aria-hidden='false'] ul li:nth-child(" + sectionNumber + ")");
         filterIsNumber.click();
     }
-
-
-//    public void applyFilterAndCheckVoid() {
-//        applyFilter(1, null, false, false, false, false, false);
-//    }
-//
-//    public void applyFilterAndCheckNotVoid() {
-//        applyFilter(2, null, false, false, false, false, false);
-//    }
-//
-//    public void applyFilterAndCheckEquals(String value, boolean shouldMatch) {
-//        applyFilter(3, value, shouldMatch, true, false, false, false);
-//    }
-//
-//    public void applyFilterAndCheckNotEquals(String value, boolean shouldMatch) {
-//        applyFilter(4, value, !shouldMatch, true, false, false, false);
-//    }
-//
-//    public void applyFilterAndCheckBeginWith(String value, boolean shouldMatch){
-//        applyFilter(5, value, shouldMatch, false, true, false, false);
-//    }
-//
-//    public void applyFilterAndCheckNotBeginWith(String value, boolean shouldMatch){
-//        applyFilter(6, value, !shouldMatch, false, true, false, false);
-//    }
-//
-//    public void applyFilterAndCheckEndsWith(String suffix, boolean shouldMatch) {
-//        applyFilter(7, suffix, shouldMatch, false, false, true, false);
-//    }
-//
-//    public void applyFilterAndCheckNotEndsWith(String suffix, boolean shouldMatch) {
-//        applyFilter(8, suffix, !shouldMatch, false, false, true, false);
-//    }
-//
-//    public void applyFilterAndCheckContains(String substring, boolean shouldMatch) {
-//        applyFilter(9, substring, shouldMatch, false, false, false, true);
-//    }
-//
-//    public void applyFilterAndCheckNotContains(String substring, boolean shouldMatch) {
-//        applyFilter(10, substring, !shouldMatch, false, false, false, true);
-//    }
-//
-//    public void applyFilterAndCheckMass(int sectionNumber, List<String> values, boolean shouldMatch) {
-//        column.filterIcon.shouldBe(visible, enabled).click();
-//        column.typeFilter.shouldBe(visible, enabled).click();
-//        openFilter(sectionNumber);
-//        for (String value : values) {
-//            column.valueOfMassFilter.shouldBe(visible, enabled).setValue(value);
-//        }
-//        column.applyButton.shouldBe(visible, enabled).click();
-//        column.activeFilters.shouldBe(visible, enabled).shouldHave(text(column.label));
-//        column.containsOfValueColumns.forEach(element -> {
-//            boolean elementMatches = values.stream().anyMatch(value -> element.getText().contains(value));
-//            if (shouldMatch) {
-//                if (!elementMatches) {
-//                    element.shouldHave(text(values.get(0)));
-//                }
-//            } else {
-//                if (elementMatches) {
-//                    element.shouldNotHave(text(values.get(0)));
-//                }
-//            }
-//        });
-//        column.closeFilters.shouldBe(visible, enabled).click();
-//    }
-
+    public void scrollToElementIfNotVisible(SelenideElement element) {
+        while (!element.isDisplayed()) {
+            executeJavaScript("arguments[0].scrollIntoView({block: 'nearest', inline: 'end'});", element);
+            sleep(500);  // Дополнительная пауза
+        }
+    }
 
 }
 class Section {
@@ -456,4 +368,3 @@ class FilterUtils {
         }
 
 }
-

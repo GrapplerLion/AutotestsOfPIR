@@ -13,10 +13,10 @@ import java.io.IOException;
 
 public class PersonalAccountTestCase extends InitDriver {
 
-    @BeforeAll
-    public static void setUp() {
-        InitDriver.setUp();
-    }
+//    @BeforeAll
+//    public static void setUp() {
+//        InitDriver.setUp();
+//    }
 
     @AfterAll
     public static void tearDown() {
