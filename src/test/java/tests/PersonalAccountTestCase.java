@@ -11,7 +11,7 @@ import tests.steps.StepFormsSorting;
 import java.awt.*;
 import java.io.IOException;
 
-public class PersonalAccountTestCase {
+public class PersonalAccountTestCase extends InitDriver {
 
     @BeforeAll
     public static void setUp() {
