@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationPage extends InitDriver {
 
-    public static final String baseUrl = "http://10.1.115.162:8080/";
+    public static final String baseUrl = "http://10.1.115.115";
 
 
     //TODO: Селекторы для проверки формы регистрации
