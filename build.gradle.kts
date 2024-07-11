@@ -77,5 +77,3 @@ tasks.test {
     systemProperty("selenide.headless", System.getProperty("headless", "false"))
     useJUnitPlatform()
 }
-
-
