@@ -1,23 +1,17 @@
 package core;
 
-import com.codeborne.selenide.Configuration;
-import io.qameta.allure.Allure;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
-import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.io.BufferedReader;
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Map;
 
 public class TestBaseExtendet {
 
-    @AfterAll
-    public static void tearDown() {
-        Allure.addAttachment("Allure Report", new ByteArrayInputStream(getAllureReport().getBytes()));
-    }
+//    @AfterAll
+//    public static void tearDown() {
+//        Allure.addAttachment("Allure Report", new ByteArrayInputStream(getAllureReport().getBytes()));
+//    }
 
     private static String getAllureReport() {
         ProcessBuilder processBuilder = new ProcessBuilder("allure", "generate", "allure-results", "--clean");

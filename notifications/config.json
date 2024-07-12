@@ -1,12 +1,12 @@
 {
   "base":
   {
-    "project": "some project",
-    "environment": "some env",
-    "comment": "some comment",
+    "project": "Автотесты PIR/Махачкала",
+    "environment": "OC Windows 10, Browser: Google Chrome, Assembly System: Gradle, Language: Java, Framework: Junit 5",
+    "comment": "",
     "reportLink": "",
     "language": "ru",
-    "allureFolder": "build/reports/allure-report/allureReport/widgets/summary.json",
+    "allureFolder": "build/reports/allure-report/allureReport",
     "enableChart": true,
     "logo": "logo.png",
     "durationFormat": "HH:mm:ss.SSS"

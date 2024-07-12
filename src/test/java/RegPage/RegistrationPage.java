@@ -1,14 +1,14 @@
 package RegPage;
 
 import com.codeborne.selenide.SelenideElement;
+import helpers.InitDriver;
+
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selenide.*;
 
-public class RegistrationPage {
+public class RegistrationPage extends InitDriver {
 
-    private final String TITLE_TEXT = "Sign in to your account";
-    public static final String baseUrl = "http://10.1.115.162:8080/";
+    public static final String baseUrl = "http://10.1.115.115";
 
 
     //TODO: Селекторы для проверки формы регистрации
@@ -22,28 +22,25 @@ public class RegistrationPage {
     private final SelenideElement InputLogin = $("#kc-login");
 
 
-    public RegistrationPage openPage() {
+    public void openPage() {
         open(baseUrl);
+        String TITLE_TEXT = "Sign in to your account";
         $("#kc-page-title").shouldHave(text(TITLE_TEXT));
-        return this;
     }
 
 
-    public RegistrationPage setFirstName(String value) {
+    public void setFirstName(String value) {
         firstNameInput.setValue(value);
 
-        return this;
     }
 
-    public RegistrationPage setLastName(String value) {
+    public void setLastName(String value) {
         lastNameInput.setValue(value);
 
-        return this;
     }
-    public RegistrationPage setInputLogin() {
+    public void setInputLogin() {
         InputLogin.click();
 
-        return this;
     }
 
 }
