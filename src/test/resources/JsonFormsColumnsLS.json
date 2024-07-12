@@ -144,10 +144,10 @@
             "value5": "1\n2"
       },
       {
-            "filterIconSelector": "[data-test-id=pir_filter_action_open_homePhone]",
-            "typeFilterSelector": "[data-test-id=pir_filter_condition_comparison_homePhone_0]",
-            "applyButtonSelector": "[data-test-id=pir_filter_action_apply_homePhone]",
-            "valueOfListSelector": "[data-test-id=pir_filter_entries_list_homePhone]",
+            "filterIconSelector": "[data-test-id='pir_filter_action_open_homePhone']",
+            "typeFilterSelector": "[data-test-id='pir_filter_condition_comparison_homePhone_0']",
+            "applyButtonSelector": "[data-test-id='pir_filter_action_apply_homePhone']",
+            "valueOfListSelector": "[data-test-id='pir_filter_entries_list_homePhone']",
             "valueOfMassFilterSelector": "[data-test-id='pir_filter_entries_list_homePhone']",
             "enterValueSelector": "input[data-test-id='pir_filter_condition_comparison_homePhone_0']",
             "containsOfValueColumnsSelector": "div[class='pir-table'] tbody tr.el-table_1_column_9",
