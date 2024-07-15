@@ -23,7 +23,7 @@ public class RegistrationPage extends InitDriver {
 
 
     public void openPage() {
-        open(baseUrl);
+        driver.get(baseUrl);
         String TITLE_TEXT = "Sign in to your account";
         $("#kc-page-title").shouldHave(text(TITLE_TEXT));
     }
