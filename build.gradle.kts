@@ -25,7 +25,7 @@ dependencies {
 
     testImplementation("com.codeborne:selenide:7.3.2")
     testImplementation("org.seleniumhq.selenium:selenium-chrome-driver:4.20.0")
-    testImplementation("io.github.bonigarcia:webdrivermanager:5.7.0")
+//    testImplementation("io.github.bonigarcia:webdrivermanager:5.7.0")
     testImplementation("org.slf4j:slf4j-simple:2.0.13")
 
     testImplementation ("org.aspectj:aspectjweaver:1.9.22")
