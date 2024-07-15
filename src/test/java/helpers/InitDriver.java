@@ -22,7 +22,7 @@ abstract public class InitDriver {
 
         switch (TestConfig.browser.toLowerCase()) {
             case "chrome":
-                WebDriverManager.chromedriver().setup();
+                WebDriverManager.chromedriver().driverVersion(System.getProperty("browser_version")).setup();
                 driver = new ChromeDriver();
                 break;
             case "firefox":
