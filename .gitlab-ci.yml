@@ -11,16 +11,17 @@ app-test:
   before_script:
     - apk update
     - apk add --no-cache bash curl
-    - apk add --no-cache chromium=126.0.6478.127-r0
-    - apk add --no-cache chromium-chromedriver=126.0.6478.127-r0
+    - apk add --no-cache chromium
+    - apk add --no-cache chromium-chromedriver
     - export PATH=$PATH:/usr/lib/chromium/
     - echo "Chromium version:"
     - chromium-browser --version
+    - export BROWSER_VERSION=$(chromium-browser --version | awk '{ print $2 }')
     - echo "ChromeDriver version:"
     - chromedriver --version
   script:
     - chmod +x ./gradlew
-    - ./gradlew clean test -Dbrowser=chrome -Dheadless=true
+    - ./gradlew clean test -Dbrowser=chrome -Dheadless=true -Dbrowser_version=$BROWSER_VERSION
 
   artifacts:
     when: always
@@ -36,5 +37,5 @@ test-report:
   script:
     - apk update
     - apk add --no-cache msttcorefonts-installer fontconfig && update-ms-fonts
-    - chmod +x ./gradlewapk add --no-cache chromium=126.0.6478.127-r0 && ./gradlew allureReport
+    - chmod +x ./gradlew && ./gradlew allureReport
     - java "-DconfigFile=notifications/config.json" -jar notifications/allure-notifications-4.6.1.jar
