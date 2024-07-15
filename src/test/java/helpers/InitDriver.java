@@ -17,7 +17,7 @@ abstract public class InitDriver {
     @BeforeAll
     public static void setUp() {
         Configuration.webdriverLogsEnabled = true;
-        Configuration.browserVersion = System.getProperty("browser_version");
+        // Configuration.browserVersion = System.getProperty("browser_version");
         Configuration.browserSize = "2560x1440";
 
         switch (TestConfig.browser.toLowerCase()) {
