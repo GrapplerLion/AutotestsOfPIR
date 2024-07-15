@@ -1,8 +1,6 @@
 package tests;
 
-import helpers.InitDriver;
 import io.qameta.allure.Feature;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
 import tests.steps.StepFormsFilterLS;
 import tests.steps.StepFormsSorting;
@@ -11,12 +9,7 @@ import java.awt.*;
 import java.io.IOException;
 
 public class PersonalAccountTestCase {
-
-    @AfterAll
-    public static void tearDown() {
-        InitDriver.tearDown();
-    }
-
+    
     private final StepFormsFilterLS stepFormsFilterLS = new StepFormsFilterLS();
     private final StepFormsSorting stepFormsSorting = new StepFormsSorting();
 

@@ -36,7 +36,7 @@ class DataColumn {
         public String checkBoxAllResultsSelector;
         public String checkBoxFalseSelector;
         public String checkBoxTrueSelector;
-
+        public String type;
     }
 
     class Column {
@@ -60,6 +60,7 @@ class DataColumn {
         public SelenideElement checkboxAllResults;
         public SelenideElement checkboxFalse;
         public SelenideElement checkboxTrue;
+        public String type;
 
         public Column(DataColumn column){
             value1 = column.value1;
@@ -81,6 +82,7 @@ class DataColumn {
             checkboxAllResults = $(column.checkBoxAllResultsSelector);
             checkboxFalse = $(column.checkBoxFalseSelector);
             checkboxTrue = $(column.checkBoxTrueSelector);
+            type = column.type;
         }
     }
 
@@ -359,18 +361,25 @@ class Main {
                         if (dataColumn != null) {
                             Column column = new Column(dataColumn);
                             ColumnFilter columnFilter = new ColumnFilter(column);
-                            columnFilter.applyFilterAndCheckVoid(1);
-                            columnFilter.applyFilterAndCheckNotVoid(2);
-                            columnFilter.applyFilterAndCheckEquals(3, true);
-                            columnFilter.applyFilterAndCheckNotEquals(4, false);
-                            columnFilter.applyFilterAndCheckBeginWith(5, true);
-                            columnFilter.applyFilterAndCheckNotBeginWith(6, false);
-                            columnFilter.applyFilterAndCheckEndsWith(7, true);
-                            columnFilter.applyFilterAndCheckNotEndsWith(8, false);
-                            columnFilter.applyFilterAndCheckContains(9, true);
-                            columnFilter.applyFilterAndCheckNotContains(10, false);
-                            columnFilter.applyFilterAndCheckIncludes(11);
-                            columnFilter.applyFilterAndCheckExcludes(12);
+                            if ("boolean".equalsIgnoreCase(column.type)) {
+                                // Логическая колонка
+                                columnFilter.applyFilterBooleanVoid();
+                                columnFilter.applyFilterBooleanFalse();
+                                columnFilter.applyFilterBooleanTrue();
+                            } else {
+                                columnFilter.applyFilterAndCheckVoid(1);
+                                columnFilter.applyFilterAndCheckNotVoid(2);
+                                columnFilter.applyFilterAndCheckEquals(3, true);
+                                columnFilter.applyFilterAndCheckNotEquals(4, false);
+                                columnFilter.applyFilterAndCheckBeginWith(5, true);
+                                columnFilter.applyFilterAndCheckNotBeginWith(6, false);
+                                columnFilter.applyFilterAndCheckEndsWith(7, true);
+                                columnFilter.applyFilterAndCheckNotEndsWith(8, false);
+                                columnFilter.applyFilterAndCheckContains(9, true);
+                                columnFilter.applyFilterAndCheckNotContains(10, false);
+                                columnFilter.applyFilterAndCheckIncludes(11);
+                                columnFilter.applyFilterAndCheckExcludes(12);
+                            }
                         }
         }
     }

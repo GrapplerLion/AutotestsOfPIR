@@ -1,12 +1,12 @@
 package RegPage;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
-import helpers.InitDriver;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
-public class RegistrationPage extends InitDriver {
+public class RegistrationPage {
 
     public static final String baseUrl = "http://10.1.115.115";
 
@@ -23,7 +23,7 @@ public class RegistrationPage extends InitDriver {
 
 
     public void openPage() {
-        driver.get(baseUrl);
+        open(baseUrl);
         String TITLE_TEXT = "Sign in to your account";
         $("#kc-page-title").shouldHave(text(TITLE_TEXT));
     }

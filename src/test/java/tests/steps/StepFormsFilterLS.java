@@ -9,7 +9,6 @@ import HorizontalPanelOptions.UpdateTable;
 import VerticalBarOptions.VerticalBar;
 import VerticalBarOptions.XlsFileExport;
 import com.codeborne.selenide.*;
-import helpers.InitDriver;
 import io.qameta.allure.Step;
 
 import java.awt.*;
