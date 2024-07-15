@@ -16,11 +16,12 @@ app-test:
     - export PATH=$PATH:/usr/lib/chromium/
     - echo "Chromium version:"
     - chromium-browser --version
+    - export BROWSER_VERSION=$(chromium-browser --version | awk '{ print $2 }')
     - echo "ChromeDriver version:"
     - chromedriver --version
   script:
     - chmod +x ./gradlew
-    - ./gradlew clean test -Dbrowser=chrome -Dheadless=true
+    - ./gradlew clean test -Dbrowser=chrome -Dheadless=true -Dbrowser_version=$BROWSER_VERSION
 
   artifacts:
     when: always
