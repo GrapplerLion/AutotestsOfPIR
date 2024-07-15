@@ -20,7 +20,7 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
 
-public class StepFormsFilterLS extends InitDriver {
+public class StepFormsFilterLS {
 
     @Step("Авторизация на сайт")
     public void Authorization(String username, String password) {

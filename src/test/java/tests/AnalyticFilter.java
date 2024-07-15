@@ -33,6 +33,9 @@ class DataColumn {
         public String activeFiltersSelector;
         public String closeFiltersSelector;
         public String tableOfSizeSelector;
+        public String checkBoxAllResultsSelector;
+        public String checkBoxFalseSelector;
+        public String checkBoxTrueSelector;
 
     }
 
@@ -54,6 +57,9 @@ class DataColumn {
         public SelenideElement activeFilters;
         public SelenideElement closeFilters;
         public ElementsCollection tableOfSize;
+        public SelenideElement checkboxAllResults;
+        public SelenideElement checkboxFalse;
+        public SelenideElement checkboxTrue;
 
         public Column(DataColumn column){
             value1 = column.value1;
@@ -72,17 +78,20 @@ class DataColumn {
             activeFilters = $(column.activeFiltersSelector);
             closeFilters = $(column.closeFiltersSelector);
             tableOfSize = $$(column.tableOfSizeSelector);
+            checkboxAllResults = $(column.checkBoxAllResultsSelector);
+            checkboxFalse = $(column.checkBoxFalseSelector);
+            checkboxTrue = $(column.checkBoxTrueSelector);
         }
     }
 
-class ColumnFilter{
+class ColumnFilter {
 
 
     public Column column;
-    public ColumnFilter(Column schema){
+
+    public ColumnFilter(Column schema) {
         this.column = schema;
     }
-
 
 
     public void applyFilterAndCheckVoid(int sectionNumber) {
@@ -149,7 +158,7 @@ class ColumnFilter{
         column.applyButton.shouldBe(visible, enabled).click();
         column.activeFilters.shouldHave(text(column.label));
         column.containsOfValueColumns.forEach(element ->
-                element.shouldHave(matchText("'"+column.value2+"'.*")));
+                element.shouldHave(matchText("'" + column.value2 + "'.*")));
         column.closeFilters.shouldBe(visible, enabled).click();
     }
 
@@ -164,7 +173,7 @@ class ColumnFilter{
         column.applyButton.shouldBe(visible, enabled).click();
         column.activeFilters.shouldBe(visible, enabled).shouldHave(text(column.label));
         column.containsOfValueColumns.forEach(element ->
-                element.shouldNotHave(matchText("'"+column.value2+"'.*")));
+                element.shouldNotHave(matchText("'" + column.value2 + "'.*")));
         column.closeFilters.shouldBe(visible, enabled).click();
     }
 
@@ -182,7 +191,7 @@ class ColumnFilter{
         for (SelenideElement element : column.containsOfValueColumns) {
             String text = element.getText();
             if (!text.endsWith(column.value3)) {
-                System.out.println("Элемент с текстом '" + text + "' не заканчивается на '"+column.value3+"'");
+                System.out.println("Элемент с текстом '" + text + "' не заканчивается на '" + column.value3 + "'");
             }
         }
         column.closeFilters.shouldBe(visible, enabled).click();
@@ -202,7 +211,7 @@ class ColumnFilter{
         for (SelenideElement element : column.containsOfValueColumns) {
             String text = element.getText();
             if (text.endsWith(column.value3)) {
-                System.out.println("Элемент с текстом '" + text + "' заканчивается на '"+column.value3+"'");
+                System.out.println("Элемент с текстом '" + text + "' заканчивается на '" + column.value3 + "'");
             }
         }
         column.closeFilters.shouldBe(visible, enabled).click();
@@ -222,7 +231,7 @@ class ColumnFilter{
         for (SelenideElement element : column.containsOfValueColumns) {
             String text = element.getText().toLowerCase();
             if (!text.contains(column.value4)) {
-                System.out.println("Элемент с текстом '" + element.getText() + "' не содержит '"+column.value4+"'");
+                System.out.println("Элемент с текстом '" + element.getText() + "' не содержит '" + column.value4 + "'");
             }
         }
         column.closeFilters.shouldBe(visible, enabled).click();
@@ -242,7 +251,7 @@ class ColumnFilter{
         for (SelenideElement element : column.containsOfValueColumns) {
             String text = element.getText().toLowerCase();
             if (text.contains(column.value4)) {
-                System.out.println("Элемент с текстом '" + element.getText() + "' содержит '"+column.value4+"'");
+                System.out.println("Элемент с текстом '" + element.getText() + "' содержит '" + column.value4 + "'");
             }
         }
         column.closeFilters.shouldBe(visible, enabled).click();
@@ -259,7 +268,7 @@ class ColumnFilter{
         for (SelenideElement element : column.containsOfValueColumns) {
             String text = element.getText().toLowerCase();
             if (!text.contains(column.value5)) {
-                System.out.println("Элемент с текстом '" + element.getText() + "' не содержит '" + column.value5+ "'");
+                System.out.println("Элемент с текстом '" + element.getText() + "' не содержит '" + column.value5 + "'");
             }
         }
         column.closeFilters.shouldBe(visible, enabled).click();
@@ -276,9 +285,36 @@ class ColumnFilter{
         for (SelenideElement element : column.containsOfValueColumns) {
             String text = element.getText().toLowerCase();
             if (text.contains(column.value5)) {
-                System.out.println("Элемент с текстом '" + element.getText() + "' содержит '" + column.value5+ "'");
+                System.out.println("Элемент с текстом '" + element.getText() + "' содержит '" + column.value5 + "'");
             }
         }
+        column.closeFilters.shouldBe(visible, enabled).click();
+    }
+
+    public void applyFilterBooleanVoid(){
+        scrollToElementIfNotVisible(column.filterIcon);
+        column.filterIcon.shouldBe(visible, enabled).click();
+        column.checkboxAllResults.shouldBe(visible, enabled).click();
+        column.applyButton.shouldBe(visible, enabled).click();
+        column.containsOfValueColumns.shouldHave(CollectionCondition.empty);
+        column.closeFilters.shouldBe(visible, enabled).click();
+    }
+
+    public void applyFilterBooleanFalse(){
+        column.filterIcon.shouldBe(visible, enabled).click();
+        column.checkboxFalse.shouldBe(visible, enabled).click();
+        column.applyButton.shouldBe(visible, enabled).click();
+        column.containsOfValueColumns.forEach(element ->
+                element.shouldHave(text(column.value2)));
+        column.closeFilters.shouldBe(visible, enabled).click();
+    }
+
+    public void applyFilterBooleanTrue(){
+        column.filterIcon.shouldBe(visible, enabled).click();
+        column.checkboxTrue.shouldBe(visible, enabled).click();
+        column.applyButton.shouldBe(visible, enabled).click();
+        column.containsOfValueColumns.forEach(element ->
+                element.shouldHave(text(column.value3)));
         column.closeFilters.shouldBe(visible, enabled).click();
     }
 
@@ -286,14 +322,15 @@ class ColumnFilter{
         SelenideElement filterIsNumber = $("[aria-hidden='false'] ul li:nth-child(" + sectionNumber + ")");
         filterIsNumber.click();
     }
+
     public void scrollToElementIfNotVisible(SelenideElement element) {
         while (!element.isDisplayed()) {
             executeJavaScript("arguments[0].scrollIntoView({block: 'nearest', inline: 'end'});", element);
             sleep(500);  // Дополнительная пауза
         }
     }
-
 }
+
 class Section {
     DataColumn[] columns;
 
