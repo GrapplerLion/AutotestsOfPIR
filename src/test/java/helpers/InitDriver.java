@@ -17,12 +17,13 @@ abstract public class InitDriver {
     @BeforeAll
     public static void setUp() {
         Configuration.webdriverLogsEnabled = true;
-        Configuration.browserVersion = "126.0.6478.127";
+        // Configuration.browserVersion = "126.0.6478.127";
         Configuration.browserSize = "2560x1440";
 
         switch (TestConfig.browser.toLowerCase()) {
             case "chrome":
-                System.setProperty("webdriver.chrome.driver", "drivers/chromedriver-win64/chromedriver.exe");
+                // System.setProperty("webdriver.chrome.driver", "drivers/chromedriver-win64/chromedriver.exe");
+                WebDriverManager.chromiumdriver().setup()
                 driver = new ChromeDriver();
                 break;
             case "firefox":
