@@ -1,3 +1,5 @@
+import kotlin.time.Duration
+
 plugins {
     id("java")
     id ("io.qameta.allure") version ("2.11.2")

@@ -5,7 +5,7 @@
             "applyButtonSelector": "[data-test-id=pir_filter_action_apply_courtCaseNumber]",
             "valueOfListSelector": "[data-test-id=pir_filter_entries_list_courtCaseNumber]",
             "valueOfMassFilterSelector": "[data-test-id='pir_filter_mass_input_courtCaseNumber']",
-            "enterValueSelector": "input[data-test-id='pir_filter_condition_comparison_courtCaseNumber_0']",
+            "enterValueSelector": "input[data-test-id='pir_filter_condition_value_courtCaseNumber_0']",
             "containsOfValueColumnsSelector": "div[class='pir-table'] tbody tr.el-table_1_column_1",
             "activeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div",
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
@@ -15,25 +15,22 @@
             "value2": "",
             "value3": "",
             "value4": "",
-            "value5": ""
+            "value5": "",
+            "type": "String"
       },
       {
             "filterIconSelector": "[data-test-id=pir_filter_action_open_courtCaseDate]",
             "typeFilterSelector": "[data-test-id='pir_filter_condition_comparison_courtCaseDate_0']",
             "applyButtonSelector": "[data-test-id=pir_filter_action_apply_courtCaseDate]",
             "valueOfListSelector": "[data-test-id=pir_filter_entries_list_courtCaseDate]",
-            "valueOfMassFilterSelector": "[data-test-id='pir_filter_mass_input_courtCaseDate']",
-            "enterValueSelector": "input[data-test-id='pir_filter_condition_comparison_courtCaseDate_0']",
+            "enterValueSelector": "input[data-test-id='pir_filter_condition_value_courtCaseDate_0']",
             "containsOfValueColumnsSelector": "div[class='pir-table'] tbody tr.el-table_1_column_2",
             "activeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div",
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Дата",
             "value1": "",
-            "value2": "",
-            "value3": "",
-            "value4": "",
-            "value5": ""
+            "type": "Date"
       },
       {
             "filterIconSelector": "[data-test-id=pir_filter_action_open_refCourtCaseProcType_name]",
@@ -41,7 +38,7 @@
             "applyButtonSelector": "[data-test-id=pir_filter_action_apply_refCourtCaseProcType_name]",
             "valueOfListSelector": "[data-test-id=pir_filter_entries_list_refCourtCaseProcType_name]",
             "valueOfMassFilterSelector": "[data-test-id='pir_filter_mass_input_refCourtCaseProcType_name']",
-            "enterValueSelector": "input[data-test-id='pir_filter_condition_comparison_refCourtCaseProcType_name_0']",
+            "enterValueSelector": "input[data-test-id='pir_filter_condition_value_refCourtCaseProcType_name_0']",
             "containsOfValueColumnsSelector": "div[class='pir-table'] tbody tr.el-table_1_column_3",
             "activeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div",
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
@@ -51,7 +48,8 @@
             "value2": "",
             "value3": "",
             "value4": "",
-            "value5": ""
+            "value5": "",
+            "type": "String"
       },
       {
             "filterIconSelector": "[data-test-id='pir_filter_action_open_precourtWork_acc_refOrg_name]",
@@ -59,7 +57,7 @@
             "applyButtonSelector": "[data-test-id='pir_filter_action_apply_precourtWork_acc_refOrg_name]",
             "valueOfListSelector": "[data-test-id='pir_filter_entries_list_precourtWork_acc_refOrg_name]",
             "valueOfMassFilterSelector": "[data-test-id='pir_filter_mass_input_precourtWork_acc_refOrg_name]",
-            "enterValueSelector": "input[data-test-id=pir_filter_condition_comparison_precourtWork_acc_refOrg_name_0]",
+            "enterValueSelector": "input[data-test-id=pir_filter_condition_value_precourtWork_acc_refOrg_name_0]",
             "containsOfValueColumnsSelector": "div[class='pir-table'] tbody tr.el-table_1_column_4",
             "activeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div",
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
@@ -69,7 +67,8 @@
             "value2": "",
             "value3": "",
             "value4": "",
-            "value5": ""
+            "value5": "",
+            "type": "String"
       },
       {
             "filterIconSelector": "[data-test-id=pir_filter_action_open_refDepartment_name]",
@@ -77,7 +76,7 @@
             "applyButtonSelector": "[data-test-id=pir_filter_action_apply_refDepartment_name]",
             "valueOfListSelector": "[data-test-id=pir_filter_entries_list_refDepartment_name]",
             "valueOfMassFilterSelector": "[data-test-id='pir_filter_mass_input_refDepartment_name']",
-            "enterValueSelector": "input[data-test-id='pir_filter_condition_comparison_refDepartment_name_0']",
+            "enterValueSelector": "input[data-test-id='pir_filter_condition_value_refDepartment_name_0']",
             "containsOfValueColumnsSelector": "div[class='pir-table'] tbody tr.el-table_1_column_5",
             "activeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div",
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
@@ -87,7 +86,8 @@
             "value2": "",
             "value3": "",
             "value4": "",
-            "value5": ""
+            "value5": "",
+            "type": "String"
       },
       {
             "filterIconSelector": "[data-test-id=pir_filter_action_open_accNumber]",
@@ -95,7 +95,7 @@
             "applyButtonSelector": "[data-test-id=pir_filter_action_apply_accNumber]",
             "valueOfListSelector": "[data-test-id=pir_filter_entries_list_accNumber]",
             "valueOfMassFilterSelector": "[data-test-id=pir_filter_mass_input_accNumber]",
-            "enterValueSelector": "input[data-test-id=pir_filter_condition_comparison_accNumber_0]",
+            "enterValueSelector": "input[data-test-id=pir_filter_condition_value_accNumber_0]",
             "containsOfValueColumnsSelector": "div[class='pir-table'] tbody tr.el-table_1_column_6",
             "activeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div",
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
@@ -105,7 +105,8 @@
             "value2": "",
             "value3": "",
             "value4": "",
-            "value5": ""
+            "value5": "",
+            "type": "String"
       },
       {
             "filterIconSelector": "[data-test-id=pir_filter_action_open_precourtWork_acc_accHoldIndivs_fio]",
@@ -113,7 +114,7 @@
             "applyButtonSelector": "[data-test-id=pir_filter_action_apply_precourtWork_acc_accHoldIndivs_fio]",
             "valueOfListSelector": "[data-test-id=pir_filter_entries_list_precourtWork_acc_accHoldIndivs_fio]",
             "valueOfMassFilterSelector": "[data-test-id=pir_filter_mass_input_precourtWork_acc_accHoldIndivs_fio]",
-            "enterValueSelector": "input[data-test-id=pir_filter_condition_precourtWork_acc_accHoldIndivs_fio_0]",
+            "enterValueSelector": "input[data-test-id=pir_filter_condition_value_precourtWork_acc_accHoldIndivs_fio_0]",
             "containsOfValueColumnsSelector": "div[class='pir-table'] tbody tr.el-table_1_column_7",
             "activeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div",
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
@@ -123,7 +124,8 @@
             "value2": "",
             "value3": "",
             "value4": "",
-            "value5": ""
+            "value5": "",
+            "type": "String"
       },
       {
             "filterIconSelector": "[data-test-id='pir_filter_action_open_mobilePhone]",
@@ -131,7 +133,7 @@
             "applyButtonSelector": "[data-test-id='pir_filter_action_apply_mobilePhone]",
             "valueOfListSelector": "[data-test-id='pir_filter_entries_list_mobilePhone]",
             "valueOfMassFilterSelector": "[data-test-id='pir_filter_mass_input_mobilePhone]",
-            "enterValueSelector": "input[data-test-id='pir_filter_condition_comparison_mobilePhone_0]",
+            "enterValueSelector": "input[data-test-id='pir_filter_condition_value_mobilePhone_0]",
             "containsOfValueColumnsSelector": "div[class='pir-table'] tbody tr.el-table_1_column_8",
             "activeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div",
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
@@ -141,7 +143,8 @@
             "value2": "",
             "value3": "",
             "value4": "",
-            "value5": ""
+            "value5": "",
+            "type": "String"
       },
       {
             "filterIconSelector": "[data-test-id=pir_filter_action_open_precourtWork_docName]",
@@ -149,7 +152,7 @@
             "applyButtonSelector": "[data-test-id=pir_filter_action_apply_precourtWork_docName]",
             "valueOfListSelector": "[data-test-id=pir_filter_entries_list_precourtWork_docName]",
             "valueOfMassFilterSelector": "[data-test-id='pir_filter_entries_list_precourtWork_docName]",
-            "enterValueSelector": "input[data-test-id='pir_filter_condition_comparison_precourtWork_docName_0]",
+            "enterValueSelector": "input[data-test-id='pir_filter_condition_value_precourtWork_docName_0]",
             "containsOfValueColumnsSelector": "div[class='pir-table'] tbody tr.el-table_1_column_9",
             "activeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div",
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
@@ -159,7 +162,8 @@
             "value2": "",
             "value3": "",
             "value4": "",
-            "value5": ""
+            "value5": "",
+            "type": "String"
       },
       {
             "filterIconSelector": "[data-test-id='pir_filter_action_open_curatorUser_fio]",
@@ -167,7 +171,7 @@
             "applyButtonSelector": "[data-test-id='pir_filter_action_apply_curatorUser_fio']",
             "valueOfListSelector": "[data-test-id='pir_filter_entries_list_curatorUser_fio']",
             "valueOfMassFilterSelector": "[data-test-id='pir_filter_mass_input_curatorUser_fio']",
-            "enterValueSelector": "input[data-test-id=pir_filter_condition_comparison_curatorUser_fio_0]",
+            "enterValueSelector": "input[data-test-id=pir_filter_condition_value_curatorUser_fio_0]",
             "containsOfValueColumnsSelector": "div[class='pir-table'] tbody tr.el-table_1_column_10",
             "activeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div",
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
@@ -177,7 +181,8 @@
             "value2": "",
             "value3": "",
             "value4": "",
-            "value5": ""
+            "value5": "",
+            "type": "String"
       },
       {
             "filterIconSelector": "[data-test-id='pir_filter_action_open_monthRelevanceStr']",
@@ -185,7 +190,7 @@
             "applyButtonSelector": "[data-test-id='pir_filter_action_apply_monthRelevanceStr']",
             "valueOfListSelector": "[data-test-id='pir_filter_entries_list_monthRelevanceStr']",
             "valueOfMassFilterSelector": "[data-test-id='pir_filter_mass_input_monthRelevanceStr]",
-            "enterValueSelector": "input[data-test-id=pir_filter_condition_comparison_monthRelevanceStr_0]",
+            "enterValueSelector": "input[data-test-id=pir_filter_condition_value_monthRelevanceStr_0]",
             "containsOfValueColumnsSelector": "div[class='pir-table'] tbody tr.el-table_1_column_11",
             "activeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div",
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
@@ -195,43 +200,36 @@
             "value2": "",
             "value3": "",
             "value4": "",
-            "value5": ""
+            "value5": "",
+            "type": "String"
       },
       {
             "filterIconSelector": "[data-test-id='pir_filter_action_open_startDate']",
             "typeFilterSelector": "[data-test-id='pir_filter_condition_comparison_startDate_0']",
             "applyButtonSelector": "[ddata-test-id='pir_filter_action_apply_startDate']",
             "valueOfListSelector": "[data-test-id='pir_filter_entries_list_startDate']",
-            "valueOfMassFilterSelector": "[data-test-id='pir_filter_mass_input_startDate']",
-            "enterValueSelector": "input[data-test-id=pir_filter_condition_comparison_startDate_0]",
+            "enterValueSelector": "input[data-test-id=pir_filter_condition_value_startDate_0]",
             "containsOfValueColumnsSelector": "div[class='pir-table'] tbody tr.el-table_1_column_12",
             "activeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div",
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Период взыскания с",
             "value1": "",
-            "value2": "",
-            "value3": "",
-            "value4": "",
-            "value5": ""
+            "type": "Date"
       },
       {
             "filterIconSelector": "[data-test-id='pir_filter_action_open_finishDate']",
             "typeFilterSelector": "[data-test-id='pir_filter_condition_comparison_finishDate_0']",
             "applyButtonSelector": "[data-test-id='pir_filter_action_apply_finishDate']",
             "valueOfListSelector": "[data-test-id='pir_filter_entries_list_finishDate']",
-            "valueOfMassFilterSelector": "[data-test-id='pir_filter_mass_input_finishDate']",
-            "enterValueSelector": "input[data-test-id=pir_filter_condition_comparison_finishDate_0]",
+            "enterValueSelector": "input[data-test-id=pir_filter_condition_value_finishDate_0]",
             "containsOfValueColumnsSelector": "div[class='pir-table'] tbody tr.el-table_1_column_13",
             "activeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div",
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Период взыскания по",
             "value1": "",
-            "value2": "",
-            "value3": "",
-            "value4": "",
-            "value5": ""
+            "type": "Date"
       },
       {
             "filterIconSelector": "[data-test-id='pir_filter_action_open_courtCaseAction_refCourtCaseState_name']",
@@ -239,7 +237,7 @@
             "applyButtonSelector": "[data-test-id='pir_filter_action_apply_courtCaseAction_refCourtCaseState_name']",
             "valueOfListSelector": "[data-test-id='pir_filter_entries_list_courtCaseAction_refCourtCaseState_name']",
             "valueOfMassFilterSelector": "[data-test-id='pir_filter_mass_input_courtCaseAction_refCourtCaseState_name']",
-            "enterValueSelector": "input[data-test-id=pir_filter_condition_comparison_courtCaseAction_refCourtCaseState_name_0]",
+            "enterValueSelector": "input[data-test-id=pir_filter_condition_value_courtCaseAction_refCourtCaseState_name_0]",
             "containsOfValueColumnsSelector": "div[class='pir-table'] tbody tr.el-table_1_column_14",
             "activeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div",
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
@@ -249,25 +247,21 @@
             "value2": "",
             "value3": "",
             "value4": "",
-            "value5": ""
+            "value5": "",
+            "type": "String"
       },
       {
             "filterIconSelector": "[data-test-id='pir_filter_action_open_courtCaseAction_refCourtCaseState_isFinish']",
-            "typeFilterSelector": "[data-test-id='pir_filter_condition_comparison_courtCaseAction_refCourtCaseState_isFinish_0']",
             "applyButtonSelector": "[data-test-id='pir_filter_action_apply_courtCaseAction_refCourtCaseState_isFinish']",
-            "valueOfListSelector": "[data-test-id='pir_filter_entries_list_courtCaseAction_refCourtCaseState_isFinish']",
-            "valueOfMassFilterSelector": "[data-test-id='pir_filter_mass_input_courtCaseAction_refCourtCaseState_isFinish']",
-            "enterValueSelector": "input[data-test-id=pir_filter_condition_comparison_courtCaseAction_refCourtCaseState_isFinish_0]",
+            "checkBoxListSelector": "[data-test-id='pir_filter_entries_list_courtCaseAction_refCourtCaseState_isFinish']",
             "containsOfValueColumnsSelector": "div[class='pir-table'] tbody tr.el-table_1_column_15",
             "activeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div",
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
-            "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Завершено",
-            "value1": "",
-            "value2": "",
-            "value3": "",
-            "value4": "",
-            "value5": ""
+            "value1": "Выделить все результаты",
+            "value2": "Нет",
+            "value3": "Да",
+            "type": "Boolean"
       },
       {
             "filterIconSelector": "[data-test-id='pir_filter_action_open_stateDutySum']",
@@ -275,7 +269,7 @@
             "applyButtonSelector": "[data-test-id='pir_filter_action_apply_stateDutySum']",
             "valueOfListSelector": "[data-test-id='pir_filter_entries_list_stateDutySum']",
             "valueOfMassFilterSelector": "[data-test-id='pir_filter_mass_input_stateDutySum']",
-            "enterValueSelector": "input[data-test-id=pir_filter_condition_comparison_stateDutySum_0]",
+            "enterValueSelector": "input[data-test-id=pir_filter_condition_value_stateDutySum_0]",
             "containsOfValueColumnsSelector": "div[class='pir-table'] tbody tr.el-table_1_column_16",
             "activeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div",
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
@@ -285,7 +279,8 @@
             "value2": "",
             "value3": "",
             "value4": "",
-            "value5": ""
+            "value5": "",
+            "type": "Float"
       },
       {
             "filterIconSelector": "[data-test-id='pir_filter_action_open_user_fio']",
@@ -293,7 +288,7 @@
             "applyButtonSelector": "[data-test-id='pir_filter_action_apply_user_fio']",
             "valueOfListSelector": "[data-test-id='pir_filter_entries_list_user_fio']",
             "valueOfMassFilterSelector": "[data-test-id='pir_filter_mass_input_user_fio']",
-            "enterValueSelector": "input[data-test-id=pir_filter_condition_comparison_user_fio_0]",
+            "enterValueSelector": "input[data-test-id=pir_filter_condition_value_user_fio_0]",
             "containsOfValueColumnsSelector": "div[class='pir-table'] tbody tr.el-table_1_column_17",
             "activeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div",
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
@@ -303,43 +298,35 @@
             "value2": "",
             "value3": "",
             "value4": "",
-            "value5": ""
+            "value5": "",
+            "type": "String"
       },
       {
             "filterIconSelector": "[data-test-id='pir_filter_action_open_claimToRgk']",
-            "typeFilterSelector": "[data-test-id='pir_filter_condition_comparison_claimToRgk_0']",
             "applyButtonSelector": "[data-test-id='pir_filter_action_apply_claimToRgk']",
-            "valueOfListSelector": "[data-test-id='pir_filter_entries_list_claimToRgk']",
-            "valueOfMassFilterSelector": "[data-test-id='pir_filter_mass_input_claimToRgk']",
-            "enterValueSelector": "input[data-test-id=pir_filter_condition_comparison_claimToRgk_0]",
+            "checkBoxListSelector": "[data-test-id='pir_filter_entries_list_claimToRgk']",
             "containsOfValueColumnsSelector": "div[class='pir-table'] tbody tr.el-table_1_column_18",
             "activeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div",
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
-            "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Иск абонента к РГК",
-            "value1": "",
-            "value2": "",
-            "value3": "",
-            "value4": "",
-            "value5": ""
+            "value1": "Выделить все результаты",
+            "value2": "Нет",
+            "value3": "Да",
+            "type": "Boolean"
       },
       {
             "filterIconSelector": "[data-test-id='pir_filter_action_open_equipment_lastChangeDate']",
             "typeFilterSelector": "[data-test-id='pir_filter_condition_comparison_equipment_lastChangeDate_0']",
             "applyButtonSelector": "[data-test-id='pir_filter_action_apply_equipment_lastChangeDate'",
             "valueOfListSelector": "[data-test-id='pir_filter_entries_list_equipment_lastChangeDate']",
-            "valueOfMassFilterSelector": "[data-test-id='pir_filter_mass_input_equipment_lastChangeDate']",
-            "enterValueSelector": "input[data-test-id='pir_filter_condition_comparison_equipment_lastChangeDate_0]",
+            "enterValueSelector": "input[data-test-id='pir_filter_condition_value_equipment_lastChangeDate_0]",
             "containsOfValueColumnsSelector": "div[class='pir-table'] tbody tr.el-table_1_column_19",
             "activeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div",
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Дата последнего изменения",
             "value1": "",
-            "value2": "",
-            "value3": "",
-            "value4": "",
-            "value5": ""
+            "type": "Date"
       },
       {
             "filterIconSelector": "[data-test-id='pir_filter_action_open_mrgNumber']",
@@ -347,7 +334,7 @@
             "applyButtonSelector": "[data-test-id='pir_filter_action_apply_mrgNumber']",
             "valueOfListSelector": "[data-test-id='pir_filter_entries_list_mrgNumber']",
             "valueOfMassFilterSelector": "[data-test-id='pir_filter_mass_input_mrgNumber']",
-            "enterValueSelector": "input[data-test-id=pir_filter_condition_comparison_mrgNumber_0]",
+            "enterValueSelector": "input[data-test-id=pir_filter_condition_value_mrgNumber_0]",
             "containsOfValueColumnsSelector": "div[class='pir-table'] tbody tr.el-table_1_column_20",
             "activeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div",
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
@@ -357,24 +344,21 @@
             "value2": "",
             "value3": "",
             "value4": "",
-            "value5": ""
+            "value5": "",
+            "type": "String"
       },
       {
             "filterIconSelector": "[data-test-id='pir_filter_action_open_receiptInLegalDate']",
             "typeFilterSelector": "[data-test-id='pir_filter_condition_comparison_receiptInLegalDate_0']",
             "applyButtonSelector": "[data-test-id='pir_filter_action_apply_receiptInLegalDate']",
             "valueOfListSelector": "[data-test-id='pir_filter_entries_list_receiptInLegalDate']",
-            "valueOfMassFilterSelector": "[data-test-id='pir_filter_mass_input_receiptInLegalDate']",
-            "enterValueSelector": "input[data-test-id=pir_filter_condition_comparison_receiptInLegalDate_0]",
+            "enterValueSelector": "input[data-test-id=pir_filter_condition_value_receiptInLegalDate_0]",
             "containsOfValueColumnsSelector": "div[class='pir-table'] tbody tr.el-table_1_column_21",
             "activeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div",
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Дата передачи документов в ЮР отдел",
             "value1": "",
-            "value2": "",
-            "value3": "",
-            "value4": "",
-            "value5": ""
+            "type": "Date"
       }
 ]
