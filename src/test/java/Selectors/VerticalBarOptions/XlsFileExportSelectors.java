@@ -1,11 +1,11 @@
-package VerticalBarOptions;
+package Selectors.VerticalBarOptions;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
-public class XlsFileExport {
+public class XlsFileExportSelectors {
 
     //путь к выгрузке файла через настройки фильтра в колонке "Абонент"
     public SelenideElement filterIconForTypeHouse = $("[data-test-id='pir_filter_action_open_refBuildType_name']");

@@ -1,11 +1,11 @@
-package SelectorOfSortColumns;
+package Selectors.SortColumns;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.$;
 
-public class SortingColumn {
+public class SortingColumnSelectors {
 
     public SelenideElement inputSortLS = $("[data-test-id='pir_filter_sort_accNumber']");
     public SelenideElement inputSortAP = $("[data-test-id='pir_filter_sort_accNumber']");

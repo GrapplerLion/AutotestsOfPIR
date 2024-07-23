@@ -1,13 +1,12 @@
-package HorizontalPanelOptions;
+package Selectors.HorizontalPanelOptions;
 
-import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
-public class NumberOfLine {
+public class NumberOfLineSelectors {
 
     public SelenideElement inputLine = $("span.el-pagination__sizes .select-trigger.el-tooltip__trigger");
     //

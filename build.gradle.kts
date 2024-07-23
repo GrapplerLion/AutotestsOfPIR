@@ -1,5 +1,3 @@
-import kotlin.time.Duration
-
 plugins {
     id("java")
     id ("io.qameta.allure") version ("2.11.2")
@@ -13,17 +11,7 @@ repositories {
     maven { url = uri("https://repo.spring.io/milestone") }
 }
 
-//tasks {
-//    wrapper {
-//        gradleVersion = "8.4" // Используйте последнюю версию Gradle
-//        distributionType = Wrapper.DistributionType.ALL
-//    }
-//}
-
 dependencies {
-
-//    implementation("org.seleniumhq.selenium:selenium-java:31.0.1")
-//    testImplementation("org.testng:testng:7.7.0")
 
     testImplementation("com.codeborne:selenide:7.3.2")
     testImplementation("org.seleniumhq.selenium:selenium-chrome-driver:4.20.0")
@@ -45,8 +33,11 @@ dependencies {
     testImplementation("com.codeborne:xls-test:1.7.1")
     testImplementation("org.apache.poi:poi-ooxml:5.2.5")
 
-    implementation("com.fasterxml.jackson.core:jackson-core:2.17.1")
+    testImplementation("com.fasterxml.jackson.core:jackson-core:2.17.1")
 
+    testImplementation("net.datafaker:datafaker:2.3.1") {
+        exclude(group = "org.yaml", module = "snakeyaml")
+    }
 
 //    testImplementation("junit:junit:4.13.2")
 
@@ -58,7 +49,6 @@ dependencies {
 //    testImplementation("org.postgresql:postgresql:42.4.23"){
 //        exclude(group = "com.google.protobuf", module = "protobuf-java")
 //    }
-//    implementation(kotlin("script-runtime"))
 
 }
 

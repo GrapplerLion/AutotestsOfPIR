@@ -1,4 +1,4 @@
-package HorizontalPanelOptions;
+package Selectors.HorizontalPanelOptions;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
 
-public class UpdateTable {
+public class UpdateTableSelectors {
 
     public SelenideElement updateTableIcon = $("svg[class$='icon-tabler-refresh']");
     public final ElementsCollection numberOfAccounts = $$("tbody tr");

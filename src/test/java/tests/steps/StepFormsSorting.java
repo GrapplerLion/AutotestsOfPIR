@@ -1,6 +1,6 @@
 package tests.steps;
 
-import SelectorOfSortColumns.SortingColumn;
+import Selectors.SortColumns.SortingColumnSelectors;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.WebDriverRunner;
@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class StepFormsSorting {
 
-    private final SortingColumn sortingColumn = new SortingColumn();
+    private final SortingColumnSelectors sortingColumnSelectors = new SortingColumnSelectors();
 
 
     private boolean isSortedDescending(List<String> list) {
@@ -45,11 +45,11 @@ public class StepFormsSorting {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         // Получение количества строк и столбцов в таблице
-        ElementsCollection rows = sortingColumn.containsOfValueColumns.shouldBe(sizeGreaterThan(0));
+        ElementsCollection rows = sortingColumnSelectors.containsOfValueColumns.shouldBe(sizeGreaterThan(0));
         int colIndex = rows.first().$$("td").shouldBe(sizeGreaterThan(0)).size() - 1; // Индекс последнего столбца
 
         // Выполняем клик для сортировки по убыванию
-        sortingColumn.inputSortLS.click();
+        sortingColumnSelectors.inputSortLS.click();
 
         // Ожидание обновления таблицы
         try {
@@ -58,7 +58,7 @@ public class StepFormsSorting {
             // Игнорируем исключение, если таблица не обновляется как ожидалось
         }
 
-        rows = sortingColumn.containsOfValueColumns.shouldBe(sizeGreaterThan(0)); // Перезапрос строк после клика
+        rows = sortingColumnSelectors.containsOfValueColumns.shouldBe(sizeGreaterThan(0)); // Перезапрос строк после клика
 
         // Получение значений после сортировки по убыванию
         List<String> sortedDescValues = new ArrayList<>();
@@ -70,8 +70,8 @@ public class StepFormsSorting {
         assertTrue(isSortedDescending(sortedDescValues), "Значения в столбце " + (colIndex + 1) + " должны быть отсортированы в порядке убывания");
 
         // Выполняем клик для сортировки по возрастанию
-        sortingColumn.inputSortLS.click();
-        sortingColumn.inputSortLS.click();
+        sortingColumnSelectors.inputSortLS.click();
+        sortingColumnSelectors.inputSortLS.click();
 
 
         // Ожидание обновления таблицы
@@ -81,7 +81,7 @@ public class StepFormsSorting {
             // Игнорируем исключение, если таблица не обновляется как ожидалось
         }
 
-        rows = sortingColumn.containsOfValueColumns.shouldBe(sizeGreaterThan(0)); // Перезапрос строк после клика
+        rows = sortingColumnSelectors.containsOfValueColumns.shouldBe(sizeGreaterThan(0)); // Перезапрос строк после клика
 
         // Получение значений после сортировки по возрастанию
         List<String> sortedAscValues = new ArrayList<>();
@@ -102,11 +102,11 @@ public class StepFormsSorting {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         // Получение количества строк и столбцов в таблице
-        ElementsCollection rows = sortingColumn.containsOfValueColumns.shouldBe(sizeGreaterThan(0));
+        ElementsCollection rows = sortingColumnSelectors.containsOfValueColumns.shouldBe(sizeGreaterThan(0));
         int colIndex = rows.first().$$("td").shouldBe(sizeGreaterThan(0)).size() - 1; // Индекс последнего столбца
 
         // Выполняем клик для сортировки по убыванию
-        sortingColumn.inputSortAP.click();
+        sortingColumnSelectors.inputSortAP.click();
 
         // Ожидание обновления таблицы
         try {
@@ -115,7 +115,7 @@ public class StepFormsSorting {
             // Игнорируем исключение, если таблица не обновляется как ожидалось
         }
 
-        rows = sortingColumn.containsOfValueColumns.shouldBe(sizeGreaterThan(0)); // Перезапрос строк после клика
+        rows = sortingColumnSelectors.containsOfValueColumns.shouldBe(sizeGreaterThan(0)); // Перезапрос строк после клика
 
         // Получение значений после сортировки по убыванию
         List<String> sortedDescValues = new ArrayList<>();
@@ -127,8 +127,8 @@ public class StepFormsSorting {
         assertTrue(isSortedDescending(sortedDescValues), "Значения в столбце " + (colIndex + 1) + " должны быть отсортированы в порядке убывания");
 
         // Выполняем клик для сортировки по возрастанию
-        sortingColumn.inputSortAP.click();
-        sortingColumn.inputSortAP.click();
+        sortingColumnSelectors.inputSortAP.click();
+        sortingColumnSelectors.inputSortAP.click();
 
         // Ожидание обновления таблицы
         try {
@@ -137,7 +137,7 @@ public class StepFormsSorting {
             // Игнорируем исключение, если таблица не обновляется как ожидалось
         }
 
-        rows = sortingColumn.containsOfValueColumns.shouldBe(sizeGreaterThan(0)); // Перезапрос строк после клика
+        rows = sortingColumnSelectors.containsOfValueColumns.shouldBe(sizeGreaterThan(0)); // Перезапрос строк после клика
 
         // Получение значений после сортировки по возрастанию
         List<String> sortedAscValues = new ArrayList<>();
@@ -158,11 +158,11 @@ public class StepFormsSorting {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         // Получение количества строк и столбцов в таблице
-        ElementsCollection rows = sortingColumn.containsOfValueColumns.shouldBe(sizeGreaterThan(0));
+        ElementsCollection rows = sortingColumnSelectors.containsOfValueColumns.shouldBe(sizeGreaterThan(0));
         int colIndex = rows.first().$$("td").shouldBe(sizeGreaterThan(0)).size() - 1; // Индекс последнего столбца
 
         // Выполняем клик для сортировки по убыванию
-        sortingColumn.inputSortDR.click();
+        sortingColumnSelectors.inputSortDR.click();
 
         // Ожидание обновления таблицы
         try {
@@ -171,7 +171,7 @@ public class StepFormsSorting {
             // Игнорируем исключение, если таблица не обновляется как ожидалось
         }
 
-        rows = sortingColumn.containsOfValueColumns.shouldBe(sizeGreaterThan(0)); // Перезапрос строк после клика
+        rows = sortingColumnSelectors.containsOfValueColumns.shouldBe(sizeGreaterThan(0)); // Перезапрос строк после клика
 
         // Получение значений после сортировки по убыванию
         List<String> sortedDescValues = new ArrayList<>();
@@ -186,7 +186,7 @@ public class StepFormsSorting {
         assertTrue(isSortedDescending(sortedDescValues), "Значения в столбце " + (colIndex + 1) + " должны быть отсортированы в порядке убывания");
 
         // Выполняем клик для сортировки по возрастанию
-        sortingColumn.inputSortDR.click();
+        sortingColumnSelectors.inputSortDR.click();
 
         // Ожидание обновления таблицы
         try {
@@ -195,7 +195,7 @@ public class StepFormsSorting {
             // Игнорируем исключение, если таблица не обновляется как ожидалось
         }
 
-        rows = sortingColumn.containsOfValueColumns.shouldBe(sizeGreaterThan(0)); // Перезапрос строк после клика
+        rows = sortingColumnSelectors.containsOfValueColumns.shouldBe(sizeGreaterThan(0)); // Перезапрос строк после клика
 
         // Получение значений после сортировки по возрастанию
         List<String> sortedAscValues = new ArrayList<>();
@@ -219,11 +219,11 @@ public class StepFormsSorting {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         // Получение количества строк и столбцов в таблице
-        ElementsCollection rows = sortingColumn.containsOfValueColumns.shouldBe(sizeGreaterThan(0));
+        ElementsCollection rows = sortingColumnSelectors.containsOfValueColumns.shouldBe(sizeGreaterThan(0));
         int colIndex = rows.first().$$("td").shouldBe(sizeGreaterThan(0)).size() - 1; // Индекс последнего столбца
 
         // Выполняем клик для сортировки по убыванию
-        sortingColumn.inputSortSP.click();
+        sortingColumnSelectors.inputSortSP.click();
 
         // Ожидание обновления таблицы
         try {
@@ -232,7 +232,7 @@ public class StepFormsSorting {
             // Игнорируем исключение, если таблица не обновляется как ожидалось
         }
 
-        rows = sortingColumn.containsOfValueColumns.shouldBe(sizeGreaterThan(0)); // Перезапрос строк после клика
+        rows = sortingColumnSelectors.containsOfValueColumns.shouldBe(sizeGreaterThan(0)); // Перезапрос строк после клика
 
         // Получение значений после сортировки по убыванию
         List<String> sortedDescValues = new ArrayList<>();
@@ -244,8 +244,8 @@ public class StepFormsSorting {
         assertTrue(isSortedDescending(sortedDescValues), "Значения в столбце " + (colIndex + 1) + " должны быть отсортированы в порядке убывания");
 
         // Выполняем клик для сортировки по возрастанию
-        sortingColumn.inputSortSP.click();
-        sortingColumn.inputSortSP.click();
+        sortingColumnSelectors.inputSortSP.click();
+        sortingColumnSelectors.inputSortSP.click();
 
         // Ожидание обновления таблицы
         try {
@@ -254,7 +254,7 @@ public class StepFormsSorting {
             // Игнорируем исключение, если таблица не обновляется как ожидалось
         }
 
-        rows = sortingColumn.containsOfValueColumns.shouldBe(sizeGreaterThan(0)); // Перезапрос строк после клика
+        rows = sortingColumnSelectors.containsOfValueColumns.shouldBe(sizeGreaterThan(0)); // Перезапрос строк после клика
 
         // Получение значений после сортировки по возрастанию
         List<String> sortedAscValues = new ArrayList<>();
@@ -275,11 +275,11 @@ public class StepFormsSorting {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         // Получение количества строк и столбцов в таблице
-        ElementsCollection rows = sortingColumn.containsOfValueColumns.shouldBe(sizeGreaterThan(0));
+        ElementsCollection rows = sortingColumnSelectors.containsOfValueColumns.shouldBe(sizeGreaterThan(0));
         int colIndex = rows.first().$$("td").shouldBe(sizeGreaterThan(0)).size() - 1; // Индекс последнего столбца
 
         // Выполняем клик для сортировки по убыванию
-        sortingColumn.inputSortIP.click();
+        sortingColumnSelectors.inputSortIP.click();
 
         // Ожидание обновления таблицы
         try {
@@ -288,7 +288,7 @@ public class StepFormsSorting {
             // Игнорируем исключение, если таблица не обновляется как ожидалось
         }
 
-        rows = sortingColumn.containsOfValueColumns.shouldBe(sizeGreaterThan(0)); // Перезапрос строк после клика
+        rows = sortingColumnSelectors.containsOfValueColumns.shouldBe(sizeGreaterThan(0)); // Перезапрос строк после клика
 
         // Получение значений после сортировки по убыванию
         List<String> sortedDescValues = new ArrayList<>();
@@ -303,8 +303,8 @@ public class StepFormsSorting {
         assertTrue(isSortedDescending(sortedDescValues), "Значения в столбце " + (colIndex + 1) + " должны быть отсортированы в порядке убывания");
 
         // Выполняем клик для сортировки по возрастанию
-        sortingColumn.inputSortIP.click();
-        sortingColumn.inputSortIP.click();
+        sortingColumnSelectors.inputSortIP.click();
+        sortingColumnSelectors.inputSortIP.click();
 
         // Ожидание обновления таблицы
         try {
@@ -313,7 +313,7 @@ public class StepFormsSorting {
             // Игнорируем исключение, если таблица не обновляется как ожидалось
         }
 
-        rows = sortingColumn.containsOfValueColumns.shouldBe(sizeGreaterThan(0)); // Перезапрос строк после клика
+        rows = sortingColumnSelectors.containsOfValueColumns.shouldBe(sizeGreaterThan(0)); // Перезапрос строк после клика
 
         // Получение значений после сортировки по возрастанию
         List<String> sortedAscValues = new ArrayList<>();

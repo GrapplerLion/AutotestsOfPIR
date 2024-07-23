@@ -1,4 +1,4 @@
-package tests;
+package tests.FilterTests;
 
 import com.codeborne.selenide.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -562,7 +562,19 @@ class Main {
                         columnFilter.applyFilterDateMoreOrEqual(6);
                         columnFilter.applyFilterDateLess(7);
                         columnFilter.applyFilterDateLessOrEqual(8);
-
+                    }else if(dataColumn.type.equals("Float")){
+                        Column column = new Column(dataColumn);
+                        ColumnFilter columnFilter = new ColumnFilter(column);
+                        columnFilter.applyFilterDateVoid(1);
+                        columnFilter.applyFilterDateNotVoid(2);
+                        columnFilter.applyFilterDateEquals(3, true);
+                        columnFilter.applyFilterDateNotEquals(4, false);
+                        columnFilter.applyFilterDateMore(5);
+                        columnFilter.applyFilterDateMoreOrEqual(6);
+                        columnFilter.applyFilterDateLess(7);
+                        columnFilter.applyFilterDateLessOrEqual(8);
+                        columnFilter.applyFilterAndCheckIncludes(11);
+                        columnFilter.applyFilterAndCheckExcludes(12);
                     }
                 }
             }

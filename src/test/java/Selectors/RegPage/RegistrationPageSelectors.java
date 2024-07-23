@@ -1,13 +1,11 @@
-package RegPage;
+package Selectors.RegPage;
 
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
-import org.junit.jupiter.api.BeforeAll;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
-public class RegistrationPage {
+public class RegistrationPageSelectors {
 
     public static final String baseUrl = "http://10.1.115.115";
 
