@@ -1,6 +1,7 @@
 package tests.steps;
 
 import Selectors.PlaningAP.PlaningAPSelectors;
+import io.qameta.allure.Step;
 import net.datafaker.Faker;
 
 import java.time.Duration;
@@ -13,6 +14,7 @@ public class StepFormsPlaningAP {
     String fakeComment = faker.chuckNorris().fact();
     PlaningAPSelectors planingAPSelectors = new PlaningAPSelectors();
 
+    @Step("Планирование СМС")
     public void planingSaveSms(){
         planingAPSelectors.chekbox.shouldBe(enabled, Duration.ofSeconds(5)).click();
         planingAPSelectors.openPlaning.shouldBe(enabled, Duration.ofSeconds(5)).click();
@@ -21,6 +23,7 @@ public class StepFormsPlaningAP {
         planingAPSelectors.sample.shouldBe(enabled, Duration.ofSeconds(5)).click();
         planingAPSelectors.setTypeSample(1);
         planingAPSelectors.button.shouldBe(enabled, Duration.ofSeconds(5)).click();
+
     }
 
 }

@@ -19,4 +19,6 @@ public class PlaningAPSelectors {
         typeSample.click();
     }
     public SelenideElement button = $("body > div.el-overlay > div > div > footer > button.el-button.el-button--primary");
+
+
 }
