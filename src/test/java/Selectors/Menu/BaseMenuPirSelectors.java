@@ -7,6 +7,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class BaseMenuPirSelectors {
 
+
     public SelenideElement topMenu = $("#app ul");
     public SelenideElement dashboard = $("div[class$='pir-tab-menu']");
 

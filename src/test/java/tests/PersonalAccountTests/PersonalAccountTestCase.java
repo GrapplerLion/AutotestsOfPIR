@@ -1,4 +1,4 @@
-package tests.PersonalAccount;
+package tests.PersonalAccountTests;
 
 import com.codeborne.selenide.Configuration;
 import io.qameta.allure.Feature;

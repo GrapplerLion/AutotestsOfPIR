@@ -1,6 +1,7 @@
 package tests.steps;
 
 import Selectors.PlaningAP.PlaningAPSelectors;
+import Selectors.SubTask.SubTaskSelectors;
 import io.qameta.allure.Step;
 import net.datafaker.Faker;
 
@@ -23,7 +24,8 @@ public class StepFormsPlaningAP {
         planingAPSelectors.sample.shouldBe(enabled, Duration.ofSeconds(5)).click();
         planingAPSelectors.setTypeSample(1);
         planingAPSelectors.button.shouldBe(enabled, Duration.ofSeconds(5)).click();
-
     }
+
+
 
 }
