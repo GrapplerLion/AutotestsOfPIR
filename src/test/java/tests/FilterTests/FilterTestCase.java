@@ -1,6 +1,8 @@
 package tests.FilterTests;
 
+import com.codeborne.selenide.Configuration;
 import io.qameta.allure.Feature;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import tests.steps.StepFormsFilterLS;
 
@@ -14,23 +16,26 @@ public class FilterTestCase {
 
     private final Main main = new Main();
 
+    @BeforeAll
+    public static void SetUp() {
+        Configuration.browser = System.getProperty("browser", "chrome");
+        Configuration.browserSize = System.getProperty("browserSize", "2560x1440");
+        Configuration.timeout = 12000;
+        Configuration.pollingInterval = 1000;
+    }
+
     @Test
     @Feature("Тестирование фильтров всех разделов ПИР")
     public void testsFilter() throws IOException {
         stepFormsFilterLS.Authorization("admin", "admin");
         stepFormsFilterLS.BaseMenu(1);
-        sleep(5000);
         main.testColumnFiltersLS();
-        sleep(5000);
         stepFormsFilterLS.BaseMenu(2);
         main.testColumnFiltersAP();
-        sleep(5000);
         stepFormsFilterLS.BaseMenu(3);
         main.testColumnFiltersDR();
-        sleep(5000);
         stepFormsFilterLS.BaseMenu(4);
         main.testColumnFiltersSP();
-        sleep(5000);
         stepFormsFilterLS.BaseMenu(5);
         main.testColumnFiltersIP();
     }

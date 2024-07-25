@@ -17,6 +17,7 @@ import static com.codeborne.selenide.CollectionCondition.size;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 import static java.util.Arrays.stream;
+import static tests.FilterTests.DateUtils.ComparisonType.*;
 
 
 class DataColumn {
@@ -105,7 +106,6 @@ class ColumnFilter {
 
     public void applyFilterAndCheckVoid(int sectionNumber) {
         scrollToElementIfNotVisible(column.filterIcon);
-        sleep(5000);
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
@@ -131,7 +131,7 @@ class ColumnFilter {
         column.filterIcon.shouldBe(enabled, Duration.ofMinutes(1)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
-        sleep(5000);
+        column.enterValue.shouldBe(visible, enabled);
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).setValue(column.value1);
         ElementsCollection elements = column.valueOfList;
@@ -147,7 +147,7 @@ class ColumnFilter {
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
-        sleep(5000);
+        column.enterValue.shouldBe(visible, enabled);
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).setValue(column.value1);
         ElementsCollection elements = column.valueOfList;
@@ -163,7 +163,7 @@ class ColumnFilter {
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
-        sleep(5000);
+        column.enterValue.shouldBe(visible, enabled);
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).setValue(column.value2);
         ElementsCollection elements = column.valueOfList;
@@ -179,7 +179,7 @@ class ColumnFilter {
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
-        sleep(5000);
+        column.enterValue.shouldBe(visible, enabled);
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).setValue(column.value2);
         ElementsCollection elements = column.valueOfList;
@@ -195,7 +195,7 @@ class ColumnFilter {
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
-        sleep(5000);
+        column.enterValue.shouldBe(visible, enabled);
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).setValue(column.value3);
         String condition = ".*" + column.value3;
@@ -216,7 +216,7 @@ class ColumnFilter {
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
-        sleep(5000);
+        column.enterValue.shouldBe(visible, enabled);
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).setValue(column.value3);
         String condition = ".*" + column.value3;
@@ -237,7 +237,7 @@ class ColumnFilter {
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
-        sleep(5000);
+        column.enterValue.shouldBe(visible, enabled);
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).setValue(column.value4);
         String condition = ".*" + column.value4 + ".*";
@@ -258,7 +258,7 @@ class ColumnFilter {
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
-        sleep(5000);
+        column.enterValue.shouldBe(visible, enabled);
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).setValue(column.value4);
         String condition = ".*" + column.value4 + ".*";
@@ -279,7 +279,6 @@ class ColumnFilter {
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
-        sleep(5000);
         column.valueOfMassFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.valueOfMassFilter.shouldBe(enabled, Duration.ofSeconds(5)).setValue(column.value5);
         column.applyButton.shouldBe(enabled, Duration.ofSeconds(5)).click();
@@ -297,7 +296,6 @@ class ColumnFilter {
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
-        sleep(5000);
         column.valueOfMassFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.valueOfMassFilter.shouldBe(enabled, Duration.ofSeconds(5)).setValue(column.value5);
         column.applyButton.shouldBe(enabled, Duration.ofSeconds(5)).click();
@@ -314,25 +312,19 @@ class ColumnFilter {
 
     public void applyFilterBooleanVoid() {
         scrollToElementIfNotVisible(column.filterIcon);
-        sleep(5000);
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(3)).click();
         column.checkBoxList.find(text(column.value1)).click();
         column.applyButton.shouldBe(enabled, Duration.ofSeconds(3)).click();
-        sleep(5000);
         column.activeFilters.shouldBe(enabled, Duration.ofSeconds(5)).shouldHave(text(column.label));
-        sleep(5000);
         column.containsOfValueColumns.shouldHave(CollectionCondition.empty);
         column.closeFilters.shouldBe(enabled, Duration.ofSeconds(3)).click();
     }
 
     public void applyFilterBooleanFalse() {
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(3)).click();
-        sleep(5000);
         column.checkBoxList.find(text(column.value2)).click();
         column.applyButton.shouldBe(enabled, Duration.ofSeconds(3)).click();
-        sleep(5000);
         column.activeFilters.shouldBe(enabled, Duration.ofSeconds(5)).shouldHave(text(column.label));
-        sleep(5000);
         column.containsOfValueColumns.forEach(element ->
                 element.shouldHave(text(column.value3)));
         column.closeFilters.shouldBe(enabled, Duration.ofSeconds(3)).click();
@@ -340,21 +332,170 @@ class ColumnFilter {
 
     public void applyFilterBooleanTrue() {
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(3)).click();
-        sleep(5000);
         column.checkBoxList.find(text(column.value3)).click();
         column.applyButton.shouldBe(enabled, Duration.ofSeconds(3)).click();
-        sleep(5000);
         column.activeFilters.shouldBe(enabled, Duration.ofSeconds(5)).shouldHave(text(column.label));
-        sleep(5000);
         column.containsOfValueColumns.forEach(element ->
                 element.shouldHave(text(column.value2)));
         column.closeFilters.shouldBe(enabled, Duration.ofSeconds(3)).click();
     }
 
 
+    public void applyFilterFloatVoid(int sectionNumber) {
+        scrollToElementIfNotVisible(column.filterIcon);
+        column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
+        column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
+        openFilter(sectionNumber);
+        column.valueOfList.shouldHave(size(1));
+        column.applyButton.shouldBe(enabled, Duration.ofSeconds(5)).click();
+        column.activeFilters.shouldBe(enabled, Duration.ofSeconds(5)).shouldHave(text(column.label));
+        column.tableOfSize.shouldHave(CollectionCondition.empty);
+        column.closeFilters.shouldBe(enabled, Duration.ofSeconds(5)).shouldBe(visible, enabled).click();
+    }
+
+    public void applyFilterFloatNotVoid(int sectionNumber) {
+        column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
+        column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
+        openFilter(sectionNumber);
+        column.valueOfList.shouldHave(size(1));
+        column.applyButton.shouldBe(enabled, Duration.ofSeconds(5)).click();
+        column.activeFilters.shouldHave(text(column.label));
+        column.tableOfSize.shouldHave(CollectionCondition.sizeGreaterThan(0));
+        column.closeFilters.shouldBe(enabled, Duration.ofSeconds(5)).click();
+    }
+
+    public void applyFilterFloatEquals(int sectionNumber, boolean shouldMatch) {
+        column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
+        column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
+        openFilter(sectionNumber);
+        column.enterValue.shouldBe(visible, enabled);
+        column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).click();
+        column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).setValue(column.value1).pressEnter();
+        ElementsCollection elements = column.valueOfList;
+        FilterUtils.checkElementsMatchCondition(elements, column.value1, shouldMatch);
+        column.applyButton.shouldBe(enabled, Duration.ofSeconds(5)).click();
+        column.activeFilters.shouldHave(text(column.label));
+        column.containsOfValueColumns.forEach(element ->
+                element.shouldHave(text(column.value1)));
+        column.closeFilters.shouldBe(enabled, Duration.ofSeconds(5)).click();
+    }
+
+    public void applyFilterFloatNotEquals(int sectionNumber, boolean shouldMatch) {
+        column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
+        column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
+        openFilter(sectionNumber);
+        column.enterValue.shouldBe(visible, enabled);
+        column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).click();
+        column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).setValue(column.value1);
+        ElementsCollection elements = column.valueOfList;
+        FilterUtils.checkElementsMatchCondition(elements, column.value1, shouldMatch);
+        column.applyButton.shouldBe(enabled, Duration.ofSeconds(5)).click();
+        column.activeFilters.shouldHave(text(column.label));
+        column.containsOfValueColumns.forEach(element ->
+                element.shouldNotHave(text(column.value1)));
+        column.closeFilters.shouldBe(enabled, Duration.ofSeconds(5)).click();
+    }
+
+    public void applyFilterFloatMore(int sectionNumber) {
+        column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
+        column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
+        openFilter(sectionNumber);
+        column.enterValue.shouldBe(visible, enabled);
+        column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).click();
+        column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).setValue(column.value1).pressEnter();
+        ElementsCollection listPopup = column.valueOfList;
+        DateUtils.verifyFloat(listPopup, Float.parseFloat(column.value1),  MORE);
+        column.applyButton.shouldBe(enabled, Duration.ofSeconds(5)).click();
+        column.activeFilters.shouldBe(enabled, Duration.ofSeconds(5)).shouldHave(text(column.label));
+        ElementsCollection elements = column.containsOfValueColumns;
+        DateUtils.verifyFloat(elements, Float.parseFloat(column.value1),  MORE);
+        column.closeFilters.shouldBe(enabled, Duration.ofSeconds(5)).click();
+    }
+
+    public void applyFilterFloatMoreOrEqual(int sectionNumber) {
+        column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
+        column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
+        openFilter(sectionNumber);
+        column.enterValue.shouldBe(visible, enabled);
+        column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).click();
+        column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).setValue(column.value1).pressEnter();
+        ElementsCollection listPopup = column.valueOfList;
+        DateUtils.verifyFloat(listPopup, Float.parseFloat(column.value1),  MORE_OR_EQUAL);
+        column.applyButton.shouldBe(enabled, Duration.ofSeconds(5)).click();
+        column.activeFilters.shouldBe(enabled, Duration.ofSeconds(5)).shouldHave(text(column.label));
+        ElementsCollection elements = column.containsOfValueColumns;
+        DateUtils.verifyFloat(elements, Float.parseFloat(column.value1),  MORE_OR_EQUAL);
+        column.closeFilters.shouldBe(enabled, Duration.ofSeconds(5)).click();
+    }
+
+    public void applyFilterFloatLess(int sectionNumber) {
+        column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
+        column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
+        openFilter(sectionNumber);
+        column.enterValue.shouldBe(visible, enabled);
+        column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).click();
+        column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).setValue(column.value1).pressEnter();
+        ElementsCollection listPopup = column.valueOfList;
+        DateUtils.verifyFloat(listPopup, Float.parseFloat(column.value1),  LESS);
+        column.applyButton.shouldBe(enabled, Duration.ofSeconds(5)).click();
+        column.activeFilters.shouldBe(enabled, Duration.ofSeconds(5)).shouldHave(text(column.label));
+        ElementsCollection elements = column.containsOfValueColumns;
+        DateUtils.verifyFloat(elements, Float.parseFloat(column.value1),  LESS);
+        column.closeFilters.shouldBe(enabled, Duration.ofSeconds(5)).click();
+    }
+
+    public void applyFilterFloatLessOrEqual(int sectionNumber) {
+        column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
+        column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
+        openFilter(sectionNumber);
+        column.enterValue.shouldBe(visible, enabled);
+        column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).click();
+        column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).setValue(column.value1).pressEnter();
+        ElementsCollection listPopup = column.valueOfList;
+        DateUtils.verifyFloat(listPopup, Float.parseFloat(column.value1),  DateUtils.ComparisonType.LESS_OR_EQUAL);
+        column.applyButton.shouldBe(enabled, Duration.ofSeconds(5)).click();
+        column.activeFilters.shouldBe(enabled, Duration.ofSeconds(5)).shouldHave(text(column.label));
+        ElementsCollection elements = column.containsOfValueColumns;
+        DateUtils.verifyFloat(elements, Float.parseFloat(column.value1),  DateUtils.ComparisonType.LESS_OR_EQUAL);
+        column.closeFilters.shouldBe(enabled, Duration.ofSeconds(5)).click();
+    }
+    public void applyFilterAndCheckIncludesFloat(int sectionNumber) {
+        column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
+        column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
+        openFilter(sectionNumber);
+        column.valueOfMassFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
+        column.valueOfMassFilter.shouldBe(enabled, Duration.ofSeconds(5)).setValue(String.valueOf(Float.parseFloat(column.value2)));
+        column.applyButton.shouldBe(enabled, Duration.ofSeconds(5)).click();
+        column.activeFilters.shouldBe(enabled, Duration.ofSeconds(5)).shouldHave(text(column.label));
+        for (SelenideElement element : column.containsOfValueColumns) {
+            String text = element.getText().toLowerCase();
+            if (!text.contains(String.valueOf(Float.parseFloat(column.value2)))) {
+                System.out.println("Элемент с текстом '" + element.getText() + "' не содержит '" + column.value5 + "'");
+            }
+        }
+        column.closeFilters.shouldBe(enabled, Duration.ofSeconds(3)).click();
+    }
+
+    public void applyFilterAndCheckExcludesFloat(int sectionNumber) {
+        column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
+        column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
+        openFilter(sectionNumber);
+        column.valueOfMassFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
+        column.valueOfMassFilter.shouldBe(enabled, Duration.ofSeconds(5)).setValue(String.valueOf(Float.parseFloat(column.value2)));
+        column.applyButton.shouldBe(enabled, Duration.ofSeconds(5)).click();
+        column.activeFilters.shouldBe(enabled, Duration.ofSeconds(5)).shouldHave(text(column.label));
+        for (SelenideElement element : column.containsOfValueColumns) {
+            String text = element.getText().toLowerCase();
+            if (text.contains(String.valueOf(Float.parseFloat(column.value2)))) {
+                System.out.println("Элемент с текстом '" + element.getText() + "' содержит '" + column.value5 + "'");
+            }
+        }
+        column.closeFilters.shouldBe(enabled, Duration.ofSeconds(3)).click();
+    }
+
+
     public void applyFilterDateVoid(int sectionNumber) {
         scrollToElementIfNotVisible(column.filterIcon);
-        sleep(5000);
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
@@ -380,10 +521,9 @@ class ColumnFilter {
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
-        sleep(5000);
+        column.enterValue.shouldBe(visible, enabled);
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).setValue(column.value1).pressEnter();
-        sleep(5000);
         ElementsCollection elements = column.valueOfList;
         FilterUtils.checkElementsMatchCondition(elements, column.value1, shouldMatch);
         column.applyButton.shouldBe(enabled, Duration.ofSeconds(5)).click();
@@ -397,10 +537,9 @@ class ColumnFilter {
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
-        sleep(5000);
+        column.enterValue.shouldBe(visible, enabled);
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).setValue(column.value1);
-        sleep(5000);
         ElementsCollection elements = column.valueOfList;
         FilterUtils.checkElementsMatchCondition(elements, column.value1, shouldMatch);
         column.applyButton.shouldBe(enabled, Duration.ofSeconds(5)).click();
@@ -411,73 +550,66 @@ class ColumnFilter {
     }
 
     public void applyFilterDateMore(int sectionNumber) {
-        sleep(5000);
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
-        sleep(5000);
+        column.enterValue.shouldBe(visible, enabled);
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).setValue(column.value1).pressEnter();
-        sleep(5000);
         ElementsCollection listPopup = column.valueOfList;
-        DateUtils.verifyDates(listPopup, column.value1,  DateUtils.DateComparisonType.MORE);
+        DateUtils.verifyDates(listPopup, column.value1,  MORE);
         column.applyButton.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.activeFilters.shouldBe(enabled, Duration.ofSeconds(5)).shouldHave(text(column.label));
         ElementsCollection elements = column.containsOfValueColumns;
-        DateUtils.verifyDates(elements, column.value1,  DateUtils.DateComparisonType.MORE);
+        DateUtils.verifyDates(elements, column.value1,  MORE);
         column.closeFilters.shouldBe(enabled, Duration.ofSeconds(5)).click();
     }
 
     public void applyFilterDateMoreOrEqual(int sectionNumber) {
-        sleep(5000);
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
-        sleep(5000);
+        column.enterValue.shouldBe(visible, enabled);
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).setValue(column.value1).pressEnter();
         ElementsCollection listPopup = column.valueOfList;
-        DateUtils.verifyDates(listPopup, column.value1,  DateUtils.DateComparisonType.MORE_OR_EQUAL);
+        DateUtils.verifyDates(listPopup, column.value1,  MORE_OR_EQUAL);
         column.applyButton.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.activeFilters.shouldBe(enabled, Duration.ofSeconds(5)).shouldHave(text(column.label));
         ElementsCollection elements = column.containsOfValueColumns;
-        DateUtils.verifyDates(elements, column.value1,  DateUtils.DateComparisonType.MORE_OR_EQUAL);
+        DateUtils.verifyDates(elements, column.value1,  MORE_OR_EQUAL);
         column.closeFilters.shouldBe(enabled, Duration.ofSeconds(5)).click();
     }
 
     public void applyFilterDateLess(int sectionNumber) {
-        sleep(5000);
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
-        sleep(5000);
+        column.enterValue.shouldBe(visible, enabled);
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).setValue(column.value1).pressEnter();
-        sleep(5000);
         ElementsCollection listPopup = column.valueOfList;
-        DateUtils.verifyDates(listPopup, column.value1,  DateUtils.DateComparisonType.LESS);
+        DateUtils.verifyDates(listPopup, column.value1,  LESS);
         column.applyButton.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.activeFilters.shouldBe(enabled, Duration.ofSeconds(5)).shouldHave(text(column.label));
         ElementsCollection elements = column.containsOfValueColumns;
-        DateUtils.verifyDates(elements, column.value1,  DateUtils.DateComparisonType.LESS);
+        DateUtils.verifyDates(elements, column.value1,  LESS);
         column.closeFilters.shouldBe(enabled, Duration.ofSeconds(5)).click();
     }
 
     public void applyFilterDateLessOrEqual(int sectionNumber) {
-        sleep(5000);
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
-        sleep(5000);
+        column.enterValue.shouldBe(visible, enabled);
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).setValue(column.value1).pressEnter();
-        sleep(5000);
         ElementsCollection listPopup = column.valueOfList;
-        DateUtils.verifyDates(listPopup, column.value1,  DateUtils.DateComparisonType.LESS_OR_EQUAL);
+        DateUtils.verifyDates(listPopup, column.value1,  DateUtils.ComparisonType.LESS_OR_EQUAL);
         column.applyButton.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.activeFilters.shouldBe(enabled, Duration.ofSeconds(5)).shouldHave(text(column.label));
         ElementsCollection elements = column.containsOfValueColumns;
-        DateUtils.verifyDates(elements, column.value1,  DateUtils.DateComparisonType.LESS_OR_EQUAL);
+        DateUtils.verifyDates(elements, column.value1,  DateUtils.ComparisonType.LESS_OR_EQUAL);
         column.closeFilters.shouldBe(enabled, Duration.ofSeconds(5)).click();
     }
 
@@ -565,16 +697,16 @@ class Main {
                     }else if(dataColumn.type.equals("Float")){
                         Column column = new Column(dataColumn);
                         ColumnFilter columnFilter = new ColumnFilter(column);
-                        columnFilter.applyFilterDateVoid(1);
-                        columnFilter.applyFilterDateNotVoid(2);
-                        columnFilter.applyFilterDateEquals(3, true);
-                        columnFilter.applyFilterDateNotEquals(4, false);
-                        columnFilter.applyFilterDateMore(5);
-                        columnFilter.applyFilterDateMoreOrEqual(6);
-                        columnFilter.applyFilterDateLess(7);
-                        columnFilter.applyFilterDateLessOrEqual(8);
-                        columnFilter.applyFilterAndCheckIncludes(11);
-                        columnFilter.applyFilterAndCheckExcludes(12);
+                        columnFilter.applyFilterFloatVoid(1);
+                        columnFilter.applyFilterFloatNotVoid(2);
+                        columnFilter.applyFilterFloatEquals(3, true);
+                        columnFilter.applyFilterFloatNotEquals(4, false);
+                        columnFilter.applyFilterFloatMore(5);
+                        columnFilter.applyFilterFloatMoreOrEqual(6);
+                        columnFilter.applyFilterFloatLess(7);
+                        columnFilter.applyFilterFloatLessOrEqual(8);
+                        columnFilter.applyFilterAndCheckIncludesFloat(11);
+                        columnFilter.applyFilterAndCheckExcludesFloat(12);
                     }
                 }
             }
@@ -622,7 +754,19 @@ class Main {
                         columnFilter.applyFilterDateMoreOrEqual(6);
                         columnFilter.applyFilterDateLess(7);
                         columnFilter.applyFilterDateLessOrEqual(8);
-
+                    }else if(dataColumn.type.equals("Float")){
+                        Column column = new Column(dataColumn);
+                        ColumnFilter columnFilter = new ColumnFilter(column);
+                        columnFilter.applyFilterFloatVoid(1);
+                        columnFilter.applyFilterFloatNotVoid(2);
+                        columnFilter.applyFilterFloatEquals(3, true);
+                        columnFilter.applyFilterFloatNotEquals(4, false);
+                        columnFilter.applyFilterFloatMore(5);
+                        columnFilter.applyFilterFloatMoreOrEqual(6);
+                        columnFilter.applyFilterFloatLess(7);
+                        columnFilter.applyFilterFloatLessOrEqual(8);
+                        columnFilter.applyFilterAndCheckIncludesFloat(11);
+                        columnFilter.applyFilterAndCheckExcludesFloat(12);
                     }
                 }
             }
@@ -670,7 +814,19 @@ class Main {
                         columnFilter.applyFilterDateMoreOrEqual(6);
                         columnFilter.applyFilterDateLess(7);
                         columnFilter.applyFilterDateLessOrEqual(8);
-
+                    }else if(dataColumn.type.equals("Float")){
+                        Column column = new Column(dataColumn);
+                        ColumnFilter columnFilter = new ColumnFilter(column);
+                        columnFilter.applyFilterFloatVoid(1);
+                        columnFilter.applyFilterFloatNotVoid(2);
+                        columnFilter.applyFilterFloatEquals(3, true);
+                        columnFilter.applyFilterFloatNotEquals(4, false);
+                        columnFilter.applyFilterFloatMore(5);
+                        columnFilter.applyFilterFloatMoreOrEqual(6);
+                        columnFilter.applyFilterFloatLess(7);
+                        columnFilter.applyFilterFloatLessOrEqual(8);
+                        columnFilter.applyFilterAndCheckIncludesFloat(11);
+                        columnFilter.applyFilterAndCheckExcludesFloat(12);
                     }
                 }
             }
@@ -718,7 +874,19 @@ class Main {
                         columnFilter.applyFilterDateMoreOrEqual(6);
                         columnFilter.applyFilterDateLess(7);
                         columnFilter.applyFilterDateLessOrEqual(8);
-
+                    }else if(dataColumn.type.equals("Float")){
+                        Column column = new Column(dataColumn);
+                        ColumnFilter columnFilter = new ColumnFilter(column);
+                        columnFilter.applyFilterFloatVoid(1);
+                        columnFilter.applyFilterFloatNotVoid(2);
+                        columnFilter.applyFilterFloatEquals(3, true);
+                        columnFilter.applyFilterFloatNotEquals(4, false);
+                        columnFilter.applyFilterFloatMore(5);
+                        columnFilter.applyFilterFloatMoreOrEqual(6);
+                        columnFilter.applyFilterFloatLess(7);
+                        columnFilter.applyFilterFloatLessOrEqual(8);
+                        columnFilter.applyFilterAndCheckIncludesFloat(11);
+                        columnFilter.applyFilterAndCheckExcludesFloat(12);
                     }
                 }
             }
@@ -766,7 +934,19 @@ class Main {
                         columnFilter.applyFilterDateMoreOrEqual(6);
                         columnFilter.applyFilterDateLess(7);
                         columnFilter.applyFilterDateLessOrEqual(8);
-
+                    }else if(dataColumn.type.equals("Float")){
+                        Column column = new Column(dataColumn);
+                        ColumnFilter columnFilter = new ColumnFilter(column);
+                        columnFilter.applyFilterFloatVoid(1);
+                        columnFilter.applyFilterFloatNotVoid(2);
+                        columnFilter.applyFilterFloatEquals(3, true);
+                        columnFilter.applyFilterFloatNotEquals(4, false);
+                        columnFilter.applyFilterFloatMore(5);
+                        columnFilter.applyFilterFloatMoreOrEqual(6);
+                        columnFilter.applyFilterFloatLess(7);
+                        columnFilter.applyFilterFloatLessOrEqual(8);
+                        columnFilter.applyFilterAndCheckIncludesFloat(11);
+                        columnFilter.applyFilterAndCheckExcludesFloat(12);
                     }
                 }
             }
@@ -777,7 +957,7 @@ class Main {
 
 
 class DateUtils {
-    public enum DateComparisonType {
+    public enum ComparisonType {
         MORE,
         MORE_OR_EQUAL,
         LESS,
@@ -785,7 +965,7 @@ class DateUtils {
     }
     private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
 
-    public static void verifyDates(ElementsCollection elements, String date, DateComparisonType comparisonType) {
+    public static void verifyDates(ElementsCollection elements, String date, ComparisonType comparisonType) {
         LocalDate filterDate = LocalDate.parse(date, formatter);
 
         for (SelenideElement element : elements) {
@@ -818,6 +998,39 @@ class DateUtils {
         }
 
         System.out.println("All dates are " + comparisonType + " " + filterDate);
+    }
+
+    public static void verifyFloat(ElementsCollection elements, float referenceValue, ComparisonType comparisonType) {
+        for (SelenideElement element : elements) {
+            float elementValue = Float.parseFloat(element.getText());
+
+            switch (comparisonType) {
+                case MORE:
+                    if (!(elementValue > referenceValue)) {
+                        throw new AssertionError("Number " + elementValue + " is not greater than " + referenceValue);
+                    }
+                    break;
+                case MORE_OR_EQUAL:
+                    if (!(elementValue >= referenceValue)) {
+                        throw new AssertionError("Number " + elementValue + " is not greater than or equal to " + referenceValue);
+                    }
+                    break;
+                case LESS:
+                    if (!(elementValue < referenceValue)) {
+                        throw new AssertionError("Number " + elementValue + " is not less than " + referenceValue);
+                    }
+                    break;
+                case LESS_OR_EQUAL:
+                    if (!(elementValue <= referenceValue)) {
+                        throw new AssertionError("Number " + elementValue + " is not less than or equal to " + referenceValue);
+                    }
+                    break;
+                default:
+                    throw new IllegalArgumentException("Unknown comparison type: " + comparisonType);
+            }
+        }
+
+        System.out.println("All numbers are " + comparisonType + " " + referenceValue);
     }
 }
 class FilterUtils {

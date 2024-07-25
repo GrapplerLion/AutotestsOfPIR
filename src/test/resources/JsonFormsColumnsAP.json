@@ -11,11 +11,11 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Организация",
-            "value1": "",
-            "value2": "",
-            "value3": "",
-            "value4": "",
-            "value5": "",
+            "value1": "ООО \"Махачкала\"",
+            "value2": "М",
+            "value3": "а",
+            "value4": "ч",
+            "value5": "ООО \"Махачкала\"\nООО \"Дагестан\"",
             "type": "String"
       },
       {
@@ -30,11 +30,11 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Подразделение",
-            "value1": "",
-            "value2": "",
-            "value3": "",
-            "value4": "",
-            "value5": "",
+            "value1": "1",
+            "value2": "1",
+            "value3": "1",
+            "value4": "1",
+            "value5": "1\n2",
             "type": "String"
       },
       {
@@ -49,11 +49,11 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "АС",
-            "value1": "",
-            "value2": "",
-            "value3": "",
-            "value4": "",
-            "value5": "",
+            "value1": "1",
+            "value2": "1",
+            "value3": "1",
+            "value4": "1",
+            "value5": "1\n2",
             "type": "String"
       },
       {
@@ -68,11 +68,11 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Лицевой счёт",
-            "value1": "",
-            "value2": "",
-            "value3": "",
-            "value4": "",
-            "value5": "",
+            "value1": "1",
+            "value2": "1",
+            "value3": "1",
+            "value4": "1",
+            "value5": "1\n2",
             "type": "String"
       },
       {
@@ -87,11 +87,11 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Состояние ЛС",
-            "value1": "",
-            "value2": "",
-            "value3": "",
-            "value4": "",
-            "value5": "",
+            "value1": "1",
+            "value2": "1",
+            "value3": "1",
+            "value4": "1",
+            "value5": "1\n2",
             "type": "String"
       },
       {
@@ -106,11 +106,11 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Cостояние подключения",
-            "value1": "",
-            "value2": "",
-            "value3": "",
-            "value4": "",
-            "value5": "",
+            "value1": "1",
+            "value2": "1",
+            "value3": "1",
+            "value4": "1",
+            "value5": "1\n2",
             "type": "String"
       },
       {
@@ -125,11 +125,11 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Тип здания",
-            "value1": "",
-            "value2": "",
-            "value3": "",
-            "value4": "",
-            "value5": "",
+            "value1": "1",
+            "value2": "1",
+            "value3": "1",
+            "value4": "1",
+            "value5": "1\n2",
             "type": "String"
       },
       {
@@ -144,11 +144,11 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Мобильный телефон",
-            "value1": "",
-            "value2": "",
-            "value3": "",
-            "value4": "",
-            "value5": "",
+            "value1": "89191112001",
+            "value2": "89191",
+            "value3": "02",
+            "value4": "42",
+            "value5": "89191112001\n89192222002",
             "type": "String"
       },
       {
@@ -163,11 +163,11 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Стационарный телефон",
-            "value1": "",
-            "value2": "",
-            "value3": "",
-            "value4": "",
-            "value5": "",
+            "value1": "1",
+            "value2": "1",
+            "value3": "1",
+            "value4": "1",
+            "value5": "1\n2",
             "type": "String"
       },
       {
@@ -182,11 +182,11 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Email",
-            "value1": "",
-            "value2": "",
-            "value3": "",
-            "value4": "",
-            "value5": "",
+            "value1": "1mail@mail.ru",
+            "value2": "1",
+            "value3": "u",
+            "value4": "4",
+            "value5": "1mail@mail.ru\n2mail@mail.ru",
             "type": "String"
       },
       {
@@ -201,11 +201,11 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Адрес доставки",
-            "value1": "",
-            "value2": "",
-            "value3": "",
-            "value4": "",
-            "value5": "",
+            "value1": "1",
+            "value2": "1",
+            "value3": "1",
+            "value4": "1",
+            "value5": "1\n2",
             "type": "String"
       },
       {
@@ -220,11 +220,11 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Адрес регистрации",
-            "value1": "",
-            "value2": "",
-            "value3": "",
-            "value4": "",
-            "value5": "",
+            "value1": "1",
+            "value2": "1",
+            "value3": "1",
+            "value4": "1",
+            "value5": "1\n2",
             "type": "String"
       },
       {
@@ -239,11 +239,11 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Адрес проживания",
-            "value1": "",
-            "value2": "",
-            "value3": "",
-            "value4": "",
-            "value5": "",
+            "value1": "1",
+            "value2": "1",
+            "value3": "1",
+            "value4": "1",
+            "value5": "1\n2",
             "type": "String"
       },
       {
@@ -258,11 +258,11 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Количество проживающих",
-            "value1": "",
-            "value2": "",
-            "value3": "",
-            "value4": "",
-            "value5": "",
+            "value1": "1",
+            "value2": "1",
+            "value3": "1",
+            "value4": "1",
+            "value5": "1\n2",
             "type": "String"
       },
       {
@@ -277,11 +277,11 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Количество месяцев образования ПДЗ",
-            "value1": "",
-            "value2": "",
-            "value3": "",
-            "value4": "",
-            "value5": "",
+            "value1": "1",
+            "value2": "1",
+            "value3": "1",
+            "value4": "1",
+            "value5": "1\n2",
             "type": "String"
       },
       {
@@ -296,11 +296,8 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Сумма долга",
-            "value1": "",
-            "value2": "",
-            "value3": "",
-            "value4": "",
-            "value5": "",
+            "value1": "1.00",
+            "value2": "1.00\n2.00",
             "type": "Float"
       },
       {
@@ -315,11 +312,11 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Количество месяцев образования долга",
-            "value1": "",
-            "value2": "",
-            "value3": "",
-            "value4": "",
-            "value5": "",
+            "value1": "1",
+            "value2": "1",
+            "value3": "1",
+            "value4": "1",
+            "value5": "1\n2",
             "type": "String"
       },
       {
@@ -334,11 +331,8 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Сумма пени",
-            "value1": "",
-            "value2": "",
-            "value3": "",
-            "value4": "",
-            "value5": "",
+            "value1": "1.00",
+            "value2": "1.00\n2.00",
             "type": "Float"
       },
       {
@@ -353,11 +347,11 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Оборудование",
-            "value1": "",
-            "value2": "",
-            "value3": "",
-            "value4": "",
-            "value5": "",
+            "value1": "1",
+            "value2": "1",
+            "value3": "1",
+            "value4": "1",
+            "value5": "1\n2",
             "type": "String"
       },
       {
@@ -372,11 +366,11 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Управляющая комания",
-            "value1": "",
-            "value2": "",
-            "value3": "",
-            "value4": "",
-            "value5": "",
+            "value1": "ООО \"Махачкала\"",
+            "value2": "М",
+            "value3": "а",
+            "value4": "ч",
+            "value5": "ООО \"Махачкала\"\nООО \"Дагестан\"",
             "type": "String"
       },
       {
@@ -455,7 +449,7 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Дата последнего СМС информирования",
-            "value1": "",
+            "value1": "01.02.2020",
             "type": "Date"
       },
       {
@@ -469,7 +463,7 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Дата последнего автодозвона",
-            "value1": "",
+            "value1": "01.02.2020",
             "type": "Date"
       },
       {
@@ -484,11 +478,11 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Результат последнего автодозвона",
-            "value1": "",
-            "value2": "",
-            "value3": "",
-            "value4": "",
-            "value5": "",
+            "value1": "Запланировано",
+            "value2": "З",
+            "value3": "у",
+            "value4": "п",
+            "value5": "Запланировано\nНе доставлено",
             "type": "String"
       },
       {
@@ -502,7 +496,7 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Дата последней рассылке по электронной почте",
-            "value1": "",
+            "value1": "01.01.2020",
             "type": "Date"
       },
       {
@@ -516,7 +510,7 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Дата последнего ручного обзвона",
-            "value1": "",
+            "value1": "01.01.2020",
             "type": "Date"
       },
       {
@@ -531,11 +525,11 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Результат последнего ручного обзвона",
-            "value1": "",
-            "value2": "",
-            "value3": "",
-            "value4": "",
-            "value5": "",
+            "value1": "Запланировано",
+            "value2": "З",
+            "value3": "у",
+            "value4": "п",
+            "value5": "Запланировано\nНе доставлено",
             "type": "String"
       },
       {
@@ -549,7 +543,7 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Дата последней отправки ЮНД",
-            "value1": "",
+            "value1": "01.01.2020",
             "type": "Date"
       },
       {
@@ -564,11 +558,11 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Последнее состояние судопроизводства",
-            "value1": "",
-            "value2": "",
-            "value3": "",
-            "value4": "",
-            "value5": "",
+            "value1": "Передано в АС",
+            "value2": "П",
+            "value3": "е",
+            "value4": "р",
+            "value5": "Передано в АС\nВынесено решение",
             "type": "String"
       },
       {
@@ -582,7 +576,7 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Дата последнего состояния судопроизводства",
-            "value1": "",
+            "value1": "01.07.2024",
             "type": "Date"
       }
 ]

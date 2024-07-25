@@ -11,11 +11,11 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Номер",
-            "value1": "",
-            "value2": "",
-            "value3": "",
-            "value4": "",
-            "value5": "",
+            "value1": "000009042",
+            "value2": "0",
+            "value3": "2",
+            "value4": "5",
+            "value5": "000009042\n000009043",
             "type": "String"
       },
       {
@@ -29,7 +29,7 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Дата",
-            "value1": "",
+            "value1": "01.07.2024",
             "type": "Date"
       },
       {
@@ -44,11 +44,11 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Вид производства",
-            "value1": "",
-            "value2": "",
-            "value3": "",
-            "value4": "",
-            "value5": "",
+            "value1": "Приказное производство",
+            "value2": "П",
+            "value3": "о",
+            "value4": "р",
+            "value5": "Приказное производство\nАрбитраж",
             "type": "String"
       },
       {
@@ -63,11 +63,11 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Организация",
-            "value1": "",
-            "value2": "",
-            "value3": "",
-            "value4": "",
-            "value5": "",
+            "value1": "ООО \"Махачкала\"",
+            "value2": "М",
+            "value3": "а",
+            "value4": "ч",
+            "value5": "ООО \"Махачкала\"\nООО \"Дагестан\"",
             "type": "String"
       },
       {
@@ -82,11 +82,11 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Подразделение",
-            "value1": "",
-            "value2": "",
-            "value3": "",
-            "value4": "",
-            "value5": "",
+            "value1": "1",
+            "value2": "1",
+            "value3": "1",
+            "value4": "1",
+            "value5": "1\n2",
             "type": "String"
       },
       {
@@ -101,11 +101,11 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Лицевой счёт",
-            "value1": "",
-            "value2": "",
-            "value3": "",
-            "value4": "",
-            "value5": "",
+            "value1": "1",
+            "value2": "1",
+            "value3": "1",
+            "value4": "1",
+            "value5": "1\n2",
             "type": "String"
       },
       {
@@ -120,11 +120,11 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Абонент",
-            "value1": "",
-            "value2": "",
-            "value3": "",
-            "value4": "",
-            "value5": "",
+            "value1": "Варфоломеев Кума Иванович",
+            "value2": "В",
+            "value3": "ч",
+            "value4": "и",
+            "value5": "Варфоломеев Кума Иванович\nАдмирал Гектор Барбосса",
             "type": "String"
       },
       {
@@ -139,11 +139,11 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Ответчик",
-            "value1": "",
-            "value2": "",
-            "value3": "",
-            "value4": "",
-            "value5": "",
+            "value1": "Варфоломеев Кума Иванович",
+            "value2": "В",
+            "value3": "ч",
+            "value4": "и",
+            "value5": "Варфоломеев Кума Иванович\nАдмирал Гектор Барбосса",
             "type": "String"
       },
       {
@@ -158,11 +158,11 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Основание",
-            "value1": "",
-            "value2": "",
-            "value3": "",
-            "value4": "",
-            "value5": "",
+            "value1": "Досудебная работа 000003844 08.07.2024 16:23:37",
+            "value2": "Д",
+            "value3": "7",
+            "value4": "а",
+            "value5": "Досудебная работа 000003844 08.07.2024 16:23:37\nДосудебная работа 000003845 08.07.2024 16:24:26",
             "type": "String"
       },
       {
@@ -177,11 +177,11 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Куратор",
-            "value1": "",
-            "value2": "",
-            "value3": "",
-            "value4": "",
-            "value5": "",
+            "value1": "УФиАО (Финансы) Сотрудник",
+            "value2": "У",
+            "value3": "к",
+            "value4": "н",
+            "value5": "УФиАО (Финансы) Сотрудник\nЮО (Юридического отдела) Сотрудник",
             "type": "String"
       },
       {
@@ -196,11 +196,11 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Месяц актуальности",
-            "value1": "",
-            "value2": "",
-            "value3": "",
-            "value4": "",
-            "value5": "",
+            "value1": "Июл 2024",
+            "value2": "И",
+            "value3": "4",
+            "value4": "л",
+            "value5": "Июл 2024\nИюл 2024",
             "type": "String"
       },
       {
@@ -214,7 +214,7 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Период взыскания с",
-            "value1": "",
+            "value1": "01.01.2021",
             "type": "Date"
       },
       {
@@ -228,7 +228,7 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Период взыскания по",
-            "value1": "",
+            "value1": "31.01.2021",
             "type": "Date"
       },
       {
@@ -243,11 +243,11 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Состояние",
-            "value1": "",
-            "value2": "",
-            "value3": "",
-            "value4": "",
-            "value5": "",
+            "value1": "Подано заявление",
+            "value2": "П",
+            "value3": "е",
+            "value4": "н",
+            "value5": "Подано заявление\nПередано в АС",
             "type": "String"
       },
       {
@@ -274,7 +274,7 @@
             "activeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div",
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
-            "label": "Сумма госпошлины",
+            "label": "Сумма взыскиваемой госпошлины",
             "value1": "",
             "value2": "",
             "value3": "",
@@ -294,11 +294,11 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Автор",
-            "value1": "",
-            "value2": "",
-            "value3": "",
-            "value4": "",
-            "value5": "",
+            "value1": "Администратор Админ",
+            "value2": "А",
+            "value3": "н",
+            "value4": "н",
+            "value5": "Администратор Админ\nАдминистратор Админ",
             "type": "String"
       },
       {
@@ -325,7 +325,7 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Дата последнего изменения",
-            "value1": "",
+            "value1": "09.07.2024",
             "type": "Date"
       },
       {
@@ -340,11 +340,11 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Исходящий номер МРГ",
-            "value1": "",
-            "value2": "",
-            "value3": "",
-            "value4": "",
-            "value5": "",
+            "value1": "1",
+            "value2": "1",
+            "value3": "1",
+            "value4": "1",
+            "value5": "1\n2",
             "type": "String"
       },
       {
@@ -358,7 +358,7 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Дата передачи документов в ЮР отдел",
-            "value1": "",
+            "value1": "01.07.2024",
             "type": "Date"
       }
 ]

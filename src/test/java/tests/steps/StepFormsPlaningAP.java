@@ -16,13 +16,13 @@ public class StepFormsPlaningAP {
     PlaningAPSelectors planingAPSelectors = new PlaningAPSelectors();
 
     @Step("Планирование СМС")
-    public void planingSaveSms(){
+    public void planingSaveSms(int planingType, int sampleType){
         planingAPSelectors.chekbox.shouldBe(enabled, Duration.ofSeconds(5)).click();
         planingAPSelectors.openPlaning.shouldBe(enabled, Duration.ofSeconds(5)).click();
-        planingAPSelectors.setTypePlaning(1);
+        planingAPSelectors.setTypePlaning(planingType);
         planingAPSelectors.comment.shouldBe(enabled, Duration.ofSeconds(5)).setValue(fakeComment);
         planingAPSelectors.sample.shouldBe(enabled, Duration.ofSeconds(5)).click();
-        planingAPSelectors.setTypeSample(1);
+        planingAPSelectors.setTypeSample(sampleType);
         planingAPSelectors.button.shouldBe(enabled, Duration.ofSeconds(5)).click();
     }
 

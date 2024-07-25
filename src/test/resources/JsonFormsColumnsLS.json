@@ -270,7 +270,7 @@
             "closeFiltersSelector": "#app > div > div.default-layout__content > div.pir-tabs__content > div > div > div > div.pir-table__top > div > span.el-tag.is-closable.el-tag--info.el-tag--light.pir-active-filter__tag > i",
             "tableOfSizeSelector": "div[class='pir-table'] tbody tr",
             "label": "Дата обновления данных по ЛС",
-            "value1": "01.07.2024",
+            "value1": "25.07.2024",
             "type": "Date"
       },
       {
