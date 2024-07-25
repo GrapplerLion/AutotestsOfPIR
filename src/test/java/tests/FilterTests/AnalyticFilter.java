@@ -104,8 +104,9 @@ class ColumnFilter {
     }
 
 
-    public void applyFilterAndCheckVoid(int sectionNumber) {
+    public void applyFilterAndCheckVoid(int sectionNumber) throws InterruptedException {
         scrollToElementIfNotVisible(column.filterIcon);
+        DateUtils.shouldBeVisible(10, column.filterIcon);
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
@@ -116,7 +117,8 @@ class ColumnFilter {
         column.closeFilters.shouldBe(enabled, Duration.ofSeconds(5)).shouldBe(visible, enabled).click();
     }
 
-    public void applyFilterAndCheckNotVoid(int sectionNumber) {
+    public void applyFilterAndCheckNotVoid(int sectionNumber) throws InterruptedException {
+        DateUtils.shouldBeVisible(10, column.filterIcon);
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
@@ -127,11 +129,12 @@ class ColumnFilter {
         column.closeFilters.shouldBe(enabled, Duration.ofSeconds(5)).click();
     }
 
-    public void applyFilterAndCheckEquals(int sectionNumber, boolean shouldMatch) {
+    public void applyFilterAndCheckEquals(int sectionNumber, boolean shouldMatch) throws InterruptedException {
+        DateUtils.shouldBeVisible(10, column.filterIcon);
         column.filterIcon.shouldBe(enabled, Duration.ofMinutes(1)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
-        column.enterValue.shouldBe(visible, enabled);
+        DateUtils.shouldBeVisible(10, column.enterValue);
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).setValue(column.value1);
         ElementsCollection elements = column.valueOfList;
@@ -143,11 +146,12 @@ class ColumnFilter {
         column.closeFilters.shouldBe(enabled, Duration.ofSeconds(5)).click();
     }
 
-    public void applyFilterAndCheckNotEquals(int sectionNumber, boolean shouldMatch) {
+    public void applyFilterAndCheckNotEquals(int sectionNumber, boolean shouldMatch) throws InterruptedException {
+        DateUtils.shouldBeVisible(10, column.filterIcon);
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
-        column.enterValue.shouldBe(visible, enabled);
+        DateUtils.shouldBeVisible(10, column.enterValue);
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).setValue(column.value1);
         ElementsCollection elements = column.valueOfList;
@@ -159,11 +163,12 @@ class ColumnFilter {
         column.closeFilters.shouldBe(enabled, Duration.ofSeconds(5)).click();
     }
 
-    public void applyFilterAndCheckBeginWith(int sectionNumber, boolean shouldMatch) {
+    public void applyFilterAndCheckBeginWith(int sectionNumber, boolean shouldMatch) throws InterruptedException {
+        DateUtils.shouldBeVisible(10, column.filterIcon);
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
-        column.enterValue.shouldBe(visible, enabled);
+        DateUtils.shouldBeVisible(10, column.enterValue);
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).setValue(column.value2);
         ElementsCollection elements = column.valueOfList;
@@ -175,11 +180,12 @@ class ColumnFilter {
         column.closeFilters.shouldBe(enabled, Duration.ofSeconds(5)).click();
     }
 
-    public void applyFilterAndCheckNotBeginWith(int sectionNumber, boolean shouldMatch) {
+    public void applyFilterAndCheckNotBeginWith(int sectionNumber, boolean shouldMatch) throws InterruptedException {
+        DateUtils.shouldBeVisible(10, column.filterIcon);
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
-        column.enterValue.shouldBe(visible, enabled);
+        DateUtils.shouldBeVisible(10, column.enterValue);
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).setValue(column.value2);
         ElementsCollection elements = column.valueOfList;
@@ -191,11 +197,12 @@ class ColumnFilter {
         column.closeFilters.shouldBe(enabled, Duration.ofSeconds(5)).click();
     }
 
-    public void applyFilterAndCheckEndsWith(int sectionNumber, boolean shouldMatch) {
+    public void applyFilterAndCheckEndsWith(int sectionNumber, boolean shouldMatch) throws InterruptedException {
+        DateUtils.shouldBeVisible(10, column.filterIcon);
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
-        column.enterValue.shouldBe(visible, enabled);
+        DateUtils.shouldBeVisible(10, column.enterValue);
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).setValue(column.value3);
         String condition = ".*" + column.value3;
@@ -212,11 +219,12 @@ class ColumnFilter {
         column.closeFilters.shouldBe(enabled, Duration.ofSeconds(3)).click();
     }
 
-    public void applyFilterAndCheckNotEndsWith(int sectionNumber, boolean shouldMatch) {
+    public void applyFilterAndCheckNotEndsWith(int sectionNumber, boolean shouldMatch) throws InterruptedException {
+        DateUtils.shouldBeVisible(10, column.filterIcon);
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
-        column.enterValue.shouldBe(visible, enabled);
+        DateUtils.shouldBeVisible(10, column.enterValue);
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).setValue(column.value3);
         String condition = ".*" + column.value3;
@@ -233,11 +241,12 @@ class ColumnFilter {
         column.closeFilters.shouldBe(enabled, Duration.ofSeconds(3)).click();
     }
 
-    public void applyFilterAndCheckContains(int sectionNumber, boolean shouldMatch) {
+    public void applyFilterAndCheckContains(int sectionNumber, boolean shouldMatch) throws InterruptedException {
+        DateUtils.shouldBeVisible(10, column.filterIcon);
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
-        column.enterValue.shouldBe(visible, enabled);
+        DateUtils.shouldBeVisible(10, column.enterValue);
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).setValue(column.value4);
         String condition = ".*" + column.value4 + ".*";
@@ -254,11 +263,12 @@ class ColumnFilter {
         column.closeFilters.shouldBe(enabled, Duration.ofSeconds(3)).click();
     }
 
-    public void applyFilterAndCheckNotContains(int sectionNumber, boolean shouldMatch) {
+    public void applyFilterAndCheckNotContains(int sectionNumber, boolean shouldMatch) throws InterruptedException {
+        DateUtils.shouldBeVisible(10, column.filterIcon);
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
-        column.enterValue.shouldBe(visible, enabled);
+        DateUtils.shouldBeVisible(10, column.enterValue);
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).setValue(column.value4);
         String condition = ".*" + column.value4 + ".*";
@@ -275,7 +285,8 @@ class ColumnFilter {
         column.closeFilters.shouldBe(enabled, Duration.ofSeconds(3)).click();
     }
 
-    public void applyFilterAndCheckIncludes(int sectionNumber) {
+    public void applyFilterAndCheckIncludes(int sectionNumber) throws InterruptedException {
+        DateUtils.shouldBeVisible(10, column.filterIcon);
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
@@ -292,7 +303,8 @@ class ColumnFilter {
         column.closeFilters.shouldBe(enabled, Duration.ofSeconds(3)).click();
     }
 
-    public void applyFilterAndCheckExcludes(int sectionNumber) {
+    public void applyFilterAndCheckExcludes(int sectionNumber) throws InterruptedException {
+        DateUtils.shouldBeVisible(10, column.filterIcon);
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
@@ -310,7 +322,8 @@ class ColumnFilter {
     }
 
 
-    public void applyFilterBooleanVoid() {
+    public void applyFilterBooleanVoid() throws InterruptedException {
+        DateUtils.shouldBeVisible(10, column.filterIcon);
         scrollToElementIfNotVisible(column.filterIcon);
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(3)).click();
         column.checkBoxList.find(text(column.value1)).click();
@@ -320,7 +333,8 @@ class ColumnFilter {
         column.closeFilters.shouldBe(enabled, Duration.ofSeconds(3)).click();
     }
 
-    public void applyFilterBooleanFalse() {
+    public void applyFilterBooleanFalse() throws InterruptedException {
+        DateUtils.shouldBeVisible(10, column.filterIcon);
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(3)).click();
         column.checkBoxList.find(text(column.value2)).click();
         column.applyButton.shouldBe(enabled, Duration.ofSeconds(3)).click();
@@ -330,7 +344,8 @@ class ColumnFilter {
         column.closeFilters.shouldBe(enabled, Duration.ofSeconds(3)).click();
     }
 
-    public void applyFilterBooleanTrue() {
+    public void applyFilterBooleanTrue() throws InterruptedException {
+        DateUtils.shouldBeVisible(10, column.filterIcon);
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(3)).click();
         column.checkBoxList.find(text(column.value3)).click();
         column.applyButton.shouldBe(enabled, Duration.ofSeconds(3)).click();
@@ -341,8 +356,9 @@ class ColumnFilter {
     }
 
 
-    public void applyFilterFloatVoid(int sectionNumber) {
+    public void applyFilterFloatVoid(int sectionNumber) throws InterruptedException {
         scrollToElementIfNotVisible(column.filterIcon);
+        DateUtils.shouldBeVisible(10, column.filterIcon);
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
@@ -353,7 +369,8 @@ class ColumnFilter {
         column.closeFilters.shouldBe(enabled, Duration.ofSeconds(5)).shouldBe(visible, enabled).click();
     }
 
-    public void applyFilterFloatNotVoid(int sectionNumber) {
+    public void applyFilterFloatNotVoid(int sectionNumber) throws InterruptedException {
+        DateUtils.shouldBeVisible(10, column.filterIcon);
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
@@ -364,7 +381,8 @@ class ColumnFilter {
         column.closeFilters.shouldBe(enabled, Duration.ofSeconds(5)).click();
     }
 
-    public void applyFilterFloatEquals(int sectionNumber, boolean shouldMatch) {
+    public void applyFilterFloatEquals(int sectionNumber, boolean shouldMatch) throws InterruptedException {
+        DateUtils.shouldBeVisible(10, column.filterIcon);
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
@@ -380,7 +398,8 @@ class ColumnFilter {
         column.closeFilters.shouldBe(enabled, Duration.ofSeconds(5)).click();
     }
 
-    public void applyFilterFloatNotEquals(int sectionNumber, boolean shouldMatch) {
+    public void applyFilterFloatNotEquals(int sectionNumber, boolean shouldMatch) throws InterruptedException {
+        DateUtils.shouldBeVisible(10, column.filterIcon);
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
@@ -396,7 +415,8 @@ class ColumnFilter {
         column.closeFilters.shouldBe(enabled, Duration.ofSeconds(5)).click();
     }
 
-    public void applyFilterFloatMore(int sectionNumber) {
+    public void applyFilterFloatMore(int sectionNumber) throws InterruptedException {
+        DateUtils.shouldBeVisible(10, column.filterIcon);
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
@@ -412,7 +432,8 @@ class ColumnFilter {
         column.closeFilters.shouldBe(enabled, Duration.ofSeconds(5)).click();
     }
 
-    public void applyFilterFloatMoreOrEqual(int sectionNumber) {
+    public void applyFilterFloatMoreOrEqual(int sectionNumber) throws InterruptedException {
+        DateUtils.shouldBeVisible(10, column.filterIcon);
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
@@ -428,7 +449,8 @@ class ColumnFilter {
         column.closeFilters.shouldBe(enabled, Duration.ofSeconds(5)).click();
     }
 
-    public void applyFilterFloatLess(int sectionNumber) {
+    public void applyFilterFloatLess(int sectionNumber) throws InterruptedException {
+        DateUtils.shouldBeVisible(10, column.filterIcon);
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
@@ -444,7 +466,8 @@ class ColumnFilter {
         column.closeFilters.shouldBe(enabled, Duration.ofSeconds(5)).click();
     }
 
-    public void applyFilterFloatLessOrEqual(int sectionNumber) {
+    public void applyFilterFloatLessOrEqual(int sectionNumber) throws InterruptedException {
+        DateUtils.shouldBeVisible(10, column.filterIcon);
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
@@ -459,7 +482,8 @@ class ColumnFilter {
         DateUtils.verifyFloat(elements, Float.parseFloat(column.value1),  DateUtils.ComparisonType.LESS_OR_EQUAL);
         column.closeFilters.shouldBe(enabled, Duration.ofSeconds(5)).click();
     }
-    public void applyFilterAndCheckIncludesFloat(int sectionNumber) {
+    public void applyFilterAndCheckIncludesFloat(int sectionNumber) throws InterruptedException {
+        DateUtils.shouldBeVisible(10, column.filterIcon);
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
@@ -476,7 +500,8 @@ class ColumnFilter {
         column.closeFilters.shouldBe(enabled, Duration.ofSeconds(3)).click();
     }
 
-    public void applyFilterAndCheckExcludesFloat(int sectionNumber) {
+    public void applyFilterAndCheckExcludesFloat(int sectionNumber) throws InterruptedException {
+        DateUtils.shouldBeVisible(10, column.filterIcon);
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
@@ -494,8 +519,9 @@ class ColumnFilter {
     }
 
 
-    public void applyFilterDateVoid(int sectionNumber) {
+    public void applyFilterDateVoid(int sectionNumber) throws InterruptedException {
         scrollToElementIfNotVisible(column.filterIcon);
+        DateUtils.shouldBeVisible(10, column.filterIcon);
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
@@ -506,7 +532,8 @@ class ColumnFilter {
         column.closeFilters.shouldBe(enabled, Duration.ofSeconds(5)).shouldBe(visible, enabled).click();
     }
 
-    public void applyFilterDateNotVoid(int sectionNumber) {
+    public void applyFilterDateNotVoid(int sectionNumber) throws InterruptedException {
+        DateUtils.shouldBeVisible(10, column.filterIcon);
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
@@ -517,7 +544,8 @@ class ColumnFilter {
         column.closeFilters.shouldBe(enabled, Duration.ofSeconds(5)).click();
     }
 
-    public void applyFilterDateEquals(int sectionNumber, boolean shouldMatch) {
+    public void applyFilterDateEquals(int sectionNumber, boolean shouldMatch) throws InterruptedException {
+        DateUtils.shouldBeVisible(10, column.filterIcon);
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
@@ -533,7 +561,8 @@ class ColumnFilter {
         column.closeFilters.shouldBe(enabled, Duration.ofSeconds(5)).click();
     }
 
-    public void applyFilterDateNotEquals(int sectionNumber, boolean shouldMatch) {
+    public void applyFilterDateNotEquals(int sectionNumber, boolean shouldMatch) throws InterruptedException {
+        DateUtils.shouldBeVisible(10, column.filterIcon);
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
@@ -549,7 +578,8 @@ class ColumnFilter {
         column.closeFilters.shouldBe(enabled, Duration.ofSeconds(5)).click();
     }
 
-    public void applyFilterDateMore(int sectionNumber) {
+    public void applyFilterDateMore(int sectionNumber) throws InterruptedException {
+        DateUtils.shouldBeVisible(10, column.filterIcon);
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
@@ -565,7 +595,8 @@ class ColumnFilter {
         column.closeFilters.shouldBe(enabled, Duration.ofSeconds(5)).click();
     }
 
-    public void applyFilterDateMoreOrEqual(int sectionNumber) {
+    public void applyFilterDateMoreOrEqual(int sectionNumber) throws InterruptedException {
+        DateUtils.shouldBeVisible(10, column.filterIcon);
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
@@ -581,7 +612,8 @@ class ColumnFilter {
         column.closeFilters.shouldBe(enabled, Duration.ofSeconds(5)).click();
     }
 
-    public void applyFilterDateLess(int sectionNumber) {
+    public void applyFilterDateLess(int sectionNumber) throws InterruptedException {
+        DateUtils.shouldBeVisible(10, column.filterIcon);
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
@@ -597,11 +629,13 @@ class ColumnFilter {
         column.closeFilters.shouldBe(enabled, Duration.ofSeconds(5)).click();
     }
 
-    public void applyFilterDateLessOrEqual(int sectionNumber) {
+    public void applyFilterDateLessOrEqual(int sectionNumber) throws InterruptedException {
+        DateUtils.shouldBeVisible(10, column.filterIcon);
         column.filterIcon.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.typeFilter.shouldBe(enabled, Duration.ofSeconds(5)).click();
         openFilter(sectionNumber);
-        column.enterValue.shouldBe(visible, enabled);
+
+        DateUtils.shouldBeVisible(10, column.enterValue);
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).click();
         column.enterValue.shouldBe(enabled, Duration.ofSeconds(5)).setValue(column.value1).pressEnter();
         ElementsCollection listPopup = column.valueOfList;
@@ -616,7 +650,7 @@ class ColumnFilter {
 
     private void openFilter(int sectionNumber) {
         SelenideElement filterIsNumber = $("[aria-hidden='false'] ul li:nth-child(" + sectionNumber + ")");
-        filterIsNumber.click();
+        filterIsNumber.shouldBe(enabled, Duration.ofSeconds(5)).click();
     }
 
     SelenideElement scroll = $(".el-table__inner-wrapper .el-scrollbar__bar.is-horizontal");
@@ -710,10 +744,12 @@ class Main {
                     }
                 }
             }
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         }
     }
 
-    void testColumnFiltersAP() throws IOException {
+    void testColumnFiltersAP() throws IOException, InterruptedException {
         ObjectMapper mapper = new ObjectMapper();
         try (InputStream jsonArray = getClass().getResourceAsStream("/JsonFormsColumnsAP.json")) {
             DataColumn[] dataColumns = mapper.readValue(jsonArray, DataColumn[].class);
@@ -830,10 +866,12 @@ class Main {
                     }
                 }
             }
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         }
     }
 
-    void testColumnFiltersSP() throws IOException {
+    void testColumnFiltersSP() throws IOException, InterruptedException {
         ObjectMapper mapper = new ObjectMapper();
         try (InputStream jsonArray = getClass().getResourceAsStream("/JsonFormsColumnsSP.json")) {
             DataColumn[] dataColumns = mapper.readValue(jsonArray, DataColumn[].class);
@@ -950,6 +988,8 @@ class Main {
                     }
                 }
             }
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         }
     }
 }
@@ -998,6 +1038,14 @@ class DateUtils {
         }
 
         System.out.println("All dates are " + comparisonType + " " + filterDate);
+    }
+    public static void shouldBeVisible(int times, SelenideElement element) throws InterruptedException {
+        for (int i = 0; i < times; i++) {
+            Thread.sleep(1000);
+            if (element.exists()) {
+                return;
+            }
+        }
     }
 
     public static void verifyFloat(ElementsCollection elements, float referenceValue, ComparisonType comparisonType) {

@@ -26,7 +26,7 @@ public class FilterTestCase {
 
     @Test
     @Feature("Тестирование фильтров всех разделов ПИР")
-    public void testsFilter() throws IOException {
+    public void testsFilter() throws IOException, InterruptedException {
         stepFormsFilterLS.Authorization("admin", "admin");
         stepFormsFilterLS.BaseMenu(1);
         main.testColumnFiltersLS();
